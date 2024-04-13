@@ -1,0 +1,2688 @@
+{
+    "advisaries": [
+        {
+            "Name": "Jagged Knife Bandit",
+            "MotivesTactics": "Escape, Profit, Throw Smoke",
+            "Tier": "0",
+            "id": 1,
+            "Role": "Standard",
+            "Weapon": {
+                "Name": "Daggers",
+                "Range": "Melee",
+                "Damage": "2d8",
+                "Type": "phy"
+            },
+            "Modifier": "+0",
+            "Difficulty": "12",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "8",
+                "Severe": "14"
+            },
+            "HP": "5",
+            "Stress": "3",
+            "Experience": {
+                "Bandit": "+2"
+            },
+            "Moves": {
+                "From Above": "When this adversary makes a successful attack on a target by striking from above, it deals 3d10 damage instead of its normal attack damage."
+            }
+        },
+        {
+            "Name": "Jagged Knife Shadow",
+            "MotivesTactics": "Ambush, Conceal, Divide, Profit",
+            "Tier": "0",
+            "id": 2,
+            "Role": "Skulk",
+            "Weapon": {
+                "Name": "Dagger",
+                "Range": "Melee",
+                "Damage": "2d6",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "12",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "4",
+                "Severe": "8"
+            },
+            "HP": "3",
+            "Stress": "1",
+            "Experience": {
+                "Intrusion": "+3"
+            },
+            "Moves": {
+                "Midnight Hunter": "Jagged Knife Shadow has advantage on attacks while Hidden.",
+                "Backstab": "If Jagged Knife Shadow has advantage on an attack, that attack deals 2d10 physical damage on success."
+            }
+        },
+        {
+            "Name": "Jagged Knife Hexer",
+            "MotivesTactics": "Command, Hex, Profit, Warp",
+            "Tier": "0",
+            "id": 3,
+            "Role": "Support",
+            "Weapon": {
+                "Name": "Staff",
+                "Range": "Far",
+                "Damage": "1d10",
+                "Type": "mag"
+            },
+            "Modifier": "+2",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "5",
+                "Severe": "9"
+            },
+            "HP": "4",
+            "Stress": "3",
+            "Experience": {
+                "Magical Knowledge": "+2"
+            },
+            "Moves": {
+                "Chaotic Flux": "Make an attack against up to three targets within Very Close range. On success, mark Stress to deal 2d6 magic damage to each."
+            }
+        },
+        {
+            "Name": "Jagged Knife Sniper",
+            "MotivesTactics": "Hide, Ambush, Profit, Reposition",
+            "Tier": "0",
+            "id": 4,
+            "Role": "Ranged",
+            "Weapon": {
+                "Name": "Shortbow",
+                "Range": "Far",
+                "Damage": "2d6",
+                "Type": "phy"
+            },
+            "Modifier": "-1",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "4",
+                "Severe": "7"
+            },
+            "HP": "3",
+            "Stress": "0",
+            "Experience": {
+                "Stealth": "+2"
+            },
+            "Moves": {
+                "Unseen Strike": "If the Sniper hits an enemy while Hidden, the attack deals 2d10 physical damage instead of its normal damage."
+            }
+        },
+        {
+            "Name": "Jagged Knife Lieutenant",
+            "MotivesTactics": "Bully, Command, Profit, Reinforce",
+            "Tier": "0",
+            "id": 5,
+            "Role": "Leader",
+            "Weapon": {
+                "Name": "Javelin",
+                "Range": "Close",
+                "Damage": "1d8+2",
+                "Type": "phy"
+            },
+            "Modifier": "+4",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "5",
+                "Severe": "10"
+            },
+            "HP": "6",
+            "Stress": "3",
+            "Experience": {
+                "Area Knowledge": "+2"
+            },
+            "Moves": {
+                "Tactician": "When this adversary activates, you may also activate two allies within Close range of them.",
+                "Sturdy": "When this adversary takes Minor damage, they may mark a Stress instead of HP.",
+                "More Where That Came From": "Spend a Fear to summon 3 Jagged Knife Lackeys, who appear at Far range."
+            }
+        },
+        {
+            "Name": "Jagged Knife Lackey",
+            "MotivesTactics": "Escape, Profit, Throw Smoke",
+            "Tier": "0",
+            "id": 6,
+            "Role": "Minion",
+            "Weapon": {
+                "Name": "Daggers",
+                "Range": "Melee",
+                "Damage": "3",
+                "Type": "phy"
+            },
+            "Modifier": "-2",
+            "Difficulty": "9",
+            "Thresholds": {
+                "Minor": "1"
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Experience": {
+                "Bandit": "+2"
+            },
+            "Moves": {
+                "Group Attack": "Spend a Fear to activate all adversaries with this name within close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 3 damage per adversary."
+            }
+        },
+        {
+            "Name": "Jagged Knife Kneebreaker",
+            "MotivesTactics": "Intimidate, Grapple, Profit, Steal",
+            "Tier": "0",
+            "id": 7,
+            "Role": "Bruiser",
+            "Weapon": {
+                "Name": "Club",
+                "Range": "Melee",
+                "Damage": "2d6+2",
+                "Type": "phy"
+            },
+            "Modifier": "-3",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "5",
+                "Severe": "9"
+            },
+            "HP": "7",
+            "Stress": "3",
+            "Experience": {
+                "Bandit": "+2",
+                "Unveiled Threats": "+3"
+            },
+            "Moves": {
+                "Hold Them Down": "Mark Stress to make a melee attack. If successful, instead of dealing damage, hold the target in place, making them Restrained and Vulnerable. A PC can break free of these conditions by rolling with Strength (12) or are let go automatically when Major damage or higher is dealt to the Bruiser.",
+                "Bull Rush": "Spend a Fear to move into melee with a close target and make an attack. On a success, all armor used against this attack is halved (round up). The target is then knocked out of melee into very close range."
+            }
+        },
+        {
+            "Name": "Bear",
+            "Role": "Bruiser",
+            "MotivesTactics": "Climb, Defend Territory, Pummel, Track",
+            "Tier": "0",
+            "id": 8,
+            "Weapon": {
+                "Name": "Claws",
+                "Range": "Melee",
+                "Damage": "2d10",
+                "Type": "phy"
+            },
+            "Modifier": "+1 Moves",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "10",
+                "Severe": "16"
+            },
+            "HP": "7",
+            "Stress": "2",
+            "Experience": {
+                "Keen Senses": "+2",
+                "Ambusher": "+3"
+            },
+            "Moves": {
+                "Overwhelming Force": "Creatures that mark HP from a Claws attack by this adversary are knocked back to Very Close range."
+            }
+        },
+        {
+            "Name": "Dire Wolf",
+            "Role": "Skulker",
+            "MotivesTactics": "Defend Territory, Harry, Protect Pack, Surround, Trail",
+            "Tier": "0",
+            "id": 9,
+            "Weapon": {
+                "Name": "Claws",
+                "Range": "Melee",
+                "Damage": "2d6",
+                "Type": "phy"
+            },
+            "Modifier": "+2 Moves",
+            "Difficulty": "12",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "5",
+                "Severe": "9"
+            },
+            "HP": "4",
+            "Stress": "0",
+            "Experience": {
+                "Keen Senses": "+3"
+            },
+            "Moves": {
+                "Hobbling Strike": "Make an attack roll against a target within very close range. On a success, spend a Fear to reach out with a gnashing of teeth to deal 4d6 phy and make them Vulnerable until they regain a Hit Point."
+            }
+        },
+        {
+            "Name": "Giant Rat",
+            "Role": "Minion",
+            "MotivesTactics": "Burrow, Scavenge, Hunger, Wear Down",
+            "Tier": "0",
+            "id": 10,
+            "Weapon": {
+                "Name": "Bite",
+                "Range": "Melee",
+                "Damage": "3",
+                "Type": "phy"
+            },
+            "Modifier": "-4 Moves",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": null,
+                "Severe": null
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Experience": {
+                "Keen Senses": "+3"
+            },
+            "Moves": {
+                "Group Attack": "Spend a Fear to activate all adversaries with this name within very close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 3 damage per adversary."
+            }
+        },
+        {
+            "Name": "Swarm of Rats",
+            "Role": "Horde",
+            "MotivesTactics": "Consume, Swarm, Obscure",
+            "Tier": "0",
+            "id": 11,
+            "Weapon": {
+                "Name": "Claws",
+                "Range": "Melee",
+                "Damage": "2d10",
+                "Type": "phy"
+            },
+            "Modifier": "-3",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": null,
+                "Severe": null
+            },
+            "HP": "6",
+            "Stress": "0",
+            "Moves": {
+                "In Your Face": "All enemies within melee range of the swarm have disadvantage on attacks against any target other than the swarm.",
+                "Horde": "2d4 - Creatures Per Hit Point: 10. This adversary deals 2d4 instead of their normal damage when they’ve marked ½ or more of their HP."
+            }
+        },
+        {
+            "Name": "Giant Scorpion",
+            "Role": "Bruiser",
+            "MotivesTactics": "Ambush, Feed, Grapple, Poison",
+            "Tier": "0",
+            "id": 12,
+            "Weapon": {
+                "Name": "Pincers",
+                "Range": "Melee",
+                "Damage": "2d8",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": null,
+                "Severe": null
+            },
+            "HP": "6",
+            "Stress": "2",
+            "Experience": {
+                "Camouflage": "+2"
+            },
+            "Moves": {
+                "Double Strike": "Mark Stress to make a Pincer attack against an additional target in range.",
+                "Venomous Stinger": "Make an attack roll against a target within very close range. On a success, spend 2 Fear to do 2d8 phy damage with your stinger. The target also becomes poisoned until their next short rest or a PC succeeds on a Knowledge (16) roll to remove the poison. While poisoned, before they make an action roll, they must roll a d6. If the result is a 4 or below, they mark a stress."
+            }
+        },
+        {
+            "Name": "Giant Snake",
+            "Role": "Ranged",
+            "MotivesTactics": "Climb, Feed, Keep Distance, Scare",
+            "Tier": "0",
+            "id": 13,
+            "Weapon": {
+                "Name": "Fangs",
+                "Range": "Very Close",
+                "Damage": "1d8+3",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": null,
+                "Severe": null
+            },
+            "HP": "8",
+            "Stress": "3",
+            "Moves": {
+                "Armor-Shredding Shards": "Any successful melee attacks against this creature also marks an armor slot on the attacker.",
+                "Spinning Serpent": "Mark Stress to make a Fangs attack against all targets within Very Close range.",
+                "Glass Spitter": "Countdown 4 (Loop). Activate when a hostile target is spotted. This countdown reduces every time a PC rolls with Fear. When triggered, this adversary shoots sharps of glass at all targets in front of them within far range. Any targets the attack roll succeeds against take 1d8+1 phy damage."
+            }
+        },
+        {
+            "Name": "Sellsword",
+            "Role": "Minion",
+            "MotivesTactics": "Charge, Overwhelm, Lacerate, Profit",
+            "Tier": "0",
+            "id": 14,
+            "Weapon": {
+                "Name": "Longsword",
+                "Range": "Melee",
+                "Damage": "4",
+                "Type": "phy"
+            },
+            "Modifier": "+0",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": null,
+                "Severe": null
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Moves": {
+                "Group Attack Close 3": "Spend a Fear to activate all adversaries with this name within close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 3 damage per adversary.",
+                "Minion": "For every 4 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range."
+            }
+        },
+        {
+            "Name": "Harrier",
+            "Role": "Ranged",
+            "MotivesTactics": "Harry, Kite, Flank, Profit",
+            "Tier": "0",
+            "id": 15,
+            "Weapon": {
+                "Name": "Javelin",
+                "Range": "Close",
+                "Damage": "1d8+2",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "12",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "8",
+                "Severe": "12"
+            },
+            "HP": "3",
+            "Stress": "2",
+            "Experience": {
+                "Athlete": "+3"
+            },
+            "Moves": {
+                "Maintain Distance": "Mark Stress after making a Javelin attack to immediately move anywhere within far range.",
+                "Fall Back": "When a PC moves into melee to make an attack, you may spend 2 Fear before they make the attack roll to move the Harrier anywhere within close range and instead make a Javelin attack on them.",
+                "Slippery": "Spend a Fear to end the Restrained condition on Harrier and move them up to a Close distance without spending an action token. Spend an additional Fear to have them make a Javelin attack with a +2 modifier."
+            }
+        },
+        {
+            "Name": "Spellblade",
+            "Role": "Leader",
+            "MotivesTactics": "Blast, Command, Endure",
+            "Tier": "0",
+            "id": 16,
+            "Weapon": {
+                "Name": "Empowered Longsword",
+                "Range": "Melee",
+                "Damage": "2d8+2",
+                "Type": "phy/mag"
+            },
+            "Modifier": "+3",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "9",
+                "Severe": "14"
+            },
+            "HP": "6",
+            "Stress": "3",
+            "Experience": {
+                "Magical Knowledge": "+3"
+            },
+            "Moves": {
+                "Arcane Steel": "Damage dealt by their Empowered Longsword is considered both physical and magic. Only targets that are resistant to both are resistant, and only targets that are immune to both are immune.",
+                "Suppressing Blast": "Spend a Fear to choose three targets within Very Close range of each other and up to Far range from this adversary. These targets all must make a reaction roll with Agility (13) or take 2d12 mag damage. Targets that succeed on the roll take half damage. Add an action token to the tracker for each target that marked HP."
+            }
+        },
+        {
+            "Name": "Weaponmaster",
+            "Role": "Bruiser",
+            "MotivesTactics": "Taunt, Hone Prowess, Retaliate, Target The Strongest",
+            "Tier": "0",
+            "id": 17,
+            "Weapon": {
+                "Name": "Greatsword",
+                "Range": "Very Close",
+                "Damage": "2d8+2",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "8",
+                "Severe": "12"
+            },
+            "HP": "6",
+            "Stress": "2",
+            "Moves": {
+                "Disarming Strike": "When you make a successful Greatsword attack against a target, you can spend a Fear to also have the PC make a reaction roll with Agility (12) or have their primary weapon knocked out of their hands to Very Close range. They must retrieve it before they can use it again.",
+                "Adrenaline Burst": "Spend 2 Fear to heal 2 HP (once per day)."
+            }
+        },
+        {
+            "Name": "Green Ooze",
+            "Role": "Skulk",
+            "MotivesTactics": "Creep up, Envelop, Camouflage, Consume & Multiply",
+            "Tier": "0",
+            "id": 18,
+            "Weapon": {
+                "Name": "Ooze Appendage",
+                "Range": "Melee",
+                "Damage": "2d8",
+                "Type": "mag"
+            },
+            "Modifier": "+1",
+            "Difficulty": "8",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "9",
+                "Severe": "14"
+            },
+            "HP": "5",
+            "Stress": "2",
+            "Experience": {
+                "Camouflage": "+3"
+            },
+            "Moves": {
+                "Slow (2)": "The GM must spend two action tokens to activate this adversary.",
+                "Acidic Form": "Any PC damaged by this adversary must also mark one Armor Slot.",
+                "Envelop": "Spend a Fear to make an attack roll against a creature within Very Close distance. On a success, deal 2d10 magic damage. If that creature marks HP, they are stuck in the ooze and Restrained until they break free (Strength 14). A creature that takes an action while Enveloped suffers 2d8 direct magic damage before acting.",
+                "Split": "When this adversary has marked 3 of its hit points, it splits into two Tiny Green Oozes (with no marked HP or Stress) that instantly activate."
+            }
+        },
+        {
+            "Name": "Tiny Green Ooze",
+            "Role": "Skulk",
+            "MotivesTactics": "Creep up, Envelop, Camouflage, Consume & Multiply",
+            "Tier": "0",
+            "id": 19,
+            "Weapon": {
+                "Name": "Ooze Appendage",
+                "Range": "Melee",
+                "Damage": "1d6",
+                "Type": "mag"
+            },
+            "Modifier": "-1",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "5",
+                "Severe": null
+            },
+            "HP": "2",
+            "Stress": "0",
+            "Moves": {
+                "Acidic Form": "Any creature damaged by this adversary must also mark one Armor Slot."
+            }
+        },
+        {
+            "Name": "Minor Treeant",
+            "Role": "Minion",
+            "MotivesTactics": "Crush, Overwhelm, Protect",
+            "Tier": "0",
+            "id": 20,
+            "Weapon": {
+                "Name": "Claws",
+                "Range": "Melee",
+                "Damage": "4",
+                "Type": "phy"
+            },
+            "Modifier": "-2",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": null,
+                "Severe": null
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Experience": {
+                "Nature’s Friend": "+1"
+            },
+            "Moves": {
+                "Minion 4": "For every 4 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack - Melee - 4": "Spend a Fear to activate all adversaries with this name within close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 3 damage per adversary."
+            }
+        },
+        {
+            "Name": "Sylvan Soldier",
+            "Role": "Standard",
+            "MotivesTactics": "Ambush, Overwhelm, Protect, Trail",
+            "Tier": "0",
+            "id": 21,
+            "Weapon": {
+                "Name": "Claws",
+                "Range": "Melee",
+                "Damage": "2d8+2",
+                "Type": "phy"
+            },
+            "Modifier": "+0",
+            "Difficulty": "11",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "8",
+                "Severe": "12"
+            },
+            "HP": "4",
+            "Stress": "0",
+            "Experience": {
+                "Tracker": "+2"
+            },
+            "Moves": {
+                "Pack Tactics": "When making a Claws attack, if another Sylvan Soldier is also in melee range of the target, deal 2d10+4 phy damage instead.",
+                "Forest Control": "Spend a Fear to pull down a tree within close distance. Anyone within Very Close of the tree must make a Reaction roll with Agility (13) or take 1d20 phy damage.",
+                "Blend In": "After a successful attack, mark Stress to become Hidden until this adversary’s next attack or a PC rolls Instinct (14) to find them."
+            }
+        },
+        {
+            "Name": "Deeproot Defender",
+            "Role": "Bruiser",
+            "MotivesTactics": "Ambush, Grab, Protect, Pummel",
+            "Tier": "0",
+            "id": 22,
+            "Weapon": {
+                "Name": "Vines",
+                "Range": "Close",
+                "Damage": "1d10+3",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "8",
+                "Severe": "16"
+            },
+            "HP": "7",
+            "Stress": "2",
+            "Experience": {
+                "Huge": "+3"
+            },
+            "Moves": {
+                "Ground Slam": "Spend a Fear to slam the ground and knock any foes within very close range into far range. Each character knocked away marks Stress.",
+                "Grab and Drag": "Make an attack roll against a close target. On a success, mark stress to deal 2d8+3 damage and pull them to Melee range, where they are Restrained. The creature can break free by rolling with Strength (11) or automatically breaks free when the Deeproot Defender suffers Severe damage."
+            }
+        },
+        {
+            "Name": "Young Dryad",
+            "Role": "Leader",
+            "MotivesTactics": "Command, Nurture, Prune the Unwelcome",
+            "Tier": "0",
+            "id": 23,
+            "Weapon": {
+                "Name": "Wand",
+                "Range": "Far",
+                "Damage": "2d8+2",
+                "Type": "mag"
+            },
+            "Modifier": "+4",
+            "Difficulty": "9",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "5",
+                "Severe": "10"
+            },
+            "HP": "4",
+            "Stress": "3",
+            "Experience": {
+                "Leadership": "+3"
+            },
+            "Moves": {
+                "Voice of the Forest": "Spend a Fear to activate 1d4 allies in range of a target they can hit with their weapon. They all deal half damage on their attacks.",
+                "Thorny Cage": "Spend 2 Fear to grow a thicket of brambles that fills a Close area anywhere within Far range of this adversary. All creatures within the bramble must make a Reaction roll with Finesse (12). On a success, they mark Stress and move out of the bramble. On a failure, they become Restrained. Creatures can break free of this condition by rolling with Finesse or Strength (12). Any opponents moving within the bramble area must roll with Finesse (10) or take 2d6 phy damage."
+            }
+        },
+        {
+            "Name": "Skeleton Dredge",
+            "Role": "Minion",
+            "MotivesTactics": "Play Dead, Overwhelm, Fall Apart, Steal Skin",
+            "Tier": "0",
+            "id": 24,
+            "Weapon": {
+                "Name": "Rusty Sword",
+                "Range": "Melee",
+                "Damage": "3",
+                "Type": "phy"
+            },
+            "Modifier": "-1",
+            "Difficulty": "8",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": null,
+                "Severe": null
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Moves": {
+                "Minion 4": "For every 4 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack - Close 3": "Spend a Fear to activate all adversaries with this name within close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 3 damage per adversary."
+            }
+        },
+        {
+            "Name": "Skeleton Warrior",
+            "Role": "Standard",
+            "MotivesTactics": "Gang Up, Feign Death, Steal Skin",
+            "Tier": "0",
+            "id": 25,
+            "Weapon": {
+                "Name": "Sword",
+                "Range": "Melee",
+                "Damage": "2d8",
+                "Type": "phy"
+            },
+            "Modifier": "+0",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "4",
+                "Severe": "8"
+            },
+            "HP": "3",
+            "Stress": "0",
+            "Moves": {
+                "Only Bones": "This creature is resistant to physical damage",
+                "Won’t Stay Dead": "When this adversary marks their last hit point, start a Countdown (6). Tick it down everytime a token is placed on the action tracker. When it is triggered, if there are still other skeleton adversaries fighting on the battlefield, this adversary reforms itself and returns to battle with no hit points marked."
+            }
+        },
+        {
+            "Name": "Skeleton Archer",
+            "Role": "Ranged",
+            "MotivesTactics": "Steal Skin, Gang Up, Feign Death",
+            "Tier": "0",
+            "id": 26,
+            "Weapon": {
+                "Name": "Shortbow",
+                "Range": "Far",
+                "Damage": "2d6",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "9",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "3",
+                "Severe": "7"
+            },
+            "HP": "3",
+            "Stress": "0",
+            "Moves": {
+                "Opportunist": "When two or more other adversaries are very close to a target, all the damage this adversary deals to that target is doubled.",
+                "Deadly Shot": "Spend a Fear after successfully attacking a Vulnerable target to deal 2d10 damage instead."
+            }
+        },
+        {
+            "Name": "Skeleton Knight",
+            "Role": "Bruiser",
+            "MotivesTactics": "Play Dead, Lead Troops, Overwhelm",
+            "Tier": "0",
+            "id": 27,
+            "Weapon": {
+                "Name": "Rusty Greatsword",
+                "Range": "Melee",
+                "Damage": "2d8+2",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "8",
+                "Severe": "15"
+            },
+            "HP": "5",
+            "Stress": "2",
+            "Moves": {
+                "Pack Tactics": "When making a Rusty Greatsword attack, if another Skeleton Knight is also in melee range of the target, deal 2d10 phy damage instead.",
+                "Cut to the Bone": "Spend a Fear to make a Rusty Greatsword attack against all enemies within Very Close range. On a success, they also mark Stress.",
+                "Dig Two Graves": "When this adversary is killed, before it dies it makes an attack against an enemy within Very Close range (prioritizing the enemy that killed it). On success, the target takes 2d10 phy damage and loses 1d4 Hope."
+            }
+        },
+        {
+            "Name": "Bladed Guards",
+            "Role": "Standard",
+            "MotivesTactics": "Arrest, Close Gates, Pin Down, Make it Through the Day",
+            "Tier": "0",
+            "id": 28,
+            "Weapon": {
+                "Name": "Longsword",
+                "Range": "Melee",
+                "Damage": "2d6",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "12",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "6",
+                "Severe": "12"
+            },
+            "HP": "5",
+            "Stress": "0",
+            "Experience": {
+                "Local Knowledge": "+3"
+            },
+            "Moves": {
+                "Shield Wall": "The difficulty to move through anywhere within close range around this adversary is increased by 1 for each Bladed Guard within melee range of one another.",
+                "Detain": "Mark Stress to make an attack roll against a target within Very Close range. On a success, the target is Restrained. They can break free on a successful attack against the adversary or on a roll with Strength or Finesse (12)."
+            }
+        },
+        {
+            "Name": "Archer Guards",
+            "Role": "Ranged",
+            "MotivesTactics": "Close Gates, Pin Down, Arrest, Make it Through the Day",
+            "Tier": "0",
+            "id": 29,
+            "Weapon": {
+                "Name": "Longbow",
+                "Range": "Far",
+                "Damage": "2d8",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "5",
+                "Severe": "10"
+            },
+            "HP": "3",
+            "Stress": "0",
+            "Experience": {
+                "Local Knowledge": "+3"
+            },
+            "Moves": {
+                "Hobbling Shot": "Spend a Fear to make a Longbow attack against any target in Far range. On a success, deal 2d8 phy damage and give them disadvantage on all Agility rolls until they clear at least one marked HP."
+            }
+        },
+        {
+            "Name": "Head Guard",
+            "Role": "Leader",
+            "MotivesTactics": "Command, Close Gates, Pin Down, Arrest, Seek Glory",
+            "Tier": "0",
+            "id": 30,
+            "Weapon": {
+                "Name": "Mace",
+                "Range": "Melee",
+                "Damage": "3d6",
+                "Type": "phy"
+            },
+            "Modifier": "+4",
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "8",
+                "Severe": "22"
+            },
+            "HP": "7",
+            "Stress": "3",
+            "Experience": {
+                "Commander": "+2",
+                "Local Knowledge": "+2"
+            },
+            "Moves": {
+                "Rally Guards": "Spend a Fear to move all Bladed Guards into melee with the nearest target they are chasing and make that target Vulnerable.",
+                "On My Signal (Countdown 5)": "Activate when this creature sees any number of hostile targets. It ticks down anytime a PC makes an attack roll. When triggered all Archer Guards fire at their nearest target with a +3 attack modifier."
+            }
+        },
+        {
+            "Name": "Shambling Zombie",
+            "Role": "Standard",
+            "MotivesTactics": "Hunger, Mob Enemy, Shred Flesh, Devour",
+            "Tier": "0",
+            "id": 31,
+            "Weapon": {
+                "Name": "Bite",
+                "Range": "Melee",
+                "Damage": "3d8",
+                "Type": "phy"
+            },
+            "Modifier": "+0",
+            "Difficulty": "9",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "4",
+                "Severe": "6"
+            },
+            "HP": "4",
+            "Stress": "0",
+            "Moves": {
+                "Too Many to Handle": "When making a Bite attack, you can spend a Fear after the roll if any other Zombie is within close range to prevent the target from spending Armor Slots to reduce the damage.",
+                "Horrifying": "When this creature deals hit point damage to a target, the target also loses a Hope. If the target doesn’t have any Hope, they mark an additional Hit Point instead."
+            }
+        },
+        {
+            "Name": "Rotted Zombie",
+            "Role": "Minion",
+            "MotivesTactics": "Hunger, Maul, Surround, Eat Flesh",
+            "Tier": "0",
+            "id": 32,
+            "Weapon": {
+                "Name": "Bite",
+                "Range": "Melee",
+                "Damage": "4",
+                "Type": "phy"
+            },
+            "Modifier": "-3",
+            "Difficulty": "7",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": null,
+                "Severe": null
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Moves": {
+                "Minion 4": "For every 4 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack - Very Close 4": "Spend a Fear to activate all adversaries with this name within very close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 4 damage per adversary."
+            }
+        },
+        {
+            "Name": "Zombie Pack",
+            "Role": "Horde",
+            "MotivesTactics": "Hunger, Maul, Consume Flesh",
+            "Tier": "0",
+            "id": 33,
+            "Weapon": {
+                "Name": "Bite",
+                "Range": "Melee",
+                "Damage": "2d10",
+                "Type": "phy"
+            },
+            "Modifier": "-1",
+            "Difficulty": "8",
+            "Thresholds": {
+                "Minor": "5",
+                "Major": "9",
+                "Severe": "13"
+            },
+            "HP": "6",
+            "Stress": "3",
+            "Moves": {
+                "Overwhelm": "When a creature within melee range deals stress to the Zombie Pack, you may spend a Fear to have the Zombie Pack immediately make an attack against that creature.",
+                "Horde": "2d6 - Creatures Per Hit Point: 2 If the Zombie Pack has 3 or more of its Hit Points marked, its attack only deals 2d6 damage."
+            }
+        },
+        {
+            "Name": "Brawny Zombie",
+            "Role": "Bruiser",
+            "MotivesTactics": "Destruction, Crush, Slam, Hail Debris",
+            "Tier": "0",
+            "id": 34,
+            "Weapon": {
+                "Name": "Slam",
+                "Range": "Very Close",
+                "Damage": "2d12",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "12",
+            "Thresholds": {
+                "Minor": "5",
+                "Major": "11",
+                "Severe": "17"
+            },
+            "HP": "7",
+            "Stress": "4",
+            "Experience": {
+                "Throw": "+4"
+            },
+            "Moves": {
+                "Devastating Blows": "Mark Stress to make a Slam attack that also forces the target to mark one armor slot on a success.",
+                "Grab & Rend": "Spend 2 Fear to make an attack against a target in melee. On a success, the target becomes Restrained and takes 2d10 phy damage as this adversary tries to rip them in two. The target can clear Restrained by rolling with Strength or Agility (14) or they will automatically break free when Brawny Zombie takes Severe damage.",
+                "Juggernaut": "Spend a Fear to destroy part of the environment within a Very Close range of Brawny Zombie. Any character within Close range of the destroyed element must make a Reaction roll with Agility (15) or be knocked over, making them Vulnerable. They can clear Vulnerable by rolling with Agility (13)."
+            }
+        },
+        {
+            "Name": "Patchwork Zombie Hulk",
+            "Role": "Solo",
+            "MotivesTactics": "Hunger, Flail, Absorb Corpses, Terrify",
+            "Tier": "0",
+            "id": 35,
+            "Weapon": {
+                "Name": "Too Many Arms",
+                "Range": "Very Close",
+                "Damage": "3d6+5",
+                "Type": "phy"
+            },
+            "Modifier": "+4",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "10",
+                "Severe": "20"
+            },
+            "HP": "9",
+            "Stress": "3",
+            "Experience": {
+                "Tear Things Apart": "+2"
+            },
+            "Moves": {
+                "Destructible": "Whenever Patchwork Zombie takes Major damage or worse, it marks +1 HP.",
+                "Another For The Pile": "Spend a Fear when the Patchwork Zombie Hulk is within Very Close of a corpse to add it to the hulk, healing 1 HP and clearing 1 Stress.",
+                "Tormented Screams": "Spend a Fear to cause all PCs within Far range to make a reaction roll with Presence (13) or lose one Hope. PCs that succeed still mark Stress.",
+                "Flail": "Mark Stress to make a Too Many Arms attack against all targets within Close range."
+            }
+        },
+        {
+            "Name": "Minor Chaos Elemental",
+            "Role": "Solo",
+            "Tier": "0",
+            "id": 36,
+            "MotivesTactics": "Confound, Destabilize, Transmogrify",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Warp Blast",
+                "Range": "Close",
+                "Damage": "2d10",
+                "Type": "mag"
+            },
+            "Moves": {
+                "Sickening Flux": "Mark Stress to cause all PCs within Close to make a reaction roll using Instinct (14). Those that fail are sickened and become Vulnerable until they take a short rest or clear at least one marked HP. Those that succeed still mark Stress.",
+                "Remake Reality": "Spend a Fear to reshape a Close area around the Minor Chaos Elemental to a different biome (forest into desert, city into lake). Any creature within that Close area must make a reaction roll with Instinct (14) or take 2d10 direct magic damage that cannot be reduced by armor (due to the ripping of reality around them). Spend an additional Fear if any targets fail the reaction roll to also make them Vulnerable until the end of the scene or until they clear Stress."
+            },
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "5",
+                "Major": "12",
+                "Severe": "25"
+            },
+            "HP": "6",
+            "Stress": "3"
+        },
+        {
+            "Name": "Minor Fire Elemental",
+            "Role": "Solo",
+            "Tier": "0",
+            "id": 37,
+            "MotivesTactics": "Start Fires, Encircle Enemies, Grow in Size, Intimidate",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Elemental Blast",
+                "Range": "Far",
+                "Damage": "2d6",
+                "Type": "mag"
+            },
+            "Moves": {
+                "Scorched Earth": "Mark a Stress to choose a point within Far distance. The ground within Very Close distance of that point immediately bursts into flames. Anyone within this area must make a reaction roll with Agility (15), or take 2d10 magic damage from the flames.",
+                "Fearsome Conflagration": "Spend a Fear to force all characters within Close distance make a reaction roll with Presence (13) or be frightened and made Vulnerable until they succeed on an action against the fire elemental. A PC that succeeds on this roll still marks Stress."
+            },
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "7",
+                "Severe": "13"
+            },
+            "HP": "7",
+            "Stress": "3"
+        },
+        {
+            "Name": "Pirate Raiders",
+            "MotivesTactics": "Gang Up, Raid, Plunder",
+            "Tier": "0",
+            "id": 38,
+            "Role": "Horde",
+            "Weapon": {
+                "Name": "Cutlass",
+                "Range": "Melee",
+                "Damage": "1d8",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "12",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "5",
+                "Severe": "10"
+            },
+            "HP": "4",
+            "Stress": "3",
+            "Experience": {
+                "Sailor": "+3"
+            },
+            "Moves": {
+                "Powerful": "On an attack against this adversary, any result of 15 or below causes the attacker to mark Stress.",
+                "Horde 1d4 - Creatures Per Hit Point: 3": "If Pirate Raiders has marked 2 or more of its HP, they deal 1d4 phy instead of their normal damage."
+            }
+        },
+        {
+            "Name": "Pirate Captain",
+            "MotivesTactics": "Command, Raid, Plunder, Make ‘em Walk the Plank",
+            "Tier": "0",
+            "id": 39,
+            "Role": "Leader",
+            "Weapon": {
+                "Name": "Cutlass",
+                "Range": "Melee",
+                "Damage": "2d8",
+                "Type": "phy"
+            },
+            "Modifier": "+4",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "6",
+                "Severe": "11"
+            },
+            "HP": "7",
+            "Stress": "3",
+            "Experience": {
+                "Sailor": "+3",
+                "Commander": "+2"
+            },
+            "Moves": {
+                "Lead by Example": "When this adversary activates, mark Stress to also activate another Pirate within Close range.",
+                "Powerful": "On an attack against the Pirate Captain, any result of 16 or below causes the attacker to mark Stress.",
+                "Out of the Holds": "Spend 2 Fear to summon a Pirate Raiders Horde that enters at Far range. This can only be done once per day."
+            }
+        },
+        {
+            "Name": "Pirate Tough",
+            "MotivesTactics": "Raid, Plunder, Smash, Terrorize",
+            "Tier": "0",
+            "id": 40,
+            "Role": "Bruiser",
+            "Weapon": {
+                "Name": "Massive Fists",
+                "Range": "Melee",
+                "Damage": "2d10+2",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "9",
+                "Severe": "13"
+            },
+            "HP": "4",
+            "Stress": "2",
+            "Experience": {
+                "Sailor": "+2"
+            },
+            "Moves": {
+                "Powerful": "On an attack against this adversary, any result of 15 or below causes the attacker to mark Stress.",
+                "Clear The Decks": "Spend a Fear to make a Massive Fists attack against a target within Very Close range. On a success, move into melee with them and deal 2d12+2 damage and they are also thrown back to Close range."
+            }
+        },
+        {
+            "Name": "Construct",
+            "MotivesTactics": "Serve Creator, Smash Target, Destroy Environment, Trample Groups",
+            "Tier": "0",
+            "id": 41,
+            "Role": "Solo",
+            "Weapon": {
+                "Name": "Fist Slam",
+                "Range": "Melee",
+                "Damage": "3d8",
+                "Type": "phy"
+            },
+            "Modifier": "+4",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "1",
+                "Major": "5",
+                "Severe": "10"
+            },
+            "HP": "9",
+            "Stress": "3",
+            "Moves": {
+                "Shifting Amalgamation": "Physical damage dealt to the Construct does +1 Hit Points. You may mark Stress to add an additional +10 to a damage roll this creature makes. Spend a Fear to activate this Construct even if it has already activated this move.",
+                "Trample": "Make an attack roll against a group of targets within Close range. On a success, spend a Fear and move the Construct into melee with them, dealing 3d10 physical damage.",
+                "Death Quake": "When this creature marks its last Hit Point, the magic powering it ruptures in an explosion of force. Make an attack roll with a bonus of +9 against all targets within Very Close range. On a success, it deals 3d20 magic damage."
+            }
+        },
+        {
+            "Name": "Acid Burrower",
+            "MotivesTactics": "Burrow, Drag away, Feed, Reposition",
+            "Tier": "0",
+            "id": 42,
+            "Role": "Solo",
+            "Weapon": {
+                "Name": "Claws",
+                "Range": "Very Close",
+                "Damage": "1d12+3",
+                "Type": "phy"
+            },
+            "Modifier": "+3",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "5",
+                "Major": "10",
+                "Severe": "15"
+            },
+            "HP": "7",
+            "Stress": "3",
+            "Experience": {
+                "Tremor Sense": "+2"
+            },
+            "Moves": {
+                "Relentless": "This adversary may activate twice in a GM move (still takes 2 action tokens).",
+                "Earth Eruption": "Mark Stress. This adversary bursts up out of the ground, causing anyone within Very Close to make an Agility (14) reaction roll or be knocked over and Vulnerable until they next act. The area within Very Close of the eruption becomes rough terrain, requiring an Agility roll (12) to pass through it.",
+                "Spit Acid": "Spend a Fear to make all targets in a line up to Close range away make an Agility (15) reaction roll or take 2d10 physical damage and are Vulnerable until their next rest. On a successful reaction roll, they take 1d10 phy damage. Armor is half as effective against damage from this attack.",
+                "Grapple": "Spend a Fear to have this adversary make an attack roll against a Very Close target. On a success, they grab them with their Claws, doing attack damage and making them Restrained and Vulnerable. A Strength (15) roll will release them.",
+                "Acid Bath": "When this adversary takes a Severe injury or goes drops below 4 HP, all foes within Close range are bathed in acid. They must make Agility (12) reaction roll or suffer 2d10 damage. On a successful reaction roll, they still mark Stress."
+            }
+        },
+        {
+            "Name": "Minor Demon",
+            "MotivesTactics": "Torment, Corral Targets, Relish Pain, Act Erratically",
+            "Tier": "0",
+            "id": 43,
+            "Role": "Solo",
+            "Weapon": {
+                "Name": "Claws",
+                "Range": "Melee",
+                "Damage": "4d6",
+                "Type": "phy"
+            },
+            "Modifier": "+3",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "6",
+                "Severe": "15"
+            },
+            "HP": "7",
+            "Stress": "2",
+            "Moves": {
+                "Hellfire": "Spend a Fear to make an attack roll to rain hellfire upon a group of targets within Far range. On a success, deal 4d8 magic damage.",
+                "Reaper": "When rolling damage, mark a Stress to add the Demon’s current number of marked Hit Points to the value of the damage inflicted."
+            }
+        },
+        {
+            "Name": "Cave Giant",
+            "MotivesTactics": "Throw Enemies, Bite Off Heads, Feast, Rip Limbs, Stomp",
+            "Tier": "0",
+            "id": 44,
+            "Role": "Solo",
+            "Weapon": {
+                "Name": "Club",
+                "Range": "Melee",
+                "Damage": "2d10",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "10",
+                "Severe": "20"
+            },
+            "HP": "6",
+            "Stress": "1",
+            "Moves": {
+                "Relentless": "The Cave Giant may activate twice in a GM move (still takes 2 tokens)",
+                "Rampaging Fury": "When this creature takes Major Damage, it rampages. Make an attack roll against all enemies within close range. On a success, deal 2d12 physical damage.",
+                "Bone Breaker": "When a PC uses an Armor Slot to reduce incoming damage from the Cave Giant, it is only half as effective.",
+                "Crush": "Make an attack roll to pick up large, heavy objects and throw them at all targets in front of this creature within far range. On a success, spend a Fear to deal 1d20+10 damage to each."
+            }
+        },
+        {
+            "Name": "Merchant",
+            "MotivesTactics": "Buy Low/Sell High, Create Demand, Inflate Prices, Seek Profit",
+            "Tier": "0",
+            "id": 45,
+            "Role": "Social",
+            "Weapon": {
+                "Name": "Club",
+                "Range": "Melee",
+                "Damage": "2d4",
+                "Type": "phy"
+            },
+            "Modifier": "-4",
+            "Difficulty": "10",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "5",
+                "Severe": "8"
+            },
+            "HP": "3",
+            "Stress": "2",
+            "Experience": {
+                "Shrewd Negotiator": "+5"
+            },
+            "Moves": {
+                "Preferential Treatment": "A character that succeeds at a social action against the Merchant gains a discount on purchases (reduce all costs by one handful of gold). Any character that fails on a social action against the merchant must pay one handful of gold more and is at disadvantage on future social actions against the Merchant."
+            }
+        },
+        {
+            "Name": "Courtier",
+            "MotivesTactics": "Discredit, Gain Favor, Maneuver, Scheme",
+            "Tier": "0",
+            "id": 46,
+            "Role": "Social",
+            "Weapon": {
+                "Name": "Dagger",
+                "Range": "Melee",
+                "Damage": "2d4",
+                "Type": "phy"
+            },
+            "Modifier": "-4",
+            "Difficulty": "9",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "6",
+                "Severe": "10"
+            },
+            "HP": "2",
+            "Stress": "3",
+            "Experience": {
+                "Socialite": "+5"
+            },
+            "Moves": {
+                "Mockery": "Mark Stress to say something mocking and force a target within Close range to make a reaction roll with Presence (14) to see if they can save face. If they fail, they mark 2 Stress and are Vulnerable for the remainder of the scene until they succeed on a social action against the Courtier. If they succeed, they still mark Stress.",
+                "Scapegoat": "Spend a Fear to convince a target crowd or notable individual that one person or group is responsible for some problem facing the target. The target becomes hostile to the scapegoat until convinced of their innocence."
+            }
+        },
+        {
+            "Name": "Petty Noble",
+            "MotivesTactics": "Gather Resources, Mobilize Minions, Abuse Power",
+            "Tier": "0",
+            "id": 47,
+            "Role": "Social",
+            "Weapon": {
+                "Name": "Rapier",
+                "Range": "Melee",
+                "Damage": "2d8",
+                "Type": "phy"
+            },
+            "Modifier": "-3",
+            "Difficulty": "12",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "7",
+                "Severe": "11"
+            },
+            "HP": "3",
+            "Stress": "3",
+            "Experience": {
+                "Aristocrat": "+5"
+            },
+            "Moves": {
+                "My Land, My Rules": "All social actions against the Petty Noble on their land are made at disadvantage.",
+                "Exile": "Spend a Fear to activate when the Petty Noble becomes hostile to a target. When the countdown triggers, the target is exiled from the noble’s territory. Spend an additional Fear for any additional targets to be exiled as well. While exiled, the target has disadvantage in all social situations within the Noble’s domain.",
+                "Guards, Seize Them": "Once per scene, mark Stress to summon a group of guards to enforce the Noble’s will."
+            }
+        },
+        {
+            "Name": "Assassin Poisoner",
+            "MotivesTactics": "Anticipate, Taint Food and Water, Disable, Get Paid",
+            "Tier": "1",
+            "id": 48,
+            "Role": "Skulk",
+            "Weapon": {
+                "Name": "Poisoned Throwing Dagger",
+                "Range": "Close",
+                "Damage": "3d8",
+                "Type": "phy"
+            },
+            "Modifier": "+3",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "12",
+                "Severe": "20"
+            },
+            "HP": "4",
+            "Stress": "3",
+            "Experience": {
+                "Intrusion": "+2"
+            },
+            "Moves": {
+                "Grindletooth Venom Blade": "Characters that mark HP from a Poisoned Throwing Dagger attack become Vulnerable until their next action. When they take their next action, they must make a Reaction Roll with Strength (14) or take 2d10 physical damage that cannot be reduced by armor and stay Vulnerable until they regain HP or are treated for poison. Characters that pass this Reaction Roll mark Stress but are no longer Vulnerable.",
+                "Out of Nowhere": "Assassin Poisoner has advantage on attacks if they are Hidden.",
+                "Fumigation": "Spend a Fear to have the Poisoner throw a sachet up to Close range that fills a Very Close area with cloying smoke. Anyone in the smoke becomes Dizzied. Dizzied characters add two tokens to the action tracker when they act, then are no longer dizzied."
+            }
+        },
+        {
+            "Name": "Apprentice Assassin",
+            "MotivesTactics": "Ambush, Maim, Fade into Crowds, Develop Skills",
+            "Tier": "1",
+            "id": 49,
+            "Role": "Minion",
+            "Weapon": {
+                "Name": "Thrown Dagger",
+                "Range": "Very Close",
+                "Damage": "5",
+                "Type": "phy"
+            },
+            "Modifier": "-1",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "1 (Minion)"
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Experience": {
+                "Intrusion": "+2"
+            },
+            "Moves": {
+                "Minion 6": "For every 6 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack - Close 5": "Spend a Fear to activate all adversaries with this name. If any are within close range of a target, they move into melee and make an attack roll against that target. On a success, they deal 5 phy damage."
+            }
+        },
+        {
+            "Name": "Master Assassin",
+            "MotivesTactics": "Ambush, Command, Dispatch, Profit",
+            "Tier": "1",
+            "id": 50,
+            "Role": "Leader",
+            "Weapon": {
+                "Name": "Serrated Dagger",
+                "Range": "Melee",
+                "Damage": "2d20",
+                "Type": "phy"
+            },
+            "Modifier": "+5",
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "12",
+                "Severe": "25"
+            },
+            "HP": "7",
+            "Stress": "4",
+            "Experience": {
+                "Intrusion": "+3"
+            },
+            "Moves": {
+                "Strike as One": "Mark Stress to activate a number of Assassins equal to the Master Assassin’s unmarked Stress.",
+                "Won’t See It Coming": "Master Assassin can spend their activation taking cover to become Hidden. Master Assassin deals +10 damage on standard attacks while Hidden.",
+                "Coup De Grace": "When Master Assassin successfully makes a Serrated Dagger attack against a character that is Vulnerable, spend a Fear to deal damage equal to the target’s Major damage threshold + 2d8 instead of rolling 2d20.",
+                "The Big Reveal": "Spend a Fear to reveal the Master Assassin as having been disguised as another character (not a PC) in the scene. They immediately make an attack roll against a target within Very Close range. On a success, the Master Assassin deals 2d10+15 damage."
+            }
+        },
+        {
+            "Name": "Battle Box",
+            "MotivesTactics": "Wait in Disguise, Trample Foes, Change Tactics",
+            "Tier": "1",
+            "id": 51,
+            "Role": "Solo",
+            "Weapon": {
+                "Name": "Slam",
+                "Range": "Melee",
+                "Damage": "3d8",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "9",
+                "Severe": "15"
+            },
+            "HP": "7",
+            "Stress": "6",
+            "Experience": {
+                "Camouflage": "+2"
+            },
+            "Moves": {
+                "Shifting Amalgamation": "Mark Stress to add +1d10 to the damage of any of the Battle Box’s attacks. You may spend a Fear to activate Battle Box even if it has already activated this GM move.",
+                "Randomized Tactics": "Mark Stress and roll 1d6. The Battle Box uses the corresponding move. You may spend a Fear and override the roll to make the move of your choice.",
+                "1. Mana Beam": "The cube turns and fires a searing beam. Make an attack with a +3 modifier against a target within Far range. On a success, deal 2d20 mag damage.",
+                "2. Fire Jets": "The cube shoots into the air, spinning as it releases jets of flame. Make an attack against all targets within Close range. Any you succeed against take 3d6 physical damage.",
+                "3. Trample": "The cube rockets around a Close area, attacking all within this range. Any it is successful against take 3d10 physical damage and are Vulnerable until their next roll with Hope.",
+                "4. Shocking Gas": "The cube sprays out a silver gas sparking with lightning. All creatures within Close range must make a Reaction roll with Finesse (15) or take 1d12 magic damage and drop all items held in their hands. On a success, targets still mark Stress.",
+                "5. Stunning Clap": "The cube leaps and its sides clap, creating a small sonic boom. Any targets within Close range must make a Reaction Roll with Strength (15) or become Vulnerable until they clear Stress or this adversary is defeated.",
+                "6. Psionic Whine": "The cube releases a cluster of mechanical bees whose buzz rattles mortal minds. All targets within a Close distance must make a reaction roll with Presence (15) or take 2d10 mag damage. Armor cannot be used to reduce this damage.",
+                "7. Death Quake": "When this adversary marks its last Hit Point, the magic powering it ruptures in an explosion of force, dealing 3d20 magic damage to all creatures within Very Close range. Targets may make a Reaction roll with Instinct (15) to sense the buildup of magical power in time to evade and take half damage, or no damage on a result of 20 or more."
+            }
+        },
+        {
+            "Name": "Chaos Skull",
+            "MotivesTactics": "Serve Creator, Cackle, Consume Magic",
+            "Tier": "1",
+            "id": 52,
+            "Role": "Ranged",
+            "Weapon": {
+                "Name": "Energy Blast",
+                "Range": "Close",
+                "Damage": "1d12",
+                "Type": "mag"
+            },
+            "Modifier": "+0",
+            "Difficulty": "16",
+            "Thresholds": {
+                "Minor": "2",
+                "Major": "8",
+                "Severe": "18"
+            },
+            "HP": "4",
+            "Stress": "2",
+            "Moves": {
+                "Levitation": "Chaos Skull levitates several feet off the ground, and is immune to attacks that move through the ground and effects that would knock it prone.",
+                "Wards": "Chaos Skull is resistant to magic damage.",
+                "Magic Burst": "Mark Stress to attack all targets within Close range.",
+                "Siphon Magic": "Mark Fear to attack a target within Very Close range. If that target has a Spellcast trait, they also mark Stress and the Chaos Skull clears Stress."
+            }
+        },
+        {
+            "Name": "Giant Eagle",
+            "MotivesTactics": "Hunt Prey, Strike Decisively, Stay Mobile",
+            "Tier": "1",
+            "id": 53,
+            "Role": "Skulk",
+            "Weapon": {
+                "Name": "Claws and Beak",
+                "Range": "Very Close",
+                "Damage": "2d8",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "10",
+                "Severe": "19"
+            },
+            "HP": "5",
+            "Stress": "2",
+            "Experience": {
+                "Intrusion": "+3"
+            },
+            "Moves": {
+                "Flight": "Giant Eagle’s Difficulty is +3 when flying.",
+                "Deadly Dive": "Spend a Fear to attack a target within Far range. On a success, the target takes 2d12+4 damage and is knocked over, making them Vulnerable until they next act.",
+                "Take Off": "Spend 2 Fear to make an attack on a Very Close target using this adversary’s large talons. On a success, the target takes 2d8 phy damage and must make a Reaction roll with Agility (14) or become Restrained within this adversary’s massive claws. If they are Restrained, the Eagle immediately lifts into the air to Very Far range above the battlefield while holding them. A Restrained target may roll with Strength (14) to escape."
+            }
+        },
+        {
+            "Name": "Juvenile Flickerfly",
+            "MotivesTactics": "Collect Shiny Things, Hunt, Swoop",
+            "Tier": "1",
+            "id": 54,
+            "Role": "Solo",
+            "Weapon": {
+                "Name": "Wing Slash",
+                "Range": "Very Close",
+                "Damage": "4d6+2",
+                "Type": "phy"
+            },
+            "Modifier": "+3",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "7",
+                "Major": "16",
+                "Severe": "29"
+            },
+            "HP": "7",
+            "Stress": "4",
+            "Moves": {
+                "Relentless": "Flickerfly may activate three times in one GM move (still costs 3 action tokens).",
+                "Soulswift Wings": "Due to the Flickerfly wings’ incredible sharpness, armor is only half as effective against damage from their Wing Slash attack.",
+                "Flight": "Juvenile Flickerfly’s difficulty is increased by 3 when flying. Juvenile Flickerfly may move up to a Far distance as part of an activation while flying.",
+                "Uncanny Reflexes": "Flickerfly may mark Stress when taking damage from an attack within Close range to take half damage (rounded up).",
+                "Mind Dance": "Spend a Fear to create a magically dazzling display that grapples the minds of its targets. All creatures within Far range must make a Reaction roll with Instinct (15). On a failure, the target adds a token to the action tracker, this adversary is Hidden to the target until they mark their next Hit Point, and this adversary learns a fear the target has.",
+                "Hallucinatory Breath": "Activate when a hostile target is spotted. When triggered, the Flickerfly breathes a cone of hallucinatory gas on all targets in front of them up to Far range. Targets must make a Reaction roll with Instinct (15) or be tormented by fearful hallucinations. Targets whose fears are known to the Flickerfly have disadvantage on this roll. On a failure, the target marks Stress and loses a Hope. On a success, the target still marks Stress unless they rolled 20 or higher."
+            }
+        },
+        {
+            "Name": "Giant Brawler",
+            "MotivesTactics": "Overwhelm, Slam, Topple, Make a Living",
+            "Tier": "1",
+            "id": 55,
+            "Role": "Bruiser",
+            "Weapon": {
+                "Name": "Warhammer",
+                "Range": "Very Close",
+                "Damage": "2d12+4",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "6",
+                "Major": "14",
+                "Severe": "30"
+            },
+            "HP": "7",
+            "Stress": "2",
+            "Moves": {
+                "Bloody Reprisal": "Spend a Fear when the Giant Brawler marks one or more HP to immediately make a Warhammer attack against the attacker, if they are within Very Close range.",
+                "Battering Ram": "Spend a Fear to have this adversary charge at a target within Close range, destroying it unless it would take a Difficulty 20 or higher roll to Smash."
+            }
+        },
+        {
+            "Name": "Giant Recruit",
+            "MotivesTactics": "Overwhelm, Batter, Terrify, Make a Living",
+            "Tier": "1",
+            "id": 56,
+            "Role": "Minion",
+            "Weapon": {
+                "Name": "Warhammer",
+                "Range": "Very Close",
+                "Damage": "6",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "1"
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Moves": {
+                "Minion (7)": "For every 7 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack - Very Close 6": "Spend a Fear to activate all adversaries with this name within very close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 6 damage per adversary."
+            }
+        },
+        {
+            "Name": "Giant Beastmaster",
+            "MotivesTactics": "Command, Maneuver, Pin Down, Make a Living, Protect Companion Animals",
+            "Tier": "1",
+            "id": 57,
+            "Role": "Support",
+            "Weapon": {
+                "Name": "Longbow",
+                "Range": "Far",
+                "Damage": "2d10+2",
+                "Type": "phy"
+            },
+            "Modifier": "+2",
+            "Difficulty": "16",
+            "Thresholds": {
+                "Minor": "6",
+                "Major": "13",
+                "Severe": "28"
+            },
+            "HP": "5",
+            "Stress": "3",
+            "Experience": {
+                "Animal Handling": "+3"
+            },
+            "Moves": {
+                "Pinning Strike": "Make a Longbow attack against a target in far range. On a success, deal damage and spend a Fear to pin them to a nearby surface. They are Restrained until freed with an Agility or Strength Roll (15).",
+                "Deadly Companion": "Spend 2 Fear to summon a Bear, Dire Wolf, or similar Tier 0 Beast under this adversary’s control. That beast immediately activates.",
+                "Two as One": "When this adversary activates, you can mark Stress to activate a Tier 0 Beast currently under this adversary’s control."
+            }
+        },
+        {
+            "Name": "Katari Burglar",
+            "MotivesTactics": "Hide, Profit, Pilfer, Evade",
+            "Tier": "1",
+            "id": 58,
+            "Role": "Skulk",
+            "Weapon": {
+                "Name": "Longbow",
+                "Range": "Far",
+                "Damage": "2d10+2",
+                "Type": "phy"
+            },
+            "Modifier": "+3",
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "15",
+                "Severe": "25"
+            },
+            "HP": "5",
+            "Stress": "3",
+            "Experience": {
+                "Acrobatics": "+3"
+            },
+            "Moves": {
+                "Quick Hands": "Mark Stress to make a dagger attack against a target in Melee range. On a success, deal 2d10 phy damage and this adversary steals one item or consumable from their inventory.",
+                "Escape Plan": "Spend a Fear to reveal a snare trap set by the Katari Burglar. All targets within Very Close range of the trap must make a reaction roll with Agility (13) or be pulled off their feet and suspended upside down. They are Vulnerable and Restrained until they get free (Finesse or Strength 13)."
+            }
+        },
+        {
+            "Name": "Mortal Hunter",
+            "MotivesTactics": "Devour, Hunt, Track",
+            "Tier": "1",
+            "id": 59,
+            "Role": "Leader",
+            "Weapon": {
+                "Name": "Tear At Flesh",
+                "Range": "Very Close",
+                "Damage": "2d20",
+                "Type": "phy"
+            },
+            "Modifier": "+5",
+            "Difficulty": "16",
+            "Thresholds": {
+                "Minor": "4",
+                "Major": "19",
+                "Severe": "40"
+            },
+            "HP": "6",
+            "Stress": "4",
+            "Experience": {
+                "Bloodhound": "+3"
+            },
+            "Moves": {
+                "Deathlock": "Spend a Fear to put a deathlock on a target within Very Close range. Any future attacks made on that target by this creature deal direct damage. This creature can only hold one deathlock at a time.",
+                "Terrifying": "Every time this creature makes a successful attack, all PCs within Far range lose one Hope.",
+                "Rampage": "Spend a Fear to activate while a hostile target is within sight. When triggered, move in a straight line to somewhere in Far range, and make an attack against all enemies in the path. Deal 2d20 physical damage to any you succeed against."
+            }
+        },
+        {
+            "Name": "Failed Experiment",
+            "MotivesTactics": "Devour, Hunt, Track",
+            "Tier": "1",
+            "id": 60,
+            "Role": "Standard",
+            "Weapon": {
+                "Name": "Bite and Claw",
+                "Range": "Melee",
+                "Damage": "2d6+5",
+                "Type": "phy"
+            },
+            "Modifier": "+1",
+            "Difficulty": "13",
+            "Thresholds": {
+                "Minor": "3",
+                "Major": "12",
+                "Severe": "30"
+            },
+            "HP": "3",
+            "Stress": "2",
+            "Moves": {
+                "Inhuman": "This creature is resistant to physical damage.",
+                "Overwhelm": "When one or more allies are also within very close range of a target this adversary is attacking, Failed Experiment’s damage is doubled.",
+                "Lurching Lunge": "Spend a Fear to activate Failed Experiment even if they have already activated this move."
+            }
+        },
+        {
+            "Name": "Gorgon",
+            "MotivesTactics": "Corner, Hit-and-Run, Seek Vengeance, Petrify",
+            "Tier": "1",
+            "id": 61,
+            "Role": "Solo",
+            "Weapon": {
+                "Name": "Sunsear Shortbow",
+                "Range": "Far",
+                "Damage": "3d8+2",
+                "Type": "mag"
+            },
+            "Modifier": "+4",
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "5",
+                "Major": "13",
+                "Severe": "25"
+            },
+            "HP": "8",
+            "Stress": "3",
+            "Experience": {
+                "Stealth": "+3"
+            },
+            "Moves": {
+                "Relentless": "This adversary can be activated twice in a GM move (still uses 2 action tokens).",
+                "Sunsear Arrows": "Targets damaged by Sunsear Shortbow give off bright light within a Close distance until the end of the scene and cannot become Hidden without a magical effect. All attack rolls against a target glowing this way gain +2.",
+                "Crown of Serpents": "Make an attack roll against a target in melee range using this adversary’s protective snakes. On a success, mark stress to deal 3d10 phy damage to the target.",
+                "Petrifying Gaze": "Spend a Fear when the Gorgon takes damage from an attack within Close range to force the attacker to make a Reaction roll with Instinct (15). On a failure, they begin to turn to stone, taking 1 hit point of direct damage and starting a Countdown (4). This countdown ticks down every time the Gorgon is attacked. When triggered, the target must make a death move. If the Gorgon is killed, all countdowns end."
+            }
+        },
+        {
+            "Name": "Minotaur",
+            "MotivesTactics": "Gore, Overpower, Pursue, Navigate, Consume",
+            "Tier": "1",
+            "id": 62,
+            "Role": "Bruiser",
+            "Weapon": {
+                "Name": "Battleaxe",
+                "Range": "Very Close",
+                "Damage": "2d12+4",
+                "Type": "phy"
+            },
+            "Modifier": "+3",
+            "Difficulty": "16",
+            "Thresholds": {
+                "Minor": "7",
+                "Major": "16",
+                "Severe": "30"
+            },
+            "HP": "7",
+            "Stress": "3",
+            "Experience": {
+                "Navigation": "+2"
+            },
+            "Moves": {
+                "Charging Bull": "Spend a Fear to make an attack roll on a target within Close range, moving the Minotaur into melee with them. On a success, the Minotaur knocks them back to Close range, dealing 4d10 phy damage. If they are knocked into a solid object or another creature, they take an additional 2d10 phy.",
+                "Gore": "Mark Stress to make an attack on a target within Very Close range, moving the Minotaur into melee with them. On a success, deal 3d10 damage to the target. Armor is only worth half its standard value against this attack."
+            }
+        },
+        {
+            "Name": "Greater Water Elemental",
+            "Role": "Support",
+            "Tier": "2",
+            "id": 63,
+            "MotivesTactics": "Disperse, Deluge, Drown",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Crashing Wave",
+                "Range": "Very Close",
+                "Damage": "3d12 mag",
+                "Type": "Very Close"
+            },
+            "Moves": {
+                "Living Tides": "On a successful attack roll, the target is also knocked back to Close range.",
+                "Waterlog": "Mark Stress to attack a Very Close target with a jet of water. On a success, deal 2d8 and their next action has disadvantage. On a failure, the target must mark a Stress.",
+                "Drowning Embrace": "Spend a Fear to make an attack with a +5 bonus within Very Close range. If successful, the target is Restrained as they begin to drown–as if submerged in water."
+            },
+            "Difficulty": "17",
+            "Thresholds": {
+                "Minor": "10",
+                "Major": "19",
+                "Severe": "35"
+            },
+            "HP": "6",
+            "Stress": "5"
+        },
+        {
+            "Name": "Elemental Spark",
+            "Role": "Minion",
+            "Tier": "2",
+            "id": 64,
+            "MotivesTactics": "Burn, Buffet, Overwhelm",
+            "Modifier": "+0",
+            "Weapon": {
+                "Name": "Bursts of Fire",
+                "Range": "Close",
+                "Damage": "7",
+                "Type": " mag"
+            },
+            "Moves": {
+                "Minion 7": "For every 7 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack - Close 7": "Spend a Fear to activate all adversaries with this name. If any are within close range of a target, they move into melee and make an attack roll against that target. On a success, they deal 7 phy damage."
+            },
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "1"
+            },
+            "HP": "1",
+            "Stress": "0"
+        },
+        {
+            "Name": "Greater Earth Elemental",
+            "Role": "Bruiser",
+            "Tier": "2",
+            "id": 65,
+            "MotivesTactics": "Pummel, Knock Over, Avalanche",
+            "Modifier": "+4",
+            "Weapon": {
+                "Name": "Boulder Fist",
+                "Range": "Very Close",
+                "Damage": "2d6+11",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Immovable Object": "Any attack that would move Greater Earth Elemental moves it two fewer ranges (Far becomes Very Close, etc.). Whenever Greater Earth Elemental takes physical damage, reduce that damage by 2d6.",
+                "Rockslide": "Spend a Fear to create a rockslide in the Close area in front of Greater Earth Elemental. All creatures in the area must make a reaction roll with Agility (19) or take 4d20 physical damage and become Vulnerable until their next roll with Hope. On a successful reaction roll, they just take half damage (rounded up)."
+            },
+            "Difficulty": "17",
+            "Thresholds": {
+                "Minor": "11",
+                "Major": "21",
+                "Severe": "40"
+            },
+            "HP": "9",
+            "Stress": "4"
+        },
+        {
+            "Name": "Huge Green Ooze",
+            "Role": "Skulk",
+            "Tier": "2",
+            "id": 66,
+            "MotivesTactics": "Creep up, Envelop, Camouflage, Multiply",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Ooze Appendage",
+                "Range": "Melee",
+                "Damage": "2d8+9",
+                "Type": "mag"
+            },
+            "Moves": {
+                "Slow (2)": "The GM must spend two initiative tokens to activate Huge Green Ooze.",
+                "Acidic Form": "Any creature damaged by Huge Green Ooze must also mark one Armor Slot.",
+                "Envelop": "Spend a Fear to attack a creature within Very Close distance. If that creature marks HP from this attack, they become Restrained and are Vulnerable until they break free (Strength 18).",
+                "Split": "When Huge Green Ooze has marked half of its hit points, it splits into two Green Oozes (with no marked HP or Stress) that instantly activate (no action tokens needed)."
+            },
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "8",
+                "Major": "16",
+                "Severe": "30"
+            },
+            "HP": "7",
+            "Stress": "3",
+            "Experience": {
+                "Blend In ": "+3"
+            }
+        },
+        {
+            "Name": "Hydra",
+            "Role": "Solo",
+            "Tier": "2",
+            "id": 67,
+            "MotivesTactics": "Devour, Regenerate, Terrify",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Bite",
+                "Range": "Close",
+                "Damage": "3d12",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Many-Headed Threat": "Hydra begins with three heads. Spend a Fear to make a number of Bite attacks equal to the Hydra’s current number of heads.",
+                "Terrifying Chorus": "Mark Stress to cause all targets within Far range to lose a Hope.",
+                "Regeneration": "If the Hydra has lost at least one head this scene, Spend a Fear to grow two new heads, clearing 2 HP and 1 Stress. If the Hydra takes magic damage, activate a Countdown (3) that ticks down every time a token is put on the action tracker. Until that countdown triggers, the Hydra may not use Regeneration and is immune to magic damage."
+            },
+            "Difficulty": "18",
+            "Thresholds": {
+                "Minor": "12",
+                "Major": "20",
+                "Severe": "42"
+            },
+            "HP": "9",
+            "Stress": "5"
+        },
+        {
+            "Name": "Flickerfly",
+            "Role": "Solo",
+            "Tier": "2",
+            "id": 68,
+            "MotivesTactics": "Collect Shiny Things, Hunt, Swoop, Nest",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Wing Slash",
+                "Range": "Very Close",
+                "Damage": "4d10+5",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Relentless (3)": "Flickerfly may activate three times in one GM move (still costs 3 action tokens).",
+                "Soulswift Wings": "Due to the Flickerfly wings’ incredible sharpness, armor is only half as effective against damage from their Wing Slash attack.",
+                "Flight": "Flickerfly’s difficulty is increased by 5 when flying. Flickerfly may move up to a Far distance as part of an activation while flying.",
+                "Uncanny Reflexes": "Flickerfly may mark Stress when taking damage from an attack within Close range to take half damage (rounded up).",
+                "Whirlwind": "Spend a Fear to fly to a spot within Close range and spin, slashing all Very Close targets. Make an attack with a +5 modifier against all targets in range. On any you succeed against, deal 3d12+10 physical damage. Armor is only half as effective when reducing this damage.",
+                "Mind-Dance": "Spend a Fear to create a magically dazzling display that grapples the minds of its targets. All creatures within Far range must make a Reaction roll with Instinct (18). On a failure, the target adds a token to the action tracker, this adversary is Hidden to the target until they mark their next Hit Point, and this adversary learns a fear the target has.",
+                "Hallucinatory Breath (Loop 1d6)": "Activate when a hostile target is spotted. When triggered, the Flickerfly breathes a cone of hallucinatory gas on all targets in front of them up to a Far range (Loop 1d6). Targets must make a Reaction roll with Instinct (18) or be tormented by fearful hallucinations. On a failure, the target marks Stress and loses a Hope. On a success, the target still marks Stress unless they rolled 20 or higher."
+            },
+            "Difficulty": "16",
+            "Thresholds": {
+                "Minor": "10",
+                "Major": "25",
+                "Severe": "55"
+            },
+            "HP": "8",
+            "Stress": "5"
+        },
+        {
+            "Name": "Dire Bat",
+            "Role": "Skulk",
+            "Tier": "2",
+            "id": 69,
+            "MotivesTactics": "Hide, Divebomb, Protect Leader",
+            "Modifier": "+2",
+            "Weapon": {
+                "Name": "Claws & Teeth",
+                "Range": "Melee",
+                "Damage": "5d6",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Screech": "Spend 2 Fear to send a high-pitch screech out toward all targets in front of the Dire Bat within Far range. They must mark 1d4 Stress.",
+                "Flying": "Attack rolls against this adversary while it is flying are at +5 difficulty.",
+                "Guardian": "When any Vampire allies mark HP, you can mark Stress and have this adversary fly into melee with the attacker to make an attack with a +5 bonus. If successful, the attack deals 3d20 phy."
+            },
+            "Difficulty": "15",
+            "Thresholds": {
+                "Minor": "10",
+                "Major": "40",
+                "Severe": "60"
+            },
+            "HP": "6",
+            "Stress": "3"
+        },
+        {
+            "Name": "Vampire",
+            "Role": "Standard",
+            "Tier": "2",
+            "id": 70,
+            "MotivesTactics": "Bite, Charm, Deceive, Feed, Intimidate",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Rapier",
+                "Range": "Melee",
+                "Damage": "5d6",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Mistform": "When taking physical damage, this adversary can mark Stress to make a reaction roll (13). On a success, they only take half damage from the attack.",
+                "Draining Bite": "Spend a Fear to bite a target in melee range. On a success, it deals 3d10 phy. A target that marks HP from this attack loses Hope and marks Stress, then the Vampire clears 1 HP."
+            },
+            "Difficulty": "16",
+            "Thresholds": {
+                "Minor": "5",
+                "Major": "40",
+                "Severe": "70"
+            },
+            "HP": "5",
+            "Stress": "3",
+            "Experience": {
+                "Nocturnal Hunter": "+3"
+            }
+        },
+        {
+            "Name": "Head Vampire",
+            "Role": "Leader",
+            "Tier": "2",
+            "id": 71,
+            "MotivesTactics": "Intimidate, Command, Charm, Fly, Create Vassals",
+            "Modifier": "+5",
+            "Weapon": {
+                "Name": "Rapier",
+                "Range": "Melee",
+                "Damage": "5d8+10",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Feed on Followers": "When this creature is in melee with a follower (any allied adversary), they may deal 1 HP to them to clear 2 HP on themselves.",
+                "Lifesuck": "Countdown (5 Loop) - Activate when this creature has a hostile target in sight. It ticks down anytime a token is placed on the action tracker. When triggered, all targets within close range must make a Reaction roll with Instinct (17). On a failure, they mark 2 HP. You may spend a Fear to make this attack within Far range instead, and clear ½ as many HP as were marked by targets (round up)."
+            },
+            "Difficulty": "17",
+            "Thresholds": {
+                "Minor": "10",
+                "Major": "50",
+                "Severe": "80"
+            },
+            "HP": "10",
+            "Stress": "6",
+            "Experience": {
+                "Aristocrat": "+3"
+            }
+        },
+        {
+            "Name": "Vault Guardian Turret",
+            "Role": "Ranged",
+            "Tier": "2",
+            "id": 72,
+            "MotivesTactics": "Concentrate Fire, Mark, Lock Down, Protect",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Magical Cannon",
+                "Range": "Far",
+                "Damage": "4d10+8",
+                "Type": "mag"
+            },
+            "Moves": {
+                "Slow (2)": "It takes 2 action tokens to activate this adversary.",
+                "Concentrate Fire": "Spend 2 Fear when another adversary does damage to a target within Far range of the Turret to add the Turret’s damage to the total.",
+                "Mark Target": "Spend a Fear to mark a target within Far range. All attacks any adversary makes against a marked target gain a +3 bonus.",
+                "Detonation": "When this adversary is destroyed, it explodes to deal 3d20 magic damage to all targets within Very Close range. Targets may make a reaction roll with Agility (17) to take half damage. If they roll a critical success, they take no damage."
+            },
+            "Difficulty": "18",
+            "Thresholds": {
+                "Minor": "7",
+                "Major": "25",
+                "Severe": "50"
+            },
+            "HP": "6",
+            "Stress": "2"
+        },
+        {
+            "Name": "Dryad",
+            "Role": "Leader",
+            "Tier": "2",
+            "id": 76,
+            "MotivesTactics": "Command, Cultivate, Drive Out, Preserve the Forest",
+            "Modifier": "+4",
+            "Weapon": {
+                "Name": "Deadfall Shortbow",
+                "Range": "Far",
+                "Damage": "2d10+3",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Bramble Patch": "Mark Stress to target a spot within Far range. You can create a patch of thorns that covers everywhere within Close range of that spot. All creatures within that area suffer 2d10 damage whenever they act, and can escape by rolling with Agility (18) or dealing 20+ damage with an attack.",
+                "We Are All One": "When another adversary dies within Close range, spend a Fear to clear 2 HP and 2 Stress on this adversary as the fallen ally’s life force is returned to the forest.",
+                "Grow Saplings": "Spend a Fear to instantly grow three Treant Sapling Minions, who appear at Close range and instantly activate."
+            },
+            "Difficulty": "16",
+            "Thresholds": {
+                "Minor": "8",
+                "Major": "29",
+                "Severe": "45"
+            },
+            "HP": "9",
+            "Stress": "5",
+            "Experience": {
+                "Forest Knowledge": "+4"
+            }
+        },
+        {
+            "Name": "Treant Sapling",
+            "Role": "Minion",
+            "Tier": "2",
+            "id": 77,
+            "MotivesTactics": "Surround, Pummel, Blend In, Preserve the Forest",
+            "Modifier": "+0",
+            "Weapon": {
+                "Name": "Branches",
+                "Range": "Melee",
+                "Damage": "8",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Minion 8": "For every 8 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack Very Close 8": "Spend a Fear to activate all adversaries with this name within very close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 3 damage per adversary."
+            },
+            "Difficulty": "14",
+            "Thresholds": {
+                "Minor": "1"
+            },
+            "HP": "1",
+            "Stress": "0"
+        },
+        {
+            "Name": "Stag Knight",
+            "Role": "Standard",
+            "Tier": "2",
+            "id": 78,
+            "MotivesTactics": "Maneuver, Isolate, Weed the Unwelcome, Protect the Forest",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Bramble Sword",
+                "Range": "Melee",
+                "Damage": "5d6",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Canopy Dive": "When this adversary attacks from a height advantage, deal 6d6+15 damage on a success.",
+                "Thorny Armor": "When a creature attacks this adversary in Melee range, spend a Fear to make them take 2d12+9 direct physical damage.",
+                "Blade of the Forest": "When this adversary is Very Close to at least two other adversaries, spend a Fear to make an attack against a target in melee range. On a hit, it deals physical damage equal to the target’s Major threshold + 2d12."
+            },
+            "Difficulty": "17",
+            "Thresholds": {
+                "Minor": "6",
+                "Major": "35",
+                "Severe": "65"
+            },
+            "HP": "7",
+            "Stress": "5"
+        },
+        {
+            "Name": "Young Ice Dragon",
+            "Role": "Solo",
+            "Tier": "2",
+            "id": 79,
+            "MotivesTactics": "Fly, Freeze, Maul, Avalanche, Gather Horde, Defend Lair",
+            "Modifier": "+4",
+            "Weapon": {
+                "Name": "Bite and Claws",
+                "Range": "Close",
+                "Damage": "6d6+6",
+                "Type": "phy"
+            },
+            "Moves": {
+                "Relentless (3)": "Young Ice Dragon may activate three times in one GM move (still costs 3 action tokens).",
+                "Rend and Crush": "All armor used against Young Ice Dragon’s attacks is reduced by 1⁄2 (round up). Targets hit by Young Ice Dragon are chilled, giving them disadvantage on Agility rolls until they clear a Stress or an HP.",
+                "Terrifying": "Any character that rolls a result with Fear within Far range of this adversary loses a Hope.",
+                "Blizzard Breath (Loop 1d8)": "Activate this countdown when this adversary sees a hostile creature. It ticks down every time a token is placed on the action tracker. When it triggers, all creatures within Close range in front of the Young Ice Dragon must make a reaction roll with Agility (18). On a failure, they take 4d12+10 magic damage and become Restrained by shards of ice until they break free by rolling with Strength (18). Targets that succeed the reaction roll must mark 2 stress or take half damage. Targets that roll a critical success take no damage but still mark a Stress."
+            },
+            "Difficulty": "18",
+            "Thresholds": {
+                "Minor": "12",
+                "Major": "40",
+                "Severe": "70"
+            },
+            "HP": "12",
+            "Stress": "6",
+            "Experience": {
+                "Aerial Predator": "+3"
+            }
+        },
+        {
+            "Name": "Arch-Necromancer",
+            "Role": "Leader",
+            "Tier": "2",
+            "id": 80,
+            "MotivesTactics": "Disable, Corrupt, Resurrect, Flee to Fight Another Day",
+            "Modifier": "+6",
+            "Weapon": {
+                "Name": "Necrotic Blast",
+                "Range": "Far",
+                "Damage": "4d12+5",
+                "Type": "mag"
+            },
+            "Difficulty": "23",
+            "Thresholds": {
+                "Minor": "16",
+                "Major": "35",
+                "Severe": "70"
+            },
+            "HP": "12",
+            "Stress": "8",
+            "Experience": {
+                "Ancient Knowledge": "+2",
+                "Wisdom of Centuries": "+3"
+            },
+            "Moves": {
+                "Dance of Death": "Mark Stress to activate 1d4 additional adversaries. Any attacks they use deal ½ damage. You may also spend a Fear per attack to have them attack deal full damage instead.",
+                "Beam of Decay": "Countdown (Loop 8). Activate when Arch-Necromancer spots a hostile target. This ticks down anytime a PC makes an attack roll. When triggered, target any number of creatures within Close range in front of this adversary and anything behind them within Far range. Targets must make a Reaction roll with Strength (21) or suffer 4d20 magic damage (half damage on success). Any target that suffers Major or worse damage also marks 2 Stress and becomes Vulnerable until after their next action.",
+                "Your Life Is Mine": "Countdown (Loop 2d6). Activate when Arch-Necromancer has marked 6 or more of their HP. It ticks down every time a token is placed on the action tracker. When triggered, deal 2d20 direct magic damage to a target within Close range. Arch-Necromancer clears a number of Stress or HP equal to those marked by the target from this attack.",
+                "Open the Gates of Death": "Spend a Fear to summon a Zombie Legion at Close range, which instantly activates.",
+                "Not Today, My Dears": "When this adversary has marked 8 or more of their HP, spend 2 Fear to have them teleport away to a safe location to recover. A character may roll with Instinct (22) to trace the teleportation magic to its destination."
+            }
+        },
+        {
+            "Name": "Zombie Legion",
+            "Role": "Horde",
+            "Tier": "2",
+            "id": 81,
+            "MotivesTactics": "Surround, Shred Flesh, Consume Target’s Brain",
+            "Modifier": "+2",
+            "Weapon": {
+                "Name": "Bite and Claws",
+                "Range": "Melee",
+                "Damage": "10d6",
+                "Type": "phy"
+            },
+            "Difficulty": "17",
+            "Thresholds": {
+                "Minor": "18",
+                "Major": "30",
+                "Severe": "50"
+            },
+            "HP": "8",
+            "Stress": "5",
+            "Moves": {
+                "Unyielding": "Zombie Legion has resistance to physical damage.",
+                "Relentless (2)": "Zombie Legion may activate twice in a GM move (still takes two action tokens).",
+                "Overwhelm": "When a creature within melee distance deals damage to Zombie Legion but it does not cause Zombie Legion to mark Hit Points, spend a Fear to have Zombie Pack immediately make an attack against that creature with advantage.",
+                "Horde 5d6 - Creatures Per Hit Point": "6. If Zombie Legion has half or more of its Hit Points marked, its attack only deals 5d6 damage."
+            }
+        },
+        {
+            "Name": "Perfected Zombie",
+            "Role": "Bruiser",
+            "Tier": "2",
+            "id": 82,
+            "MotivesTactics": "Consume, Hound, Maim, Terrify",
+            "Modifier": "+4",
+            "Weapon": {
+                "Name": "Greataxe",
+                "Range": "Very Close",
+                "Damage": "4d12+10",
+                "Type": "phy"
+            },
+            "Difficulty": "20",
+            "Thresholds": {
+                "Minor": "18",
+                "Major": "40",
+                "Severe": "70"
+            },
+            "HP": "9",
+            "Stress": "4",
+            "Moves": {
+                "Memento Mori": "Spend a Fear to make a Greataxe attack against all targets within Very Close Range. Targets damaged by an attack from Perfected Zombie are knocked back to Close range and must mark an armor slot after taking damage. If they can’t, they mark an additional hit point.",
+                "Patience of the Dead": "When another adversary damages a target within Very Close of Perfected Zombie, mark Stress to have Perfected Zombie add damage from their Greataxe to that attack."
+            }
+        },
+        {
+            "Name": "Kraken",
+            "Role": "Solo",
+            "Tier": "2",
+            "id": 83,
+            "MotivesTactics": "Crush, Consume, Grapple, Drown",
+            "Modifier": "+4",
+            "Weapon": {
+                "Name": "Tentacles",
+                "Range": "Close",
+                "Damage": "4d20",
+                "Type": "phy"
+            },
+            "Difficulty": "20",
+            "Thresholds": {
+                "Minor": "15",
+                "Major": "30",
+                "Severe": "60"
+            },
+            "HP": "15",
+            "Stress": "10",
+            "Experience": {
+                "Swimming": "+3"
+            },
+            "Moves": {
+                "Relentless (2)": "May act twice in a GM move (still requires 2 action tokens).",
+                "Many Tentacles": "Because of its many tentacles, this adversary makes two attacks per activation. If this adversary takes Major damage or higher, it loses one of its tentacles. When it does so, place a token on this adversary. If it ever has three or more tokens, it makes only one attack per activation.",
+                "Grapple & Drown": "Mark Stress to attack roll against a target within Close range. If successful, the Kraken grapples them in one of its tentacles, dragging them beneath the water. While grappled, they are Restrained and Vulnerable. They can break free by rolling with Strength (16). If the tentacle holding them is destroyed, they automatically break free.",
+                "Whirlpool (Countdown Loop 3d4)": "Activate when this creature sees a hostile target. It ticks down every time a token is placed on the action tracker. When triggered, all targets within Close range must make a reaction roll using Agility or Strength (18) or be sucked into a deadly whirlpool. Anyone trapped in the Whirlpool suffers 2d12+5 physical damage and puts two tokens on the action tracker the next time they take an action. If the Whirlpool targets a vessel or building, it suffers 4d20 damage.",
+                "Boiling Blast": "Spend a Fear to have the Kraken spew a line of boiling water at any number of targets in a line up to far range. All targets must make a reaction roll with Agility (20). On a failure, they take 3d20 physical damage. PCs must mark a stress in order to use any number of armor slots to reduce the damage. Targets that succeed on the Reaction Roll mark Stress unless they rolled a critical success."
+            }
+        },
+        {
+            "Name": "Oracle of Doom",
+            "Role": "Solo",
+            "Tier": "2",
+            "id": 84,
+            "MotivesTactics": "Toss Aside, Change Environment, Dishearten, Condemn",
+            "Modifier": "+5",
+            "Weapon": {
+                "Name": "Psychic Attack",
+                "Range": "Far",
+                "Damage": "3d20+10",
+                "Type": "mag"
+            },
+            "Difficulty": "20",
+            "Thresholds": {
+                "Minor": "10",
+                "Major": "50",
+                "Severe": "100"
+            },
+            "HP": "14",
+            "Stress": "8",
+            "Experience": {
+                "Boundless Knowledge": "+4"
+            },
+            "Moves": {
+                "Knockback": "Anytime this adversary marks HP, they send any targets within Very Close range flying back to Far range, dealing 5d10 damage. Damaged targets may make a reaction roll with Agility (20) to take half damage, or no damage if they roll a critical success.",
+                "Walls Closing In": "Any time a target within Very Far of Oracle of Doom rolls a failure with Fear, they mark a Stress.",
+                "Pronounce Fate": "Spend a Fear to present a target within Far range with a vision of their greatest fear. The target must make a reaction roll with Presence (20) or lose all Hope and take 3d20+10 magic damage that cannot be reduced by armor. On a success, they take half damage and lose only 1 Hope, or no damage if they roll a critical success.",
+                "Summoner (Countdown Loop 8 - Decreasing)": "Activate when the Oracle spots a hostile target or turns hostile against a character. It ticks down everytime a token is placed on the action tracker. When triggered, summon minions relevant to a character’s fears at close range to them."
+            }
+        },
+        {
+            "Name": "Outer Realms Abomination",
+            "Role": "Bruiser",
+            "Tier": "2",
+            "id": 85,
+            "MotivesTactics": "Demolish, Undermine, Warp",
+            "Modifier": "+1d8",
+            "Weapon": {
+                "Name": "Massive Ooze Appendage",
+                "Range": "Very Close",
+                "Damage": "10d6",
+                "Type": "mag"
+            },
+            "Difficulty": "21",
+            "Thresholds": {
+                "Minor": "11",
+                "Major": "38",
+                "Severe": "72"
+            },
+            "HP": "11",
+            "Stress": "5",
+            "Moves": {
+                "Disorienting Presence": "Targets damaged by this adversary must make a reaction roll with Instinct (17). On a failure, they are also Disoriented and Vulnerable until they clear a Stress or take a rest. Disoriented characters add two action tokens to the tracker when they act.",
+                "Unreal Form": "When this adversary takes damage, reduce that damage by 1d20. Each time this adversary attacks, roll 1d8 and use that as their attack modifier (as reflected in the attack modifier section).",
+                "": "Spend a Fear to rattle the edges of reality near this adversary. All targets within far range must make a reaction roll with Presence (20). Any who fail become un-stuck from reality until the end of the scene. While an un-stuck target spends Hope or Armor Slots or marks Hit Points or Stress, they must always spend/mark double the amount. Targets that succeed mark a Stress."
+            }
+        },
+        {
+            "Name": "Outer Realms Corruptor",
+            "Role": "Skulk",
+            "Tier": "2",
+            "id": 86,
+            "MotivesTactics": "Dishearten, Disgorge, Destroy, Transmogrify",
+            "Modifier": "+5",
+            "Weapon": {
+                "Name": "Corroding Ooze Appendage",
+                "Range": "Very Close",
+                "Damage": "2d20",
+                "Type": "mag"
+            },
+            "Difficulty": "20",
+            "Thresholds": {
+                "Minor": "9",
+                "Major": "32",
+                "Severe": "60"
+            },
+            "HP": "8",
+            "Stress": "3",
+            "Moves": {
+                "Will-Shattering Touch": "Targets damaged by Outer Realms Corrupter lose a Hope.",
+                "Disgorge Reality Flotsam": "Spend a Fear to spew partially-digested portions of consumed realities at all targets within Close range of this adversary. Targets must make a reaction roll with Presence (18) or mark 2 Stress. For each Stress they are unable to mark, they mark 1 HP."
+            }
+        },
+        {
+            "Name": "Outer Realms Thrall",
+            "Role": "Minion",
+            "Tier": "2",
+            "id": 87,
+            "MotivesTactics": "Disorient, Disgust, Destroy, Warp",
+            "Modifier": "+1",
+            "Weapon": {
+                "Name": "Claws & Teeth",
+                "Range": "Very Close",
+                "Damage": "2d6",
+                "Type": "mag"
+            },
+            "Difficulty": "17",
+            "Thresholds": {
+                "Minor": "1"
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Moves": {
+                "Minion 9": "For every 9 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack: Close (2d6)": "Spend a Fear to activate all adversaries with this name within very close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 2d6 damage per adversary."
+            }
+        },
+        {
+            "Name": "Volcanic Dragon: Obsidian Predator",
+            "Role": "Solo",
+            "Tier": "2",
+            "id": 88,
+            "MotivesTactics": "Hunt, Fly, Divebomb, Intimidate, Defend Lair",
+            "Modifier": "+5",
+            "Weapon": {
+                "Name": "Obsidian Claws",
+                "Range": "Close",
+                "Damage": "3d12+10",
+                "Type": "phy"
+            },
+            "Difficulty": "19",
+            "Thresholds": {
+                "Minor": "15",
+                "Major": "45",
+                "Severe": "70"
+            },
+            "HP": "7",
+            "Stress": "5",
+            "Experience": {
+                "Military Scholar": "+5"
+            },
+            "Moves": {
+                "Relentless (3)": "This adversary may activate three times in a GM move (still takes three tokens).",
+                "Flying": "Attack rolls against this creature while it is flying are at +3 difficulty.",
+                "Avalanche Tail": "Mark Stress to make a tail attack with a +10 modifier against all targets within Close range. Any hit by Avalanche Tail take 2d20 phy damage and are knocked back to Close range, becoming Vulnerable until their next roll with Hope.",
+                "Divebomb": "If this adversary is flying, spend a Fear to pick a spot within Far range. Make an attack roll with a +7 modifier against all targets within Very Close range of that spot. Any you succeed against take 3d20+5 phy damage. Targets hit by Divebomb also mark a Stress and lose a Hope.",
+                "Obsidian Scales": "Any time Obsidian Predator takes damage, it reduces that damage by 2d8.",
+                "Erupting Rage (Phase Change)": "When Obsidian Predator marks their last HP, replace them with Molten Scourge. You may spend a Fear to have them activate immediately."
+            }
+        },
+        {
+            "Name": "Volcanic Dragon: Molten Scourge",
+            "Role": "Solo",
+            "Tier": "2",
+            "id": 89,
+            "MotivesTactics": "Incinerate, Douse with Lava, Repel Invaders, Reposition",
+            "Modifier": "+6",
+            "Weapon": {
+                "Name": "Lava-coated Claws",
+                "Range": "Close",
+                "Damage": "5d10+15",
+                "Type": "phy"
+            },
+            "Difficulty": "21",
+            "Thresholds": {
+                "Minor": "13",
+                "Major": "42",
+                "Severe": "65"
+            },
+            "HP": "7",
+            "Stress": "5",
+            "Experience": {
+                "Military Scholar": "+5"
+            },
+            "Moves": {
+                "Relentless (4)": "This adversary may activate four times in a GM move (still takes four tokens).",
+                "Shattering Might": "Mark Stress to attack a target within Very Close range using a +8 modifier. If successful, it deals 10d6+10 phy damage. Creatures hit by Shattering Might are knocked away to Close range and add a token to the action tracker.",
+                "Volcanic Breath (Countdown Loop 1d8)": "Activate when a hostile target is spotted. This ticks down every time a token is placed on the action tracker. When triggered, this creature breathes a flow of lava on all targets in front of them within far range. They must make a Reaction roll with Agility (21). On a failure, they take 3d20 phy damage, mark 1d4 Stress, and are Vulnerable until they heal a hit point. On a success, they take half damage and mark 1 Stress.",
+                "Eruption Countdown 6 (Loop-Increasing)": "Spend a Fear to activate this countdown. It ticks down every time a PC makes an attack roll. When triggered, this creature unleashes a torrent of lava on the entire area within Far range, dealing 3d10 direct phy damage to all targets.",
+                "Lava Splash": "Whenever Molten Scourge marks HP, molten blood gushes forth from the wound and all creatures within Very Close range must make a Reaction roll with Agility (19). On a failure, they take 6d6 phy damage. Creatures that succeed take half damage, or no damage if they roll a critical success.",
+                "Cracked Scales": "Any time Volcanic Dragon takes damage, it reduces that damage by 1d8.",
+                "Ashen Vengeance (Phase Change)": "When Molten Scourge marks their last HP, replace them with Ashen Tyrant. You may spend a Fear to have them activate immediately."
+            }
+        },
+        {
+            "Name": "Volcanic Dragon: Ashen Tyrant",
+            "Role": "Solo",
+            "Tier": "2",
+            "id": 90,
+            "MotivesTactics": "Choke, Fly, Intimidate, Kill or Be Killed",
+            "Modifier": "+7",
+            "Weapon": {
+                "Name": "Claws and Teeth",
+                "Range": "Close",
+                "Damage": "4d12+20",
+                "Type": "phy"
+            },
+            "Difficulty": "20",
+            "Thresholds": {
+                "Minor": "10",
+                "Major": "36",
+                "Severe": "60"
+            },
+            "HP": "7",
+            "Stress": "5",
+            "Experience": {
+                "Military Scholar": "+5"
+            },
+            "Moves": {
+                "Relentless (3)": "This adversary may activate four times in a GM move (still takes four tokens).",
+                "Injured Wings": "Attack rolls against this creature while it is flying are at +1 difficulty.",
+                "Fiery Death": "Whenever a target within Close distance of Volcanic Dragon gets a result with Fear, they lose Hope. If they can’t, they mark a hit point.",
+                "Desperate Rampage": "Mark Stress to make an attack roll against all opponents within Close range. Any target hit by this attack marks Stress and is knocked back to Close range.",
+                "Ashen Cloud": "Spend a Fear to smash the ground and kick up ash everywhere within Far range. Ranged attacks through this area are at disadvantage. Any creature taking an action within the ash cloud adds two tokens to the action tracker.",
+                "Apocalyptic Thrashing (Countdown Loop 2d6-Decreasing)": "Spend a Fear to activate. This ticks down every time a token is placed on the action tracker. When triggered, Ashen Tyrant thrashes about a Far area, causing environmental damage (earthquake, avalanche, collapsing walls, etc.) All targets within Far range must make a Reaction Roll with Strength (22) or suffer 3d20 phy damage and become Restrained and Vulnerable due to being buried in rubble."
+            }
+        },
+        {
+            "Name": "High Seraph",
+            "Role": "Leader",
+            "Tier": "2",
+            "id": 91,
+            "MotivesTactics": "Enforce Dogma, Fly, Smite, Pronounce Judgment",
+            "Modifier": "+7",
+            "Weapon": {
+                "Name": "Holy Sword",
+                "Range": "Very Close",
+                "Damage": "4d12+12",
+                "Type": "phy"
+            },
+            "Difficulty": "22",
+            "Thresholds": {
+                "Minor": "15",
+                "Major": "40",
+                "Severe": "85"
+            },
+            "HP": "15",
+            "Stress": "5",
+            "Experience": {
+                "Divine Knowledge": "+3"
+            },
+            "Moves": {
+                "Relentless (2)": "This adversary may activate twice in a GM move (still takes 2 tokens).",
+                "Divine Flight": "High Seraph can fly a Far distance as part of an activation.",
+                "Judgment": "Spend a Fear to mark a character as Guilty in the eyes of the High Seraph’s god. Only one character may be marked by High Seraph at a time. While so marked, the target does not gain Hope on a result with Hope. When High Seraph hits a target marked as Guilty, they deal physical damage equal to 20+the target’s Major threshold (instead of their normal attack damage).",
+                "God Rays": "Mark Stress to reflect a sliver of the majesty of High Seraph’s god as a searing beam of light that hits up to twenty targets within Very Far range. Anyone hit by the beam must make a reaction roll will Presence (21) or suffer 10d6 magical damage. Targets marked as Guilty have disadvantage on this roll. Anyone that succeeds on the roll takes half damage. Targets that roll a critical success take no damage."
+            }
+        },
+        {
+            "Name": "Hallowed Soldier",
+            "Role": "Minion",
+            "Tier": "2",
+            "id": 92,
+            "MotivesTactics": "Obey, Swarm, Outmaneuver, Punish",
+            "Modifier": "+2",
+            "Weapon": {
+                "Name": "Sword and Shield",
+                "Range": "Melee",
+                "Damage": "10",
+                "Type": "phy"
+            },
+            "Difficulty": "18",
+            "Thresholds": {
+                "Minor": "1"
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Moves": {
+                "Minion - 12": "For every 12 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack - Very Close 10": "Spend a Fear to activate all adversaries with this name within close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal 10 damage per adversary.",
+                "Flight": "Hallowed Soldier can fly up to Far range as part of activating."
+            }
+        },
+        {
+            "Name": "Hallowed Archer",
+            "Role": "Ranged",
+            "Tier": "2",
+            "id": 93,
+            "MotivesTactics": "Obey, Volley, Reposition, Focus Fire",
+            "Modifier": "+3",
+            "Weapon": {
+                "Name": "Longbow",
+                "Range": "Far",
+                "Damage": "2d10+7",
+                "Type": "phy"
+            },
+            "Difficulty": "19",
+            "Thresholds": {
+                "Minor": "10",
+                "Major": "30",
+                "Severe": "60"
+            },
+            "HP": "3",
+            "Stress": "2",
+            "Moves": {
+                "Punish the Guilty": "Hallowed Archers deal double damage to characters marked by the High Seraph as Guilty.",
+                "Divine Volley": "Mark Stress to attack up to three targets with one Longbow attack."
+            }
+        },
+        {
+            "Name": "Fallen Shock Troop",
+            "Role": "Minion",
+            "Tier": "2",
+            "id": 94,
+            "MotivesTactics": "Command, Cultivate, Drive Out, Preserve the Forest",
+            "Modifier": "+2",
+            "Weapon": {
+                "Name": "Cursed Axe",
+                "Range": "Very Close",
+                "Damage": "13",
+                "Type": "phy"
+            },
+            "Difficulty": "18",
+            "Thresholds": {
+                "Minor": "1"
+            },
+            "HP": "1",
+            "Stress": "0",
+            "Moves": {
+                "Minion (13)": "For every 13 damage a PC deals to this adversary, they also deal 1 HP to an additional minion within this attack’s range.",
+                "Group Attack - Very Close 13": "Spend a Fear to activate all adversaries with this name within close range of a target. This group moves into Very Close range and makes an attack roll against that target. On a success, they deal 13 damage per adversary.",
+                "Aura of Doom": "A character that marks HP from an attack by this adversary also loses Hope."
+            }
+        },
+        {
+            "Name": "Fallen Sorcerer",
+            "Role": "Support",
+            "Tier": "2",
+            "id": 95,
+            "MotivesTactics": "Dominate, Acquire, Dishearten, Torment",
+            "Modifier": "+4",
+            "Weapon": {
+                "Name": "Corrupted Staff",
+                "Range": "Far",
+                "Damage": "3d12",
+                "Type": "mag"
+            },
+            "Difficulty": "20",
+            "Thresholds": {
+                "Minor": "12",
+                "Major": "30",
+                "Severe": "50"
+            },
+            "HP": "9",
+            "Stress": "5",
+            "Experience": {
+                "Forbidden Knowledge": "+3"
+            },
+            "Moves": {
+                "Slippery": "When this adversary takes damage from an opponent, they fly away up to Far range.",
+                "Shackles of Guilt": "Countdown (Loop 2d6). Activate when a hostile creature is spotted. It will tick down every time a token is placed on the action tracker. When triggered, all targets within Far range become Vulnerable as they relive their greatest regrets. All targets immediately mark Stress. They may roll with Presence or Strength (18) to try to break free. Each time a character fails to break free, they lose Hope.",
+                "Conflagration": "Spend a Fear to make an attack roll to unleash a firestorm that consumes all opponents within Close range. Any you succeed against take 4d12 magic damage. The firestorm persists for a Countdown (4) and each character that begins their action in the firestorm takes 2d20 direct magic damage.",
+                "Nightmare Tableau": "Mark Stress to create a powerful illusion that traps a target within Far range in a tableau of their worst fears. While trapped they are Restrained and Vulnerable, but may break free by succeeding on a roll with Instinct (18). On a failure of any kind on that roll, the GM takes a Fear. Each time a trapped character makes a roll to escape, the Fallen Sorcerer must mark Stress or 1 HP."
+            }
+        },
+        {
+            "Name": "Fallen Warlord: Realm-Breaker",
+            "Role": "Leader",
+            "Tier": "2",
+            "id": 96,
+            "MotivesTactics": "Corrupt, Dominate, Punish",
+            "Modifier": "+7",
+            "Weapon": {
+                "Name": "Barbed Invective Whip",
+                "Range": "Close",
+                "Damage": "4d12+15",
+                "Type": "phy"
+            },
+            "Difficulty": "22",
+            "Thresholds": {
+                "Minor": "18",
+                "Major": "50",
+                "Severe": "80"
+            },
+            "HP": "7",
+            "Stress": "5",
+            "Experience": {
+                "Break the World": "+3",
+                "History": "+2"
+            },
+            "Moves": {
+                "Relentless (2)": "This adversary may activate twice in a GM move (still requires two action tokens).",
+                "Doombringer": "When a character marks HP from an attack by this adversary, all PCs within Far range of the target lose Hope.",
+                "Firespite Plate Armor": "Any time Realm-Breaker takes damage, reduce that damage by 2d10.",
+                "Tormenting Lash": "Mark Stress to make a Barbed Invective Whip attack against all targets within Very Close range. Each use of armor to reduce damage from this attack requires marking two armor slots.",
+                "All-Consuming Rage": "Countdown (Loop 12 - Decreasing). Activate when a hostile creature is spotted. This ticks down every time a token is placed on the action tracker. When triggered, create a torrent of incarnate rage that rends flesh from bone. All other creatures within Far range must make a Reaction roll with Presence (19). Any that fail take 3d20 magical damage. Creatures that succeed take half damage. For each HP marked, summon one Fallen Shock Troop within Very Close range of the injured target.",
+                "I Have Never Known Defeat (Phase Change)": "When Realm-Breaker marks their last HP, replace them with Undefeated Champion. You may spend a Fear to activate them immediately."
+            }
+        },
+        {
+            "Name": "Fallen Warlord: Undefeated Champion",
+            "Role": "Leader",
+            "Tier": "2",
+            "id": 97,
+            "MotivesTactics": "Rant, Punish the Defiant, Secure Victory at Any Cost",
+            "Modifier": "+8",
+            "Weapon": {
+                "Name": "Heart-shattering Sword",
+                "Range": "Very Close",
+                "Damage": "5d10+20",
+                "Type": "phy"
+            },
+            "Difficulty": "20",
+            "Thresholds": {
+                "Minor": "15",
+                "Major": "42",
+                "Severe": "70"
+            },
+            "HP": "8",
+            "Stress": "5",
+            "Experience": {
+                "Unflinching": "+3",
+                "Intimidation": "+2"
+            },
+            "Moves": {
+                "Relentless (3)": "This adversary may activate three times in a GM move (still requires three action tokens).",
+                "Doombringer": "When a PC marks HP from an attack by Undefeated Champion, all characters within Far range of the target lose Hope.",
+                "Faltering Armor": "Any time Undefeated Champion takes damage, reduce that damage by 1d10.",
+                "Shattering Strike": "Mark Stress to make a Heart-Shattering Sword attack. Targets hit by this attack lose Hope equal to the HP marked from the damage.",
+                "Endless Legions": "Spend a Fear to summon a number of Fallen Shock Troops equal to twice the number of players. They appear at Far range.",
+                "Circle of Defilement": "Countdown (2d4). Activate when a hostile creature is spotted. This ticks down every time a token is placed on the action tracker. When triggered, activate a magical circle covering any area within Far range. All opponents within the area are now Vulnerable. This circle can be removed by completing a Progress Countdown (6) with a difficulty of 22."
+            }
+        }
+    ]
+}

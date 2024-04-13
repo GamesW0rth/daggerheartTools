@@ -1,0 +1,269 @@
+* {
+  font-size: 100%;
+  font-family: Monospace;
+ }
+ ::-webkit-scrollbar{
+	background-color: transparent;
+	width: 10px;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #CBCBCB;
+	outline: 2px solid #FFF;
+	outline-offset: -2px;
+	border: .1px solid #B7B7B7;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #909090;
+}
+body{
+  background-color: #404040;
+  opacity: 1;
+  background-image:  linear-gradient(#676767 2.4000000000000004px, transparent 2.4000000000000004px), linear-gradient(90deg, #676767 2.4000000000000004px, transparent 2.4000000000000004px), linear-gradient(#676767 1.2000000000000002px, transparent 1.2000000000000002px), linear-gradient(90deg, #676767 1.2000000000000002px, #404040 1.2000000000000002px);
+  background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
+  background-position: -2.4000000000000004px -2.4000000000000004px, -2.4000000000000004px -2.4000000000000004px, -1.2000000000000002px -1.2000000000000002px, -1.2000000000000002px -1.2000000000000002px;  
+} 
+#gm-controls{
+  background-color: #a5aab0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height:40vh;
+  text-align: center;
+}
+.middlepane{
+  width: 40%;
+  min-width: 800px;
+  min-height: 650px;
+  float: left;
+  border-collapse: collapse;
+  overflow-y: scroll;
+  height:99vh;
+}
+.leftpane{
+    background-color: #ccc;
+    resize: both;
+    width: 25%;
+    min-width: 350px;
+    min-height: 400px;
+    float: left;
+    border-collapse: collapse;
+    height:99vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rightpane{
+   width: available;
+   position: relative;
+   margin-left: 50%;
+   overflow-y: scroll;
+   height:99vh;
+   border-collapse: collapse;
+}
+
+.toppane{
+   width: available;
+   height: 100px;
+   border-collapse: collapse;
+   background-color: #4da6ff;
+}
+.advisaries-list-container{
+  overflow-y: scroll;
+  height:95vh;
+}
+.card {
+  width: 615px;
+  background-color: #b0b2b5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.header{
+  overflow: hidden;
+  background-color: #bcceeb;
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.inline{
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.inline-center{
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.card p {
+  user-select: none;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 5px 0;
+}
+.card ul li {
+  margin-bottom: 10px;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  
+}
+
+.card ul li {
+  margin-bottom: 2px;
+}
+.tr {
+  
+  background-color: #000000;
+}
+#advisaries-list-container {
+  max-height: 400px; /* Adjust based on your needs */
+  overflow-y: auto; /* Enables vertical scrolling */
+  border: 1px solid #ccc; /* Optional: adds a border around the container */
+}
+#advisaries-list-container table tr {
+  background-color: #f9f9f9; /* Light grey background */
+  color: #333; /* Darker text color for contrast */
+  border-bottom: 1px solid #ddd; /* A subtle bottom border for each row */
+}
+
+#advisaries-list-container table tr:nth-child(odd) {
+  background-color: #efefef; /* Slightly different color for odd rows for zebra striping */
+}
+
+.card ul li:nth-child(odd) {
+  background-color: #afbbc7; /* Set background color for odd-numbered moves */
+}
+
+.card ul li strong {
+  font-weight: bold;
+  display: block;
+}
+
+.card ul li p {
+  margin-top: 2px;
+}
+.left-column {
+    float:left; /* add this */
+}
+
+.right-column {
+    overflow: hidden; /* Adjust spacing between left and right columns */
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Two columns layout */
+  gap: 0px; /* Gap between columns */
+}
+
+.advisary-description {
+  margin-top: 20px;
+}
+
+.button-text{
+  background-color: #d1d1d1;
+  border: #000000;
+  border-radius: 9px;
+  padding: 3px 8px;
+  user-select: none;
+}
+.button-text:hover{
+  background-color: #696969;
+  color: white;
+  cursor: pointer;
+}
+
+.bubble-text{
+  border-radius: 4px;
+  padding: 1px 1px;
+}
+.controls-header{
+  width: available;
+  margin: auto;
+  height: 30px;
+  border-collapse: collapse;
+  background-color: #758ea6;
+  text-align: center;
+  font-size: 25px;
+}
+.button-fear{
+  background-color: #765e5e;
+  border: #000000;
+  border-radius: 9px;
+  padding: 3px 8px;
+  width: 18px;
+  height:12px;
+  user-select: none;
+}
+.button-fear-grayed{
+  background-color: #918e8e;
+}
+.button-fear:hover{
+  background-color: #c3a8a8;
+  color: white;
+  cursor: pointer;
+}
+.action-token{
+  background-color: #4887a4;
+  border:2px solid  #06072b;
+  border-radius: 9px;
+  margin-left: 3px;
+  width: 15px;
+  height:15px;
+  user-select: none;
+}
+.clickable-header{
+  overflow: hidden;
+  background-color: #bcceeb;
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.clickable-header:hover{
+  border:rgba(0, 0, 0, 1);
+  color: rgb(111, 53, 53);
+  cursor: pointer;
+}
+.editable-text{
+  background-color: #bcceeb;
+  border:2px solid  #06072b;
+}
+.not-highlight{
+  user-select: none;
+}
+
+#minionCont { /* Adjust based on your needs */
+  border: 1px solid rgb(70, 70, 70); /* Optional: adds a border around the container */
+}
+#minionCont tr { /* Light grey background */
+  border-bottom: 1px solid #ddd; /* A subtle bottom border for each row */
+  border: 1px solid rgb(70, 70, 70);
+}
+
+#minionCont tr:nth-child(odd) {
+  background-color: #828282; /* Slightly different color for odd rows for zebra striping */
+}
