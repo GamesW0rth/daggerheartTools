@@ -37,7 +37,7 @@ body{
 }
 .middlepane{
   width: 40%;
-  min-width: 800px;
+  min-width: 37vw;
   min-height: 650px;
   float: left;
   border-collapse: collapse;
@@ -47,7 +47,7 @@ body{
 .leftpane{
     background-color: #ccc;
     resize: both;
-    width: 25%;
+    width: 16vw;
     min-width: 350px;
     min-height: 400px;
     float: left;
