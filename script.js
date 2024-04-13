@@ -431,6 +431,13 @@ function getPlainCard(advisary){
     `;
     
     var threshMj = '';
+    var threshSvr = '';
+    if (advisary.Thresholds["Major"]){
+        threshMj = ` Major: ${advisary.Thresholds.Major}`
+    }
+    if (advisary.Thresholds["Severe"]){
+        threshSvr = ` Severe: ${advisary.Thresholds.Severe}`
+    }
 
     const leftColumnHtml = `
     <div class="left-column">
@@ -438,7 +445,7 @@ function getPlainCard(advisary){
     <p><i><strong>${advisary.Weapon.Name}:</strong></i> ${advisary.Weapon.Range}|${advisary.Weapon.Damage}, ${advisary.Weapon.Type}</p>
     <p><strong>Modifier:</strong> ${advisary.Modifier}</p>
     <p><strong>Difficulty:</strong> ${advisary.Difficulty}</p>
-    <p><strong>Thresholds:</strong> Minor: ${advisary.Thresholds.Minor} Major: ${advisary.Thresholds.Major} Severe: ${advisary.Thresholds.Severe}</p> 
+    <p><strong>Thresholds:</strong> Minor: ${advisary.Thresholds.Minor}${threshMj}${threshSvr}</p> 
     ${experienceHtml}
     <p><strong>HP:</strong> ${advisary.HP}</p>
     <p><strong>Stress:</strong> ${advisary.Stress}</p>
