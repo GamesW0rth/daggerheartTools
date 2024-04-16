@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisary Creater</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class = "leftpane">
+        <div id="advisaries-list-container"></div>
+        <div id="gm-controls"><div class="button-text" style ="width: 100px;" onclick="newAdvisary()">New Advisary</div></div>
+        
+    </div>
+    <div>
+    <div class ="card">
+        <div>Advisary Name:<input type="text" id="name"></div>
+        <div>Role:            
+            <select id="role">
+                <option value="Bruiser">Bruiser</option>
+                <option value="Horde">Horde</option>
+                <option value="Leader">Leader</option>
+                <option value="Minion">Minion</option>
+                <option value="Ranged">Ranged</option>
+                <option value="Skulk">Skulk</option>
+                <option value="Social">Social</option>
+                <option value="Solo">Solo</option>
+                <option value="Standard">Standard</option>
+                <option value="Support">Support</option>
+              </select>
+        </div>
+        <div>Motives and Tactics:<input type="text" id="motives" style="width: 400px;"></div>
+        <div>Tier:
+            <select id="tier">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+        </div>
+        <div>Difficulty:<input type="number" id="difficulty" style="width: 30px;"></div>
+        <div>Modifier:<input type="number" id="modifier" style="width: 30px;"></div>
+        <div>Weapon - Name:<input type="text" id="weaponName"></div>
+        <div>Range:<select id="weaponRange">
+            <option value="Melee">Melee</option>
+            <option value="Very Close">Very Close</option>
+            <option value="Close">Close</option>
+            <option value="Far">Far</option>
+            <option value="Very Far">Very Far</option>
+          </select>
+            Damage:<input type="text" id="weaponDamage" style="width: 30px;">
+              Type:
+              <select id="damageType">
+                <option value="phy">phy</option>
+                <option value="mag">mag</option>
+                <option value="mag/phy">mag/phy</option>
+              </select>
+        </div>
+        <div>Thresholds- Minor<input type="number" id="minorThresh" style="width: 30px;"> Major<input type="number" id="majorThresh" style="width: 30px;"> Severe<input type="number" id="severeThresh" style="width: 30px;"></div>
+        <div>Health points:<input type="number" id="hp" style="width: 30px;"></div>
+        <div>Stress points:<input type="number" id="stress" style="width: 30px;"></div>
+        <div class ="inline">
+            Experiences:
+            <div class="button-text" onclick="newExperience()" style="width: 105px;">Add Experience</div>
+        </div>
+            <div id="experiences-div">
+
+            </div>
+        <div class ="inline">
+            Features:
+            <div class="button-text" onclick="newFeature()" style="width: 80px;">Add Feature</div>
+            <select id="presets"></select>
+        </div>
+        <div id="features-div"></div>
+        <div class="button-text" onclick="updateCreationJson()" style="width: 80px;">Save</div>
+    </div>
+    <div class="card" id="jsonArea"></div></div>
+
+    <script src="newAdvisaryScript.js"></script>
+</body>
+</html>
+

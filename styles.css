@@ -37,7 +37,7 @@ body{
 }
 .middlepane{
   width: 40%;
-  min-width: 37vw;
+  min-width: 45vw;
   min-height: 650px;
   float: left;
   border-collapse: collapse;
@@ -81,13 +81,16 @@ body{
   background-color: #b0b2b5;
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 1 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   overflow: hidden;
+  padding: 5px 0px 5px 0px;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .header{
   overflow: hidden;
+  background-image: linear-gradient(to left,rgba(255, 255, 255, 0.471),transparent ,transparent , rgba(0, 0, 0, 0.169));
   background-color: #bcceeb;
   text-align: center;
   display: flex;
@@ -120,18 +123,14 @@ body{
 .card p {
   margin: 5px 0;
 }
-.card ul li {
-  margin-bottom: 10px;
-}
 
 .card ul {
   list-style-type: none;
   padding: 0;
-  
 }
 
 .card ul li {
-  margin-bottom: 2px;
+  padding: 1px;
 }
 .tr {
   
@@ -152,9 +151,6 @@ body{
   background-color: #efefef; /* Slightly different color for odd rows for zebra striping */
 }
 
-.card ul li:nth-child(odd) {
-  background-color: #afbbc7; /* Set background color for odd-numbered moves */
-}
 
 .card ul li strong {
   font-weight: bold;
@@ -266,4 +262,8 @@ body{
 
 #minionCont tr:nth-child(odd) {
   background-color: #828282; /* Slightly different color for odd rows for zebra striping */
+}
+
+.input[type=text]{
+  border-radius: 15px;
 }
