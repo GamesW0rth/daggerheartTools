@@ -1931,18 +1931,6 @@
                 "Camouflage": "+2"
             },
             "Features": {
-                "Relentless (2)": {
-                    "Type": "Passive",
-                    "Description": "May activate two times during a GM move."
-                },
-                "Shifting Amalgamation": {
-                    "Type": "Reaction",
-                    "Description": "Spend a Fear to add +1d10 to the damage of any of the Battle Box’s attacks."
-                },
-                "Randomized Tactics": {
-                    "Type": "Action",
-                    "Description": "Mark Stress and roll 1d6. The Battle Box uses the corresponding move:"
-                },
                 "1": {
                     "Type": "Action",
                     "Description": "Mana Beam (+3 attack modifier, 2d20 mag damage, Far range)"
@@ -1966,6 +1954,18 @@
                 "6": {
                     "Type": "Action",
                     "Description": "Psionic Whine (Presence Reaction Roll (15), 2d10 mag damage, Close range, damage not reducible by armor)"
+                },
+                "Relentless (2)": {
+                    "Type": "Passive",
+                    "Description": "May activate two times during a GM move."
+                },
+                "Shifting Amalgamation": {
+                    "Type": "Reaction",
+                    "Description": "Spend a Fear to add +1d10 to the damage of any of the Battle Box’s attacks."
+                },
+                "Randomized Tactics": {
+                    "Type": "Action",
+                    "Description": "Mark Stress and roll 1d6. The Battle Box uses the corresponding move:"
                 },
                 "Death Quake": {
                     "Type": "Reaction",
@@ -2999,165 +2999,165 @@
             "Description": "A massive winged creature with obsidian scales and impossibly sharp claws.",
             "MotivesTactics": "Hunt, Fly, Divebomb, Intimidate, Defend Lair",
             "Tier": "3",
-            "Type": "Solo",
+            "Role": "Solo",
             "Difficulty": "19",
             "AttackModifier": "+8",
             "Weapon": {
-              "Name": "Obsidian Claws",
-              "Range": "Close",
-              "Damage": "4d10+5",
-              "Type": "phy"
+                "Name": "Obsidian Claws",
+                "Range": "Close",
+                "Damage": "4d10+5",
+                "Type": "phy"
             },
             "Thresholds": {
-              "Minor": "1",
-              "Major": "40",
-              "Severe": "70"
+                "Minor": "1",
+                "Major": "40",
+                "Severe": "70"
             },
             "HP": "7",
             "Stress": "5",
             "Experience": {
-              "Military Scholar": "+5"
+                "Military Scholar": "+5"
             },
             "Features": {
-              "Relentless (2)": {
-                "Type": "Passive",
-                "Description": "This adversary may activate two times during a GM move."
-              },
-              "Flying": {
-                "Type": "Passive",
-                "Description": "Attack rolls against this creature, while it is flying, are at +3 difficulty."
-              },
-              "Avalanche Tail": {
-                "Type": "Action",
-                "AttackModifier": "+10",
-                "Description": "Mark a Stress to make a tail attack against all targets within Close range. Any hit by Avalanche Tail take 2d20 phy damage and are knocked back to Close range, becoming Vulnerable until their next roll with Hope."
-              },
-              "Divebomb": {
-                "Type": "Action",
-                "AttackModifier": "+7",
-                "Description": "If this adversary is flying, mark a Stress to pick a spot within Far range. Make an attack against all targets within Very Close range of that spot. Any you succeed against take 3d20+5 phy damage. Targets hit by Divebomb also mark a Stress and lose a Hope."
-              },
-              "Obsidian Scales": {
-                "Type": "Reaction",
-                "Description": "Any time Obsidian Predator takes damage, it reduces that damage by 2d8."
-              },
-              "Erupting Rage (Phase Change)": {
-                "Type": "Reaction",
-                "Description": "When Obsidian Predator marks their last HP, replace them with Molten Scourge. Spend a Fear to have them activate immediately."
-              }
+                "Relentless (2)": {
+                    "Type": "Passive",
+                    "Description": "This adversary may activate two times during a GM move."
+                },
+                "Flying": {
+                    "Type": "Passive",
+                    "Description": "Attack rolls against this creature, while it is flying, are at +3 difficulty."
+                },
+                "Avalanche Tail": {
+                    "Type": "Action",
+                    "AttackModifier": "+10",
+                    "Description": "Mark a Stress to make a tail attack against all targets within Close range. Any hit by Avalanche Tail take 2d20 phy damage and are knocked back to Close range, becoming Vulnerable until their next roll with Hope."
+                },
+                "Divebomb": {
+                    "Type": "Action",
+                    "AttackModifier": "+7",
+                    "Description": "If this adversary is flying, mark a Stress to pick a spot within Far range. Make an attack against all targets within Very Close range of that spot. Any you succeed against take 3d20+5 phy damage. Targets hit by Divebomb also mark a Stress and lose a Hope."
+                },
+                "Obsidian Scales": {
+                    "Type": "Reaction",
+                    "Description": "Any time Obsidian Predator takes damage, it reduces that damage by 2d8."
+                },
+                "Erupting Rage (Phase Change)": {
+                    "Type": "Reaction",
+                    "Description": "When Obsidian Predator marks their last HP, replace them with Molten Scourge. Spend a Fear to have them activate immediately."
+                }
             },
             "id": 78
-          },
-          {
+        },
+        {
             "Name": "Volcanic Dragon: Molten Scourge",
             "Description": "Enraged by their wounds, the dragon bursts into molten lava.",
             "MotivesTactics": "Incinerate, Douse with Lava, Repel Invaders, Reposition",
             "Tier": "3",
-            "Type": "Solo",
+            "Role": "Solo",
             "Difficulty": "20",
             "AttackModifier": "+9",
             "Weapon": {
-              "Name": "Lava-coated Claws",
-              "Range": "Close",
-              "Damage": "5d10+10",
-              "Type": "phy"
+                "Name": "Lava-coated Claws",
+                "Range": "Close",
+                "Damage": "5d10+10",
+                "Type": "phy"
             },
             "Thresholds": {
-              "Minor": "1",
-              "Major": "37",
-              "Severe": "62"
+                "Minor": "1",
+                "Major": "37",
+                "Severe": "62"
             },
             "HP": "7",
             "Stress": "5",
             "Experience": {
-              "Military Scholar": "+5"
+                "Military Scholar": "+5"
             },
             "Features": {
-              "Relentless (3)": {
-                "Type": "Passive",
-                "Description": "This adversary may activate three times in a GM move."
-              },
-              "Shattering Might": {
-                "Type": "Action",
-                "AttackModifier": "+8",
-                "Description": "Mark a Stress to attack a target within Very Close range. If successful, it deals 10d6+10 phy damage. Creatures hit by Shattering Might are knocked away to Close range and add a token to the action tracker."
-              },
-              "Volcanic Breath": {
-                "Type": "Reaction",
-                "Description": "Any time this adversary is dealt Major damage, roll 1d10. On an 8+, this creature breathes a flow of lava on all targets in front of them within Far range. They must make a Reaction roll using Agility (21). On a failure, they take 3d20 phy damage, mark 1d4 Stress, and are Vulnerable until they clear a Stress. On a success, they take half damage and mark 1 Stress."
-              },
-              "Eruption": {
-                "Type": "Action",
-                "Description": "Spend a Fear to erupt lava from beneath this adversary’s scales, filling the area in Very Close range around them with molten stone. Any targets in that area must make an Agility Reaction Roll (22) or take 4d20+8 phy damage and be pushed out into Close range. This area remains lava that deals 4d20+8 damage to anyone who enters it until the battle is over."
-              },
-              "Lava Splash": {
-                "Type": "Reaction",
-                "Description": "Whenever Molten Scourge takes Severe Damage, molten blood gushes forth from the wound and hits the attacker if they are within Very Close range, dealing 6d6 phy damage."
-              },
-              "Cracked Scales": {
-                "Type": "Reaction",
-                "Description": "Any time Volcanic Dragon takes damage, it reduces that damage by 1d8."
-              },
-              "Ashen Vengeance (Phase Change)": {
-                "Type": "Reaction",
-                "Description": "When Molten Scourge marks their last HP, replace them with Ashen Tyrant. Spend a Fear to have them activate immediately."
-              }
+                "Relentless (3)": {
+                    "Type": "Passive",
+                    "Description": "This adversary may activate three times in a GM move."
+                },
+                "Shattering Might": {
+                    "Type": "Action",
+                    "AttackModifier": "+8",
+                    "Description": "Mark a Stress to attack a target within Very Close range. If successful, it deals 10d6+10 phy damage. Creatures hit by Shattering Might are knocked away to Close range and add a token to the action tracker."
+                },
+                "Volcanic Breath": {
+                    "Type": "Reaction",
+                    "Description": "Any time this adversary is dealt Major damage, roll 1d10. On an 8+, this creature breathes a flow of lava on all targets in front of them within Far range. They must make a Reaction roll using Agility (21). On a failure, they take 3d20 phy damage, mark 1d4 Stress, and are Vulnerable until they clear a Stress. On a success, they take half damage and mark 1 Stress."
+                },
+                "Eruption": {
+                    "Type": "Action",
+                    "Description": "Spend a Fear to erupt lava from beneath this adversary’s scales, filling the area in Very Close range around them with molten stone. Any targets in that area must make an Agility Reaction Roll (22) or take 4d20+8 phy damage and be pushed out into Close range. This area remains lava that deals 4d20+8 damage to anyone who enters it until the battle is over."
+                },
+                "Lava Splash": {
+                    "Type": "Reaction",
+                    "Description": "Whenever Molten Scourge takes Severe Damage, molten blood gushes forth from the wound and hits the attacker if they are within Very Close range, dealing 6d6 phy damage."
+                },
+                "Cracked Scales": {
+                    "Type": "Reaction",
+                    "Description": "Any time Volcanic Dragon takes damage, it reduces that damage by 1d8."
+                },
+                "Ashen Vengeance (Phase Change)": {
+                    "Type": "Reaction",
+                    "Description": "When Molten Scourge marks their last HP, replace them with Ashen Tyrant. Spend a Fear to have them activate immediately."
+                }
             },
             "id": 79
-          },
-          {
+        },
+        {
             "Name": "Volcanic Dragon: Ashen Tyrant",
             "Description": "No enemy has ever had the insolence to wound the dragon so. As the lava settles, it is ground to ash like the dragon’s past foes.",
             "MotivesTactics": "Choke, Fly, Intimidate, Kill or Be Killed",
             "Tier": "3",
-            "Type": "Solo",
+            "Role": "Solo",
             "Difficulty": "18",
             "AttackModifier": "+10",
             "Weapon": {
-              "Name": "Claws and Teeth",
-              "Range": "Close",
-              "Damage": "6d10+10",
-              "Type": "phy"
+                "Name": "Claws and Teeth",
+                "Range": "Close",
+                "Damage": "6d10+10",
+                "Type": "phy"
             },
             "Thresholds": {
-              "Minor": "1",
-              "Major": "26",
-              "Severe": "57"
+                "Minor": "1",
+                "Major": "26",
+                "Severe": "57"
             },
             "HP": "7",
             "Stress": "5",
             "Experience": {
-              "Military Scholar": "+5"
+                "Military Scholar": "+5"
             },
             "Features": {
-              "Relentless (4)": {
-                "Type": "Passive",
-                "Description": "This adversary may activate four times in a GM move."
-              },
-              "Injured Wings": {
-                "Type": "Passive",
-                "Description": "Attack rolls against this creature while it is flying are at +1 difficulty."
-              },
-              "Fiery Death": {
-                "Type": "Passive",
-                "Description": "Whenever a target within Close distance of Volcanic Dragon rolls a failure, they lose a Hope. If they can’t, they mark a Hit Point."
-              },
-              "Desperate Rampage": {
-                "Type": "Action",
-                "AttackModifier": "+8",
-                "Description": "Mark a Stress to make an attack against all targets within Close range. Any target hit by this attack takes 4d12 phy damage, marks Stress, and is knocked back to Close range."
-              },
-              "Ashen Cloud": {
-                "Type": "Action",
-                "Description": "Spend a Fear to smash the ground and kick up ash everywhere within Far range. Ranged attacks through this area are at disadvantage. Any creature taking an action within the ash cloud adds two tokens to the action tracker. This cloud clears the next time the GM spends every token on the action tracker."
-              },
-              "Apocalyptic Thrashing": {
-                "Type": "Action",
-                "Countdown": "1d12",
-                "Description": "Spend a Fear to activate. This ticks down every time a token is placed on the action tracker. When triggered, Ashen Tyrant thrashes about, causing environmental damage (earthquake, avalanche, collapsing walls, etc.) All targets within Far range must make a Strength Reaction Roll (22) or suffer 4d20 phy damage and become Restrained in the rubble. Any restrained targets can break free with Strength (25). Targets that succeed only take half damage and are not Restrained."
-              }
+                "Relentless (4)": {
+                    "Type": "Passive",
+                    "Description": "This adversary may activate four times in a GM move."
+                },
+                "Injured Wings": {
+                    "Type": "Passive",
+                    "Description": "Attack rolls against this creature while it is flying are at +1 difficulty."
+                },
+                "Fiery Death": {
+                    "Type": "Passive",
+                    "Description": "Whenever a target within Close distance of Volcanic Dragon rolls a failure, they lose a Hope. If they can’t, they mark a Hit Point."
+                },
+                "Desperate Rampage": {
+                    "Type": "Action",
+                    "AttackModifier": "+8",
+                    "Description": "Mark a Stress to make an attack against all targets within Close range. Any target hit by this attack takes 4d12 phy damage, marks Stress, and is knocked back to Close range."
+                },
+                "Ashen Cloud": {
+                    "Type": "Action",
+                    "Description": "Spend a Fear to smash the ground and kick up ash everywhere within Far range. Ranged attacks through this area are at disadvantage. Any creature taking an action within the ash cloud adds two tokens to the action tracker. This cloud clears the next time the GM spends every token on the action tracker."
+                },
+                "Apocalyptic Thrashing": {
+                    "Type": "Action",
+                    "Countdown": "1d12",
+                    "Description": "Spend a Fear to activate. This ticks down every time a token is placed on the action tracker. When triggered, Ashen Tyrant thrashes about, causing environmental damage (earthquake, avalanche, collapsing walls, etc.) All targets within Far range must make a Strength Reaction Roll (22) or suffer 4d20 phy damage and become Restrained in the rubble. Any restrained targets can break free with Strength (25). Targets that succeed only take half damage and are not Restrained."
+                }
             },
             "id": 80
-          }                                                                                                                                                             
+        }
     ]
 }

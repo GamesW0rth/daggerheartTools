@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(data => {
         setupSession();
         advisaryMasterList = data.advisaries;
+        searchList=advisaryMasterList
         displayAdvisaries(data.advisaries);
-        setupSearch(data.advisaries);
+        setupSearch(searchList);
         displayPlayedAdvisaries(selectedAdvisaries);
         displayAdvisaryShortList(data.advisaries);
         setupGMControls();
@@ -15,7 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let selectedAdvisaries = [];
 let advisaryMasterList= [];
+let searchList=[];
 let loops = [];
+const actionColorStyles={
+    "Action":"background-image: linear-gradient(to right,rgba(255, 0, 0, 0.1),transparent ,transparent , transparent );",
+    "Action (2)":"background-image: linear-gradient(to right,rgba(255, 0, 0, 0.2),transparent ,transparent , transparent );",
+    "Action (3)":"background-image: linear-gradient(to right,rgba(255, 0, 0, 0.3),transparent ,transparent , transparent );",
+    "Passive":"background-image: linear-gradient(to right,rgba(0, 140, 255, 0.1),transparent ,transparent , transparent );",
+    "Reaction":"background-image: linear-gradient(to right,rgba(132, 0, 255, 0.1),transparent ,transparent , transparent );"
+}
 const tierColorTypes = {
     0 : "#bcceeb",
     1 : "#abd99e",
@@ -187,8 +196,7 @@ function createAndAppendPlayedAdvisaryCards(advisaries, containerId) {
         const card = document.createElement("div");
         card.classList.add("card");
         var tierColor = tierColorTypes[advisary.Tier];
-        const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li><strong>${featureName}:</strong><i>${feature.Type}</i> ${feature.Description}</li>`).join('');
-
+        const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li style = "${actionColorStyles[feature.Type]}"><strong>${featureName}:</strong><i>${feature.Type}</i> ${feature.Description}</li>`).join('');
         
         let experienceHtml = '';
         const experience = advisary.Experience;
@@ -406,7 +414,7 @@ function getPlainCard(advisary){
     const card = document.createElement("div");
     card.classList.add("card");
     var tierColor = tierColorTypes[advisary.Tier];
-    const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li><strong>${featureName}:</strong><i>${feature.Type}</i> ${feature.Description}</li>`).join('');
+    const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li style = "${actionColorStyles[feature.Type]}"><strong>${featureName}:</strong><i>${feature.Type}</i> ${feature.Description}</li>`).join('');
 
     let advisaryDescriptionHtml = '';
     if (advisary["Advisary Description"] && shouldToggle == true && advisary["Advisary Description"].trim() !== '') {
@@ -576,7 +584,44 @@ function displayPlayedAdvisaries(advisaries) {
     
     createAndAppendPlayedAdvisaryCards(advisaries, "selected-advisaries-container");
 }
-function displayAdvisaryShortList(advisaries) {
+
+function addNewCustomAdvisary(){
+    const card = document.createElement("div");
+    card.classList.add("card");
+    
+    // Header Details
+        //Name
+        //Role
+        //Motives
+    //Tier
+    //Difficulty
+    //Modifier
+    //Weapon
+    //Experiences
+        //Experience
+            //Name
+            //Value
+        //Add New
+    //Thresholds
+    //Health Points
+    //Stress
+    //Moves
+        //Move
+            //Move Name
+            //Move Type
+            //Move Description
+        //Add Move
+        //Add Default Move
+    //Description
+
+    return card;
+}
+
+function sortBySelected(advisaryValueToSortBy,previoslySelected){
+    searchList.sort
+}
+
+function displayAdvisaryShortList(advisaries, selectedSort = -1) {
     const listContainer = document.getElementById("advisaries-list-container");
     listContainer.innerHTML = ""; // Clear the container
 
@@ -593,6 +638,7 @@ function displayAdvisaryShortList(advisaries) {
     // Create the name and tier cell
     const nameHeadCell = document.createElement("td");
     nameHeadCell.textContent = `Name`;
+    nameHeadCell.onclick = function(){sortBySelected("Name",selectedSort);};
     headRow.appendChild(nameHeadCell);
 
     const tierHeadCell = document.createElement("td");
@@ -713,7 +759,7 @@ function setupGMControls(){
     controlsHeader.classList.add("controls-header");
     controlsHeader.textContent = "Game Master Controls";
     controlsContainer.appendChild(controlsHeader);
-    const maxFear = 10;
+    const maxFear = 6;
     //fear counter
     const fearP = document.createElement("p");
     fearP.classList.add("inline-center");
@@ -725,14 +771,14 @@ function setupGMControls(){
         const fearBubble = document.createElement("div");
         fearBubble.classList.add("button-fear");
         fearBubble.textContent = i+1;
-        fearBubble.onclick = function(){setFear(i+1)};
+        fearBubble.onclick = function(){setFear(i+1,maxFear)};
         fearP.appendChild(fearBubble);
     }
     for(let i = GMControlState.fear; i<maxFear;i++){
         const fearBubble = document.createElement("div");
         fearBubble.classList.add("button-fear");
         fearBubble.classList.add("button-fear-grayed");
-        fearBubble.onclick = function(){setFear(i+1)};
+        fearBubble.onclick = function(){setFear(i+1,maxFear)};
         fearP.appendChild(fearBubble);
     }
     controlsContainer.appendChild(fearP)
@@ -743,20 +789,20 @@ function setupGMControls(){
     const removeFearButton = document.createElement("div");
     removeFearButton.classList.add("button-text");
     removeFearButton.textContent = "-1 fear"
-    removeFearButton.onclick = function(){addFear(-1)};
+    removeFearButton.onclick = function(){addFear(-1,maxFear)};
     fearButtonsP.appendChild(removeFearButton);  
 
     const addFearButton = document.createElement("div");
     addFearButton.classList.add("button-text");
     addFearButton.textContent = "+1 fear"
-    addFearButton.onclick = function(){addFear(1)};
+    addFearButton.onclick = function(){addFear(1,maxFear)};
     fearButtonsP.appendChild(addFearButton);  
 
     //Button to convert 2 fear to 1 action token
     const convertButton = document.createElement("div");
     convertButton.classList.add("button-text");
     convertButton.textContent = "Convert 1 fear to 2 action";
-    convertButton.onclick = function(){addFear(-1);addAction(+2);};
+    convertButton.onclick = function(){addFear(-1,maxFear);addAction(+2);};
     fearButtonsP.appendChild(convertButton);  
     
     controlsContainer.appendChild(fearButtonsP);
@@ -789,7 +835,7 @@ function setupGMControls(){
     const convertActionsButton = document.createElement("div");
     convertActionsButton.classList.add("button-text");
     convertActionsButton.textContent = "Convert 2 actions to 1 fear";
-    convertActionsButton.onclick = function(){if(GMControlState.actions>1){addFear(+1);addAction(-2);}};
+    convertActionsButton.onclick = function(){if(GMControlState.actions>1 && (GMControlState.fear+1)<maxFear){addFear(+1,maxFear);addAction(-2);}};
     actionButtonsP.appendChild(convertActionsButton);  
     
     controlsContainer.appendChild(actionButtonsP);
@@ -808,18 +854,22 @@ function setupGMControls(){
     const convertAllActionsButton = document.createElement("div");
     convertAllActionsButton.classList.add("button-text");
     var potentialFear = Math.floor(GMControlState.actions/2);
-    if(potentialFear > 10){
-        potentialFear = 10;
+    if(potentialFear+GMControlState.fear > maxFear){
+        potentialFear = maxFear - GMControlState.fear;
     }
-    convertAllActionsButton.textContent = "Convert "+GMControlState.actions+" actions to "+potentialFear+" fear";
+    convertAllActionsButton.textContent = "Convert "+potentialFear*2+" actions to "+potentialFear+" fear";
     convertAllActionsButton.onclick = function(){
-        GMControlState.actions = 0;
+        addAction(-(potentialFear*2));
         addFear(potentialFear);
     };
     macroActions.appendChild(convertAllActionsButton)
     controlsContainer.appendChild(macroActions);
 
-    
+    const newAdvisaryBut = document.createElement("div");
+    newAdvisaryBut.classList.add("button-text");
+    newAdvisaryBut.onclick = addNewCustomAdvisary();
+    newAdvisaryBut.innerText = "Add New Advisary"
+    controlsContainer.appendChild(newAdvisaryBut);
 
     saveSession();
 }
@@ -830,20 +880,20 @@ function addAction(value){
     }
     setupGMControls();
 }
-function addFear(value){
+function addFear(value, max){
     GMControlState.fear += value;
-    fearCheck();
+    fearCheck(max);
     setupGMControls();
 }
-function setFear(value){
+function setFear(value, max){
     GMControlState.fear = value
-    fearCheck();
+    fearCheck(max);
     setupGMControls();
 }
 
-function fearCheck(){
-    if(GMControlState.fear > 10){
-        GMControlState.fear = 10;
+function fearCheck(max){
+    if(GMControlState.fear > max){
+        GMControlState.fear = max;
     }
     else if (GMControlState.fear < 0){
         GMControlState.fear = 0;
