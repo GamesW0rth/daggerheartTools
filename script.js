@@ -1,21 +1,69 @@
 document.addEventListener("DOMContentLoaded", function() {
+    setupSession();
     fetch("advisaries.json")
     .then(response => response.json())
     .then(data => {
-        setupSession();
-        advisaryMasterList = data.advisaries;
+        loadedAdvisaries = data.advisaries;
+        advisaryMasterList= [...loadedAdvisaries,...customAdvisaries];
         searchList=advisaryMasterList
-        displayAdvisaries(data.advisaries);
-        setupSearch(searchList);
+        displayAdvisaries(advisaryMasterList);
+        setupSearch();
         displayPlayedAdvisaries(selectedAdvisaries);
-        displayAdvisaryShortList(data.advisaries);
+        displayAdvisaryShortList(advisaryMasterList);
         setupGMControls();
+        saveSession();
     })
     .catch(error => console.error("Error fetching advisaries:", error));
 });
 
-let selectedAdvisaries = [];
-let advisaryMasterList= [];
+function saveJsonToLocalStorage(key, jsonData) {
+    // Convert the JSON object to a string
+    const jsonString = JSON.stringify(jsonData);
+    // Save the string to localStorage under the specified key
+    localStorage.setItem(key, jsonString);
+}
+function loadJsonFromLocalStorage(key) {
+    // Retrieve the data string from localStorage
+    const jsonString = localStorage.getItem(key);
+    // Parse the string back into JSON
+    if (jsonString) {
+        return JSON.parse(jsonString);
+    }
+    return null; // Return null if the key doesn't exist
+}
+function loadJsonArrayFromLocalStorage(key) {
+    // Retrieve the data string from localStorage
+    const jsonString = localStorage.getItem(key);
+    // Parse the string back into a JSON array
+    if (jsonString) {
+        return JSON.parse(jsonString);
+    }
+    // Return an empty array if the key doesn't exist or data is null
+    return [];
+}
+function saveSession(){
+    saveJsonToLocalStorage("playedAdvisary",selectedAdvisaries);
+    saveJsonToLocalStorage("latestPlayId",LatestPlayId);
+    saveJsonToLocalStorage("GMControlState",GMControlState);
+    saveJsonToLocalStorage("advisaryVanilla",loadedAdvisaries);
+}
+function setupSession(){
+    selectedAdvisaries = loadJsonArrayFromLocalStorage('playedAdvisary');
+    LatestPlayId = loadJsonFromLocalStorage('latestPlayId');
+    GMControlState = loadJsonFromLocalStorage('GMControlState');
+    customAdvisaries = loadJsonArrayFromLocalStorage('customAdvisary');
+    if (GMControlState == null){
+        GMControlState = {
+            fear:2,
+            actions:0
+        };
+    }
+}
+
+let selectedAdvisaries = [];//list of advisaries in pllay
+let loadedAdvisaries = []; //Advisaries loaded from master file
+let advisaryMasterList= [];// list combining loaded and custom advisaries
+let customAdvisaries = [];//custom made advisaries loaded from session
 let searchList=[];
 let loops = [];
 const actionColorStyles={
@@ -586,39 +634,21 @@ function displayPlayedAdvisaries(advisaries) {
 }
 
 function addNewCustomAdvisary(){
-    const card = document.createElement("div");
-    card.classList.add("card");
-    
-    // Header Details
-        //Name
-        //Role
-        //Motives
-    //Tier
-    //Difficulty
-    //Modifier
-    //Weapon
-    //Experiences
-        //Experience
-            //Name
-            //Value
-        //Add New
-    //Thresholds
-    //Health Points
-    //Stress
-    //Moves
-        //Move
-            //Move Name
-            //Move Type
-            //Move Description
-        //Add Move
-        //Add Default Move
-    //Description
-
-    return card;
+    //get id
+    var usedIds = [];
+    var newId = 1;
+    //advisaryMasterList.forEach()
+    advisaryMasterList.forEach(advisary => {usedIds.push(advisary.id);});
+    while(usedIds.includes(newId)){
+        newId++
+    }
+    saveJsonToLocalStorage("newAdvisaryId",newId);
+    window.open("advisaryMaker.html");
 }
 
 function sortBySelected(advisaryValueToSortBy,previoslySelected){
     searchList.sort
+    //not implimented yet
 }
 
 function displayAdvisaryShortList(advisaries, selectedSort = -1) {
@@ -697,57 +727,16 @@ function displayAdvisaryShortList(advisaries, selectedSort = -1) {
     table.appendChild(tbody);
     listContainer.appendChild(table);
 }
-function saveJsonToLocalStorage(key, jsonData) {
-    // Convert the JSON object to a string
-    const jsonString = JSON.stringify(jsonData);
-    // Save the string to localStorage under the specified key
-    localStorage.setItem(key, jsonString);
-}
-function loadJsonFromLocalStorage(key) {
-    // Retrieve the data string from localStorage
-    const jsonString = localStorage.getItem(key);
-    // Parse the string back into JSON
-    if (jsonString) {
-        return JSON.parse(jsonString);
-    }
-    return null; // Return null if the key doesn't exist
-}
-function loadJsonArrayFromLocalStorage(key) {
-    // Retrieve the data string from localStorage
-    const jsonString = localStorage.getItem(key);
-    // Parse the string back into a JSON array
-    if (jsonString) {
-        return JSON.parse(jsonString);
-    }
-    // Return an empty array if the key doesn't exist or data is null
-    return [];
-}
-function saveSession(){
-    saveJsonToLocalStorage("playedAdvisary",selectedAdvisaries);
-    saveJsonToLocalStorage("latestPlayId",LatestPlayId);
-    saveJsonToLocalStorage("GMControlState",GMControlState);
-}
-function setupSession(){
-    selectedAdvisaries = loadJsonArrayFromLocalStorage('playedAdvisary');
-    LatestPlayId = loadJsonFromLocalStorage('latestPlayId');
-    GMControlState = loadJsonFromLocalStorage('GMControlState');
-    if (GMControlState == null){
-        GMControlState = {
-            fear:2,
-            actions:0
-        };
-    }
-}
-function setupSearch(advisaries) {
+function setupSearch() {
     const searchInput = document.getElementById('searchInput');
     
     searchInput.addEventListener('input', function() {
         const searchTerm = searchInput.value.toLowerCase();
-        const filteredAdvisaries = advisaries.filter(advisary => advisary.Name.toLowerCase().includes(searchTerm) || advisary.Role.toLowerCase().includes(searchTerm));
+        const filteredAdvisaries = advisaryMasterList.filter(advisary => advisary.Name.toLowerCase().includes(searchTerm) || advisary.Role.toLowerCase().includes(searchTerm));
         const leftContainer = document.getElementById("advisaries-container");
         leftContainer.innerHTML = ''; // Clear previous content
         
-        displayAdvisaries(advisaries,"advisaries-container");
+        displayAdvisaries(advisaryMasterList,"advisaries-container");
         displayAdvisaryShortList(filteredAdvisaries); // Call to display simplified list based on search
     });
 }
@@ -755,6 +744,7 @@ function setupSearch(advisaries) {
 function setupGMControls(){
     const controlsContainer = document.getElementById("gm-controls");
     controlsContainer.innerHTML = "";
+
     const controlsHeader = document.createElement("p");
     controlsHeader.classList.add("controls-header");
     controlsHeader.textContent = "Game Master Controls";
@@ -867,8 +857,9 @@ function setupGMControls(){
 
     const newAdvisaryBut = document.createElement("div");
     newAdvisaryBut.classList.add("button-text");
-    newAdvisaryBut.onclick = addNewCustomAdvisary();
-    newAdvisaryBut.innerText = "Add New Advisary"
+    newAdvisaryBut.innerText = "Create New Advisary"
+    newAdvisaryBut.style = "width:100px;"
+    newAdvisaryBut.onclick = function(){addNewCustomAdvisary()};
     controlsContainer.appendChild(newAdvisaryBut);
 
     saveSession();

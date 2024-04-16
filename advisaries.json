@@ -1931,30 +1931,7 @@
                 "Camouflage": "+2"
             },
             "Features": {
-                "1": {
-                    "Type": "Action",
-                    "Description": "Mana Beam (+3 attack modifier, 2d20 mag damage, Far range)"
-                },
-                "2": {
-                    "Type": "Action",
-                    "Description": "Fire Jets (+2 attack modifier, 3d6 phy damage, Close range)"
-                },
-                "3": {
-                    "Type": "Action",
-                    "Description": "Trample (+0 attack modifier, 3d10 phy damage, Close range, makes targets Vulnerable)"
-                },
-                "4": {
-                    "Type": "Action",
-                    "Description": "Shocking Gas (Finesse Reaction Roll (15), 3 Stress, Close range)"
-                },
-                "5": {
-                    "Type": "Action",
-                    "Description": "Stunning Clap (Strength Reaction Roll (15), Vulnerable, Very Close range)"
-                },
-                "6": {
-                    "Type": "Action",
-                    "Description": "Psionic Whine (Presence Reaction Roll (15), 2d10 mag damage, Close range, damage not reducible by armor)"
-                },
+                
                 "Relentless (2)": {
                     "Type": "Passive",
                     "Description": "May activate two times during a GM move."
@@ -1965,7 +1942,7 @@
                 },
                 "Randomized Tactics": {
                     "Type": "Action",
-                    "Description": "Mark Stress and roll 1d6. The Battle Box uses the corresponding move:"
+                    "Description": "Mark Stress and roll 1d6. The Battle Box uses the corresponding move:<ol><li>Mana Beam (+3 attack modifier, 2d20 mag damage, Far range)</li><li>Fire Jets (+2 attack modifier, 3d6 phy damage, Close range)</li><li>Trample (+0 attack modifier, 3d10 phy damage, Close range, makes targets Vulnerable)</li><li>Shocking Gas (Finesse Reaction Roll (15), 3 Stress, Close range)</li><li>Stunning Clap (Strength Reaction Roll (15), Vulnerable, Very Close range)</li><li>Psionic Whine (Presence Reaction Roll (15), 2d10 mag damage, Close range, damage not reducible by armor)</li></ol>"
                 },
                 "Death Quake": {
                     "Type": "Reaction",

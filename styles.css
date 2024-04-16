@@ -85,6 +85,7 @@ body{
   margin: 20px auto;
   overflow: hidden;
   padding: 5px 0px 5px 0px;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .header{
@@ -112,7 +113,6 @@ body{
   align-items: center;
 }
 .card p {
-  
   user-select: none;
 }
 
@@ -123,18 +123,14 @@ body{
 .card p {
   margin: 5px 0;
 }
-.card ul li {
-  margin-bottom: 10px;
-}
 
 .card ul {
   list-style-type: none;
   padding: 0;
-  
 }
 
 .card ul li {
-  margin-bottom: 2px;
+  padding: 1px;
 }
 .tr {
   
@@ -155,9 +151,6 @@ body{
   background-color: #efefef; /* Slightly different color for odd rows for zebra striping */
 }
 
-.card ul li:nth-child(odd) {
-  background-color: #b9babd; /* Set background color for odd-numbered moves */
-}
 
 .card ul li strong {
   font-weight: bold;

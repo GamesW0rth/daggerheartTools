@@ -40,6 +40,28 @@ const featurePresets = [
     }
     
 ]
+const defultAdvisary={
+    "Name": "",
+    "Description": "",
+    "MotivesTactics": "",
+    "Tier": "",
+    "Role": "",
+    "id": 0,
+    "Difficulty": "",
+    "Modifier": "",
+    "Weapon": {
+    },
+    "Thresholds": {
+    },
+    "HP": "",
+    "Stress": "",
+    "Experience": {
+    },
+    "Features": {
+    }
+}
+let vanillaAdvisaries = [];
+let customAdvisaries = [];
 var advisaryObject = {
     "Name": "",
     "Description": "",
@@ -68,9 +90,63 @@ When this adversary takes physical damage, reduce that damage by X.
 */
 
 document.addEventListener("DOMContentLoaded", function() {
-    generateFeaturePresetList();
+    setupSession();
+    loadAdvisary(advisaryObject.id);
+    generateFeaturePresetList();   
+    updateCustomAdvisariesDisplay();
+    updateUIFromJson();
     updateCreationJson();
 });
+
+function setupSession(){
+    customAdvisaries = loadJsonArrayFromLocalStorage('customAdvisary');
+    vanillaAdvisaries = loadJsonArrayFromLocalStorage('advisaryVanilla');
+    advisaryObject.id = loadJsonFromLocalStorage("newAdvisaryId");
+}
+
+function loadAdvisary(advisaryId){
+    customAdvisaries.forEach(adv => {
+        if(adv.id == advisaryId){
+            advisaryObject = adv
+        }
+    })
+}
+
+function saveCreation(){
+    //check if in session
+    var found = false;
+    customAdvisaries.forEach(advisary => {
+        if (advisary.id == advisaryObject.id){
+            found = true;
+            customAdvisaries[customAdvisaries.indexOf(advisary)] = advisaryObject;
+        }
+    });
+    //add if not
+    if (found == false){
+        customAdvisaries.push(advisaryObject);
+    }
+    saveJsonToLocalStorage('customAdvisary',customAdvisaries);
+    updateCustomAdvisariesDisplay();
+}
+
+function newAdvisary(){
+    //getID
+    var usedIds = [];
+    var newId = 1;
+    const advisaryMasterList = [...vanillaAdvisaries,...customAdvisaries];
+    advisaryMasterList.forEach(advisary => {usedIds.push(advisary.id);});
+    while(usedIds.includes(newId)){
+        newId++
+    }
+    saveJsonToLocalStorage("newAdvisaryId",newId);
+    advisaryObject = JSON.parse(JSON.stringify(defultAdvisary));
+    advisaryObject.id = newId;
+    //Load New
+    emptyUIFields();
+    saveCreation();
+    updateCustomAdvisariesDisplay();
+    updateUIFromJson();
+}
 
 function updateCreationJson(){
     advisaryObject.Name = document.getElementById("name").value;
@@ -84,12 +160,10 @@ function updateCreationJson(){
     advisaryObject.Thresholds.Minor = document.getElementById("minorThresh").value;
     advisaryObject.Thresholds.Major = document.getElementById("majorThresh").value;
     advisaryObject.Thresholds.Severe = document.getElementById("severeThresh").value;
-    advisaryObject.Weapon = {
-        "Name":document.getElementById("weaponName").value,
-        "Range":document.getElementById("weaponRange").value,
-        "Damage":diceString(),
-        "Type":document.getElementById("damageType").value
-    }
+    advisaryObject.Weapon.Damage = document.getElementById("weaponDamage").value;
+    advisaryObject.Weapon.Name = document.getElementById("weaponName").value
+    advisaryObject.Weapon.Range = document.getElementById("weaponRange").value;
+    advisaryObject.Weapon.Type =document.getElementById("damageType").value;
     advisaryObject.Experience = {};//empty exps
     experiences.forEach(experience =>{
         advisaryObject.Experience[experience.name] = experience.bonus;
@@ -103,7 +177,177 @@ function updateCreationJson(){
         advisaryObject.Features[feature.Name] = newFeat;
     });
     updateJSonField();
+    saveCreation();
 }
+function emptyUIFields(){
+    document.getElementById("name").value='';
+    document.getElementById("motives").value='';
+    document.getElementById("tier").value='';
+    document.getElementById("role").value='';
+    document.getElementById("difficulty").value='';
+    document.getElementById("modifier").value = '';
+    document.getElementById("hp").value = '';
+    document.getElementById("stress").value = '';
+    document.getElementById("minorThresh").value = '';
+    document.getElementById("majorThresh").value = '';
+    document.getElementById("severeThresh").value = '';
+    document.getElementById("weaponName").value = '';
+    document.getElementById("weaponRange").value = '';
+    document.getElementById("damageType").value = '';
+    document.getElementById("weaponDamage").value = '';
+    experiences =[];
+    features = [];
+    regenerateFeatureList();
+    regenerateExperienceDiv();
+    updateJSonField();
+}
+function updateUIFromJson(){
+    emptyUIFields();
+    document.getElementById("name").value=advisaryObject.Name;
+    document.getElementById("motives").value=advisaryObject.MotivesTactics;
+    document.getElementById("tier").value=advisaryObject.Tier;
+    document.getElementById("role").value=advisaryObject.Role;
+    document.getElementById("difficulty").value=advisaryObject.Difficulty;
+    document.getElementById("modifier").value = advisaryObject.Modifier;
+    document.getElementById("hp").value = advisaryObject.HP;
+    document.getElementById("stress").value = advisaryObject.Stress;
+    document.getElementById("minorThresh").value = advisaryObject.Thresholds.Minor;
+    document.getElementById("majorThresh").value = advisaryObject.Thresholds.Major;
+    document.getElementById("severeThresh").value = advisaryObject.Thresholds.Severe;
+    document.getElementById("weaponName").value = advisaryObject.Weapon.Name;
+    document.getElementById("weaponRange").value = advisaryObject.Weapon.Range;
+    document.getElementById("damageType").value = advisaryObject.Weapon.Type;
+    document.getElementById("weaponDamage").value = advisaryObject.Weapon.Damage;
+    experiences =[];
+    Object.entries(advisaryObject.Experience).forEach(([expName, expValue]) => {
+        experiences.push({
+            "name":expName,
+            "bonus":expValue
+        });
+    });
+    features = [];
+    Object.entries(advisaryObject.Features).forEach(([featName, featValue]) => {
+        features.push({
+            "Name":featName,
+            "Type":featValue.Type,
+            "Description":featValue.Description
+        });
+    });
+    regenerateFeatureList();
+    regenerateExperienceDiv();
+    updateJSonField();
+}
+
+function deleteAdvisary(id){
+    customAdvisaries.forEach(adv => {
+        if(adv.id == id){
+            customAdvisaries.splice(customAdvisaries.indexOf(adv),1);
+        }
+    });
+    saveJsonToLocalStorage('customAdvisary',customAdvisaries);
+    updateCustomAdvisariesDisplay();
+}
+
+function loadAdvisaryForEdit(id){
+    saveJsonToLocalStorage('newAdvisaryId',id);
+    setupSession();
+    loadAdvisary(advisaryObject.id);
+    updateUIFromJson();
+    updateCreationJson();
+}
+
+
+
+function updateCustomAdvisariesDisplay(){
+    const listContainer = document.getElementById("advisaries-list-container");
+    listContainer.innerHTML = ""; // Clear the container
+
+    // Create the table and the table body
+    const table = document.createElement("table");
+    const tbody = document.createElement("tbody");
+
+    const headRow = document.createElement("tr");
+
+    const addHeadCell = document.createElement("td");
+    addHeadCell.textContent = `Edit`;
+    headRow.appendChild(addHeadCell);
+
+    const deleteHeadCell = document.createElement("td");
+    deleteHeadCell.textContent = `Delete`;
+    headRow.appendChild(deleteHeadCell);
+
+    // Create the name and tier cell
+    const nameHeadCell = document.createElement("td");
+    nameHeadCell.textContent = `Name`;
+    nameHeadCell.onclick = function(){sortBySelected("Name",selectedSort);};
+    headRow.appendChild(nameHeadCell);
+
+    const tierHeadCell = document.createElement("td");
+    tierHeadCell.textContent = `Tier`;
+    headRow.appendChild(tierHeadCell);
+
+    const diffHeadCell = document.createElement("td");
+    diffHeadCell.textContent = `DC`;
+    headRow.appendChild(diffHeadCell);
+
+    
+    const roleHeadCell = document.createElement("td");
+    roleHeadCell.textContent = `Role`;
+    headRow.appendChild(roleHeadCell);
+
+
+    // Append the row to the table body
+    tbody.appendChild(headRow);
+
+    customAdvisaries.forEach((advisary) => {
+        // Create a row for each advisary
+        const row = document.createElement("tr");
+
+        // Create the add cell
+        const editCell = document.createElement("td");
+        const editButton = document.createElement("div");
+        editButton.classList.add("button-text");
+        editButton.appendChild(document.createTextNode("edit"));
+        editButton.onclick = function(){loadAdvisaryForEdit(advisary.id)};
+        editCell.appendChild(editButton);
+        row.appendChild(editCell);
+        
+        const deleteCell = document.createElement("td");
+        const deleteButton = document.createElement("div");
+        deleteButton.classList.add("button-text");
+        deleteButton.appendChild(document.createTextNode("delete"));
+        deleteButton.onclick = function(){deleteAdvisary(advisary.id)};
+        deleteCell.appendChild(deleteButton);
+        row.appendChild(deleteCell);
+
+        // Create the name and tier cell
+        const nameCell = document.createElement("td");
+        nameCell.textContent = `${advisary.Name}`;
+        row.appendChild(nameCell);
+
+        const tierCell = document.createElement("td");
+        tierCell.textContent = `${advisary.Tier}`;
+        row.appendChild(tierCell);
+
+        const diffCell = document.createElement("td");
+        diffCell.textContent = `${advisary.Difficulty}`;
+        row.appendChild(diffCell);
+
+        
+        const roleCell = document.createElement("td");
+        roleCell.textContent = `${advisary.Role}`;
+        row.appendChild(roleCell);
+
+
+        // Append the row to the table body
+        tbody.appendChild(row);
+    });
+
+    // Append the tbody to the table, and the table to the listContainer
+    table.appendChild(tbody);
+    listContainer.appendChild(table);
+}
+
 function diceString(){
     var result = "";
     var diceCount = document.getElementById("weaponDiceCount").value;
@@ -298,4 +542,30 @@ function generateExperienceField(experience){
     newExperienceDiv.appendChild(bonus);
     newExperienceDiv.appendChild(deleteButton);
     return newExperienceDiv;
+}
+
+function saveJsonToLocalStorage(key, jsonData) {
+    // Convert the JSON object to a string
+    const jsonString = JSON.stringify(jsonData);
+    // Save the string to localStorage under the specified key
+    localStorage.setItem(key, jsonString);
+}
+function loadJsonFromLocalStorage(key) {
+    // Retrieve the data string from localStorage
+    const jsonString = localStorage.getItem(key);
+    // Parse the string back into JSON
+    if (jsonString) {
+        return JSON.parse(jsonString);
+    }
+    return null; // Return null if the key doesn't exist
+}
+function loadJsonArrayFromLocalStorage(key) {
+    // Retrieve the data string from localStorage
+    const jsonString = localStorage.getItem(key);
+    // Parse the string back into a JSON array
+    if (jsonString) {
+        return JSON.parse(jsonString);
+    }
+    // Return an empty array if the key doesn't exist or data is null
+    return [];
 }

@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    <div class = "leftpane">
+        <div id="advisaries-list-container"></div>
+        <div id="gm-controls"><div class="button-text" style ="width: 100px;" onclick="newAdvisary()">New Advisary</div></div>
+        
+    </div>
+    <div>
     <div class ="card">
         <div>Advisary Name:<input type="text" id="name"></div>
         <div>Role:            
@@ -42,16 +49,7 @@
             <option value="Far">Far</option>
             <option value="Very Far">Very Far</option>
           </select>
-            Damage:<input type="number" min =0 id="weaponDiceCount" style="width: 30px;">
-             <select id="weaponDice">
-                <option value="d4">d4</option>
-                <option value="d6">d6</option>
-                <option value="d8">d8</option>
-                <option value="d10">d10</option>
-                <option value="d12">d12</option>
-                <option value="d20">d20</option>
-              </select>+
-              <input type="number" id="weaponDamageBonus" style="width: 30px;">
+            Damage:<input type="text" id="weaponDamage" style="width: 30px;">
               Type:
               <select id="damageType">
                 <option value="phy">phy</option>
@@ -77,7 +75,7 @@
         <div id="features-div"></div>
         <div class="button-text" onclick="updateCreationJson()" style="width: 80px;">Save</div>
     </div>
-    <div class="card" id="jsonArea"></div>
+    <div class="card" id="jsonArea"></div></div>
 
     <script src="newAdvisaryScript.js"></script>
 </body>
