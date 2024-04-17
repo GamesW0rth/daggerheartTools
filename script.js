@@ -636,15 +636,6 @@ function displayPlayedAdvisaries(advisaries) {
 }
 
 function addNewCustomAdvisary(){
-    //get id
-    var usedIds = [];
-    var newId = 1;
-    //advisaryMasterList.forEach()
-    advisaryMasterList.forEach(advisary => {usedIds.push(advisary.id);});
-    while(usedIds.includes(newId)){
-        newId++
-    }
-    saveJsonToLocalStorage("newAdvisaryId",newId);
     window.open("advisaryMaker.html");
 }
 
@@ -908,13 +899,9 @@ function setupGMControls(){
     };
     macroActions.appendChild(convertAllActionsButton)
     controlsContainer.appendChild(macroActions);
-
-    const newAdvisaryBut = document.createElement("div");
-    newAdvisaryBut.classList.add("button-text");
-    newAdvisaryBut.innerText = "Create New Advisary"
-    newAdvisaryBut.style = "width:100px;"
-    newAdvisaryBut.onclick = function(){addNewCustomAdvisary()};
-    controlsContainer.appendChild(newAdvisaryBut);
+    
+    const loopTable = document.createElement("tbody");
+    
 
     saveSession();
 }

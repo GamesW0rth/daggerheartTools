@@ -9,14 +9,14 @@
 <body>
     <div>
         <div id="search-container" class = "leftpane">
-            <p><input type="text" id="searchInput" placeholder="Search advisaries..."></p>
+            <div><input type="text" id="searchInput" placeholder="Search advisaries..."></div>
             <div id="preview-card"></div>
             <div id="advisaries-list-container"></div>
             <div id="gm-controls"></div>
         </div>
         <div id="selected-advisaries-container" class="middlepane"></div>
         <div class="rightpane">
-            <button class="right">show main list</button>
+            <button class="right" onclick="addNewCustomAdvisary()">Advisary Editor</button>
             <div id="advisaries-container"></div>
         </div>
     </div>
