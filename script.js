@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(data => {
         loadedAdvisaries = data.advisaries;
         advisaryMasterList= [...loadedAdvisaries,...customAdvisaries];
+        advisaryMasterList = advisaryMasterList.sort((a,b) => parseInt(a.Tier)-parseInt(b.Tier));
         searchList=advisaryMasterList
         displayAdvisaries(advisaryMasterList);
         setupSearch();
@@ -70,6 +71,7 @@ const actionColorStyles={
     "Action":"background-image: linear-gradient(to right,rgba(255, 0, 0, 0.1),transparent ,transparent , transparent );",
     "Action (2)":"background-image: linear-gradient(to right,rgba(255, 0, 0, 0.2),transparent ,transparent , transparent );",
     "Action (3)":"background-image: linear-gradient(to right,rgba(255, 0, 0, 0.3),transparent ,transparent , transparent );",
+    "Action - Fear":"background-image: linear-gradient(to right,rgba(255, 99, 179, 0.4),transparent ,transparent , transparent );",
     "Passive":"background-image: linear-gradient(to right,rgba(0, 140, 255, 0.1),transparent ,transparent , transparent );",
     "Reaction":"background-image: linear-gradient(to right,rgba(132, 0, 255, 0.1),transparent ,transparent , transparent );"
 }
@@ -244,7 +246,7 @@ function createAndAppendPlayedAdvisaryCards(advisaries, containerId) {
         const card = document.createElement("div");
         card.classList.add("card");
         var tierColor = tierColorTypes[advisary.Tier];
-        const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li style = "${actionColorStyles[feature.Type]}"><strong>${featureName}:</strong><i>${feature.Type}</i> ${feature.Description}</li>`).join('');
+        const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li style = "${actionColorStyles[feature.Type]}"><strong>${featureName}: <i>${feature.Type}</i></strong> ${feature.Description}</li>`).join('');
         
         let experienceHtml = '';
         const experience = advisary.Experience;
@@ -462,7 +464,7 @@ function getPlainCard(advisary){
     const card = document.createElement("div");
     card.classList.add("card");
     var tierColor = tierColorTypes[advisary.Tier];
-    const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li style = "${actionColorStyles[feature.Type]}"><strong>${featureName}:</strong><i>${feature.Type}</i> ${feature.Description}</li>`).join('');
+    const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li style = "${actionColorStyles[feature.Type]}"><strong>${featureName}: <i>${feature.Type}</i></strong> ${feature.Description}</li>`).join('');
 
     let advisaryDescriptionHtml = '';
     if (advisary["Advisary Description"] && shouldToggle == true && advisary["Advisary Description"].trim() !== '') {
@@ -646,12 +648,46 @@ function addNewCustomAdvisary(){
     window.open("advisaryMaker.html");
 }
 
-function sortBySelected(advisaryValueToSortBy,previoslySelected){
-    searchList.sort
-    //not implimented yet
+function sortBySelected(filteredList,advisaryValueToSortBy,previoslySelected,currentDirection){
+    var direction = true;
+    if(advisaryValueToSortBy != "Name" && advisaryValueToSortBy != "Role"){
+        if (previoslySelected == advisaryValueToSortBy&&currentDirection){
+            searchList = filteredList.sort((a,b) => parseInt(b[advisaryValueToSortBy])-parseInt(a[advisaryValueToSortBy]));//desc
+        }
+        else{
+            searchList = filteredList.sort((a,b) => parseInt(a[advisaryValueToSortBy])-parseInt(b[advisaryValueToSortBy]));//asc
+        }
+        direction = !currentDirection;
+    }else{
+        if (previoslySelected == advisaryValueToSortBy&&currentDirection){
+            searchList = filteredList.sort((a,b) => {
+                if (a[advisaryValueToSortBy] < b[advisaryValueToSortBy]) {
+                    return 1;
+                  }
+                  if (a[advisaryValueToSortBy] > b[advisaryValueToSortBy]) {
+                    return -1;
+                  }
+                  return 0;
+            });//desc
+            direction = !currentDirection;
+        }
+        else{
+            searchList = filteredList.sort((a,b) => {                
+                if (a[advisaryValueToSortBy] < b[advisaryValueToSortBy]) {
+                    return -1;
+                  }
+                  if (a[advisaryValueToSortBy] > b[advisaryValueToSortBy]) {
+                    return 1;
+                  }
+                  return 0;
+            });//asc
+        }
+    }
+    displayAdvisaryShortList(searchList, advisaryValueToSortBy,direction);
 }
 
-function displayAdvisaryShortList(advisaries, selectedSort = -1) {
+function displayAdvisaryShortList(advisaries, selectedSort = -1,direction=null)//direction, true asc false desc
+{
     const listContainer = document.getElementById("advisaries-list-container");
     listContainer.innerHTML = ""; // Clear the container
 
@@ -660,6 +696,7 @@ function displayAdvisaryShortList(advisaries, selectedSort = -1) {
     const tbody = document.createElement("tbody");
 
     const headRow = document.createElement("tr");
+    headRow.classList.add("table-head-row");
 
     const addHeadCell = document.createElement("td");
     addHeadCell.textContent = `Add`;
@@ -668,22 +705,39 @@ function displayAdvisaryShortList(advisaries, selectedSort = -1) {
     // Create the name and tier cell
     const nameHeadCell = document.createElement("td");
     nameHeadCell.textContent = `Name`;
-    nameHeadCell.onclick = function(){sortBySelected("Name",selectedSort);};
+    nameHeadCell.id = "Name";
+    nameHeadCell.onclick = function(){sortBySelected(advisaries,"Name",selectedSort,direction);};
     headRow.appendChild(nameHeadCell);
 
     const tierHeadCell = document.createElement("td");
     tierHeadCell.textContent = `Tier`;
+    tierHeadCell.id = "Tier";
+    tierHeadCell.onclick = function(){sortBySelected(advisaries,"Tier",selectedSort,direction);};
     headRow.appendChild(tierHeadCell);
 
     const diffHeadCell = document.createElement("td");
     diffHeadCell.textContent = `DC`;
+    diffHeadCell.id = "Difficulty";
+    diffHeadCell.onclick = function(){sortBySelected(advisaries,"Difficulty",selectedSort,direction);};
     headRow.appendChild(diffHeadCell);
 
     
     const roleHeadCell = document.createElement("td");
     roleHeadCell.textContent = `Role`;
+    roleHeadCell.id = "Role";
+    roleHeadCell.onclick = function(){sortBySelected(advisaries,"Role",selectedSort,direction);};
     headRow.appendChild(roleHeadCell);
 
+    for (var c = 0, cell; cell = headRow.cells[c]; c++) {
+        if(cell.id == selectedSort){
+            if(direction){
+                cell.style = "border-style: solid hidden hidden hidden;border-width: 2px;border-color: red;"
+            }
+        else{
+            cell.style = "border-style: hidden hidden solid hidden;border-width: 2px;border-color: red;"
+            }
+        }
+    } 
     // Append the row to the table body
     tbody.appendChild(headRow);
 
