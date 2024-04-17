@@ -175,9 +175,9 @@
                     "Description": "Summon 3 Jagged Knife Lackeys, who appear at Far range. 'You see more trouble headed your way.'"
                 },
                 "Coup de Grace": {
-                    "Type": "Action",
+                    "Type": "Action - Fear",
                     "AttackModifier": "+4",
-                    "Description": "Spend a Fear to make an attack against a Vulnerable target within Close range. If successful, deal 4d8 phy damage and force the target to mark a Stress. 'They see you struggling and move to end this.'"
+                    "Description": "+4 Attack modifier</br>Spend a Fear to make an attack against a Vulnerable target within Close range. If successful, deal 4d8 phy damage and force the target to mark a Stress. 'They see you struggling and move to end this.'"
                 }
             },
             "id": 5
@@ -2811,7 +2811,7 @@
                     "Description": "Make an attack roll with a +6 modifier against a target within Close range. If successful, mark a Stress to have the Kraken grab them in one of its tentacles, dragging them beneath the water. They are Restrained and Vulnerable and must mark stress for every action token placed on the tracker until they are no longer grabbed. The target can break free with Strength (16) roll or by the PCs dealing at least Major damage to the Kraken with the intent of freeing the grabbed character."
                 },
                 "Boiling Blast": {
-                    "Type": "Action",
+                    "Type": "Action - Fear",
                     "Description": "Spend a Fear to have the Kraken spew a line of boiling water at any number of targets in a line up to Far range. All targets must make an Agility Reaction Roll (20). On a failure, they take 3d20 physical damage. If they use any number of armor slots to reduce the damage, they must also mark one Stress."
                 }
             },
@@ -3064,7 +3064,7 @@
                     "Description": "Any time this adversary is dealt Major damage, roll 1d10. On an 8+, this creature breathes a flow of lava on all targets in front of them within Far range. They must make a Reaction roll using Agility (21). On a failure, they take 3d20 phy damage, mark 1d4 Stress, and are Vulnerable until they clear a Stress. On a success, they take half damage and mark 1 Stress."
                 },
                 "Eruption": {
-                    "Type": "Action",
+                    "Type": "Action - Fear",
                     "Description": "Spend a Fear to erupt lava from beneath this adversary’s scales, filling the area in Very Close range around them with molten stone. Any targets in that area must make an Agility Reaction Roll (22) or take 4d20+8 phy damage and be pushed out into Close range. This area remains lava that deals 4d20+8 damage to anyone who enters it until the battle is over."
                 },
                 "Lava Splash": {
@@ -3125,11 +3125,11 @@
                     "Description": "Mark a Stress to make an attack against all targets within Close range. Any target hit by this attack takes 4d12 phy damage, marks Stress, and is knocked back to Close range."
                 },
                 "Ashen Cloud": {
-                    "Type": "Action",
+                    "Type": "Action - Fear",
                     "Description": "Spend a Fear to smash the ground and kick up ash everywhere within Far range. Ranged attacks through this area are at disadvantage. Any creature taking an action within the ash cloud adds two tokens to the action tracker. This cloud clears the next time the GM spends every token on the action tracker."
                 },
                 "Apocalyptic Thrashing": {
-                    "Type": "Action",
+                    "Type": "Action - Fear",
                     "Countdown": "1d12",
                     "Description": "Spend a Fear to activate. This ticks down every time a token is placed on the action tracker. When triggered, Ashen Tyrant thrashes about, causing environmental damage (earthquake, avalanche, collapsing walls, etc.) All targets within Far range must make a Strength Reaction Roll (22) or suffer 4d20 phy damage and become Restrained in the rubble. Any restrained targets can break free with Strength (25). Targets that succeed only take half damage and are not Restrained."
                 }

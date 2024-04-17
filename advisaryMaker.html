@@ -10,8 +10,15 @@
     
     <div class = "leftpane">
         <div id="advisaries-list-container"></div>
-        <div id="gm-controls"><div class="button-text" style ="width: 100px;" onclick="newAdvisary()">New Advisary</div></div>
-        
+        <div id="gm-controls">
+            <table>
+                <tr>
+                    <td><div class="button-text" style ="width: 100px;" onclick="newAdvisary()">New Advisary</div></td>
+                    <td><div class="button-text" style ="width: 120px;" onclick="saveButton()">Save Advisaries to File</div></td>
+                    <td><div class="button-text" style ="width: 120px;" onclick="loadButton()">Load Advisaries from File</div></td>
+                </tr>
+            </table>
+        </div>       
     </div>
     <div>
     <div class ="card">
