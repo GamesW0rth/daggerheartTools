@@ -132,10 +132,6 @@ body{
 .card ul li {
   padding: 1px;
 }
-.tr {
-  
-  background-color: #000000;
-}
 #advisaries-list-container {
   max-height: 400px; /* Adjust based on your needs */
   overflow-y: auto; /* Enables vertical scrolling */
@@ -151,6 +147,15 @@ body{
   background-color: #efefef; /* Slightly different color for odd rows for zebra striping */
 }
 
+.table-head-row td{
+  background-color: #b8b8b8;
+  cursor: pointer;
+  user-select: none;
+}
+.table-head-row td:hover{
+  background-color: #797979;
+  color: white;
+}
 
 .card ul li strong {
   font-weight: bold;

@@ -4,6 +4,7 @@ const featureTypes = [
     "Action",
     "Action (2)",
     "Action (3)",
+    "Action - Fear",
     "Reaction",
     "Passive",
 ]
@@ -147,6 +148,53 @@ function newAdvisary(){
     updateCustomAdvisariesDisplay();
     updateUIFromJson();
 }
+
+const downloadToFile = (content, filename, contentType) => {
+    const a = document.createElement('a');
+    const file = new Blob([content], {type: contentType});
+    
+    a.href= URL.createObjectURL(file);
+    a.download = filename;
+    a.click();
+    
+    URL.revokeObjectURL(a.href);
+};
+
+function saveButton(){
+    downloadToFile(JSON.stringify(customAdvisaries), 'savedAdvisaries.json', 'json');
+}
+
+function loadButton(){
+    var input = document.createElement('input');
+    input.type = 'file';
+    
+    input.onchange = e => { 
+
+        // getting a hold of the file reference
+        var file = e.target.files[0]; 
+     
+        // setting up the reader
+        var reader = new FileReader();
+        reader.readAsText(file,'UTF-8');
+     
+        // here we tell the reader what to do when it's done reading...
+        reader.onload = readerEvent => {
+           var content = readerEvent.target.result; // this is the content!
+           console.log( content );
+        
+           // Parse the string back into a JSON array
+           if (content) {
+                customAdvisaries = JSON.parse(content);
+                saveJsonToLocalStorage('customAdvisary',customAdvisaries);
+                updateCustomAdvisariesDisplay();
+            }
+        }
+     
+    }
+
+    input.click();
+}
+
 
 function updateCreationJson(){
     advisaryObject.Name = document.getElementById("name").value;
