@@ -417,13 +417,13 @@ function createAndAppendPlayedAdvisaryCards(advisaries, containerId) {
                 addStressButton.appendChild(document.createTextNode("+1"));
                 addStressButton.onclick = function(){changeAdvStressOnClick(+1,playedAdvisary.playId)}
                 stressP.appendChild(addStressButton);
-        }
 
-            const removeStressButton = document.createElement("div");
-            removeStressButton.classList.add("button-text");
-            removeStressButton.appendChild(document.createTextNode("-1"));
-            removeStressButton.onclick = function(){changeAdvStressOnClick(-1,playedAdvisary.playId)}
-            stressP.appendChild(removeStressButton);
+                const removeStressButton = document.createElement("div");
+                removeStressButton.classList.add("button-text");
+                removeStressButton.appendChild(document.createTextNode("-1"));
+                removeStressButton.onclick = function(){changeAdvStressOnClick(-1,playedAdvisary.playId)}
+                stressP.appendChild(removeStressButton);
+        }
         }
         const rightColumnHtml = `
         <p><strong>Moves:</strong></p>
