@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
         advisaryMasterList= [...loadedAdvisaries,...customAdvisaries];
         advisaryMasterList = advisaryMasterList.sort((a,b) => parseInt(a.Tier)-parseInt(b.Tier));
         searchList=advisaryMasterList
-        displayAdvisaries(advisaryMasterList);
+        //displayAdvisaries(advisaryMasterList);
+        refreshMiddlePane();
+        generateLoops();
         setupSearch();
-        displayPlayedAdvisaries(selectedAdvisaries);
+        //displayPlayedAdvisaries(selectedAdvisaries);
         displayAdvisaryShortList(advisaryMasterList);
         setupGMControls();
         saveSession();
@@ -47,12 +49,17 @@ function saveSession(){
     saveJsonToLocalStorage("latestPlayId",LatestPlayId);
     saveJsonToLocalStorage("GMControlState",GMControlState);
     saveJsonToLocalStorage("advisaryVanilla",loadedAdvisaries);
+    saveJsonToLocalStorage("loops",loops);
+    saveJsonToLocalStorage("playList",playList);
 }
 function setupSession(){
     selectedAdvisaries = loadJsonArrayFromLocalStorage('playedAdvisary');
+    loops = loadJsonArrayFromLocalStorage('loops');
     LatestPlayId = loadJsonFromLocalStorage('latestPlayId');
     GMControlState = loadJsonFromLocalStorage('GMControlState');
     customAdvisaries = loadJsonArrayFromLocalStorage('customAdvisary');
+    playList = loadJsonFromLocalStorage('playList');
+
     if (GMControlState == null){
         GMControlState = {
             fear:2,
@@ -67,6 +74,8 @@ let advisaryMasterList= [];// list combining loaded and custom advisaries
 let customAdvisaries = [];//custom made advisaries loaded from session
 let searchList=[];
 let loops = [];
+let playList = false;
+
 const actionColorStyles={
     "Action":"background-image: linear-gradient(to right,rgba(255, 0, 0, 0.1),transparent ,transparent , transparent );",
     "Action (2)":"background-image: linear-gradient(to right,rgba(255, 0, 0, 0.2),transparent ,transparent , transparent );",
@@ -89,6 +98,25 @@ function isInt(value) {
            parseInt(Number(value)) == value && 
            !isNaN(parseInt(value, 10));
 }
+
+function refreshMiddlePane(){
+    const butn = document.getElementById("swapButton");
+    if(playList){
+        displayPlayedAdvisaries(selectedAdvisaries);
+        butn.innerText = "Show All"
+    }
+    else{
+        displayAdvisaries(advisaryMasterList);
+        butn.innerText = "Show Active"
+    }
+}
+
+function swapDisplay(button){
+    playList=!playList;
+    saveSession();
+    refreshMiddlePane();
+}
+
 function toggleDescription(index) {
     const card = document.getElementById(`card-${index}`);
     
@@ -620,7 +648,7 @@ function displayAdvisaries(advisaries) {
         return; // Exit the function early
     }
     
-    createAndAppendAdvisaryCards(advisaries, "advisaries-container");
+    createAndAppendAdvisaryCards(advisaries, "selected-advisaries-container");
 }
 function displayPlayedAdvisaries(advisaries) {
     
@@ -781,7 +809,7 @@ function setupSearch() {
         const leftContainer = document.getElementById("advisaries-container");
         leftContainer.innerHTML = ''; // Clear previous content
         
-        displayAdvisaries(advisaryMasterList,"advisaries-container");
+        //displayAdvisaries(advisaryMasterList,"advisaries-container");
         displayAdvisaryShortList(filteredAdvisaries); // Call to display simplified list based on search
     });
 }
@@ -792,7 +820,7 @@ function setupGMControls(){
 
     const controlsHeader = document.createElement("p");
     controlsHeader.classList.add("controls-header");
-    controlsHeader.textContent = "Game Master Controls";
+    controlsHeader.textContent = "GM Controls";
     controlsContainer.appendChild(controlsHeader);
     const maxFear = 6;
     //fear counter
@@ -801,21 +829,26 @@ function setupGMControls(){
     const fearLabel = document.createElement("div");
     fearLabel.textContent = "Fear: ";
     fearP.appendChild(fearLabel);
+    const fearHolder = document.createElement("div");
+    fearHolder.classList.add("inline-center");
+    fearHolder.classList.add("fear-holder");
     //button to add/remove
     for(let i = 0; i<GMControlState.fear;i++){
         const fearBubble = document.createElement("div");
         fearBubble.classList.add("button-fear");
         fearBubble.textContent = i+1;
         fearBubble.onclick = function(){setFear(i+1,maxFear)};
-        fearP.appendChild(fearBubble);
+        fearHolder.appendChild(fearBubble);
     }
     for(let i = GMControlState.fear; i<maxFear;i++){
         const fearBubble = document.createElement("div");
         fearBubble.classList.add("button-fear");
         fearBubble.classList.add("button-fear-grayed");
         fearBubble.onclick = function(){setFear(i+1,maxFear)};
-        fearP.appendChild(fearBubble);
+        fearHolder.appendChild(fearBubble);
     }
+    
+    fearP.appendChild(fearHolder);
     controlsContainer.appendChild(fearP)
 
     const fearButtonsP = document.createElement("p");
@@ -836,7 +869,7 @@ function setupGMControls(){
     //Button to convert 2 fear to 1 action token
     const convertButton = document.createElement("div");
     convertButton.classList.add("button-text");
-    convertButton.textContent = "Convert 1 fear to 2 action";
+    convertButton.textContent = "1 FT-> 2 AT";
     convertButton.onclick = function(){addFear(-1,maxFear);addAction(+2);};
     fearButtonsP.appendChild(convertButton);  
     
@@ -869,7 +902,7 @@ function setupGMControls(){
     //Button to convert 2 fear to 1 action token
     const convertActionsButton = document.createElement("div");
     convertActionsButton.classList.add("button-text");
-    convertActionsButton.textContent = "Convert 2 actions to 1 fear";
+    convertActionsButton.textContent = "2 AT->1 FT";
     convertActionsButton.onclick = function(){if(GMControlState.actions>1 && (GMControlState.fear+1)<maxFear){addFear(+1,maxFear);addAction(-2);}};
     actionButtonsP.appendChild(convertActionsButton);  
     
@@ -882,7 +915,7 @@ function setupGMControls(){
 
     const playerAction = document.createElement("div");
     playerAction.classList.add("button-text");
-    playerAction.textContent = "Player takes an action";
+    playerAction.textContent = "Add Token ";
     playerAction.onclick = function(){addAction(+1);};
     macroActions.appendChild(playerAction)
 
@@ -892,7 +925,7 @@ function setupGMControls(){
     if(potentialFear+GMControlState.fear > maxFear){
         potentialFear = maxFear - GMControlState.fear;
     }
-    convertAllActionsButton.textContent = "Convert "+potentialFear*2+" actions to "+potentialFear+" fear";
+    convertAllActionsButton.textContent = ""+potentialFear*2+" AT->"+potentialFear+" FT";
     convertAllActionsButton.onclick = function(){
         addAction(-(potentialFear*2));
         addFear(potentialFear);
@@ -900,11 +933,176 @@ function setupGMControls(){
     macroActions.appendChild(convertAllActionsButton)
     controlsContainer.appendChild(macroActions);
     
-    const loopTable = document.createElement("tbody");
-    
-
     saveSession();
 }
+
+function generateLoops(){
+    const loopDiv = document.getElementById("loops");
+    loopDiv.innerHTML ='';
+
+    const loopTable = document.createElement("table");
+    const loopTbody = document.createElement("tbody");
+    loopTbody.id = "ctdnTableBody";
+    const headerRow = document.createElement("tr");
+
+    const headCount = document.createElement("td");
+    headCount.innerHTML = "<b>Count</b>";
+    const headName = document.createElement("td");
+    headName.innerHTML = "<b>Name</b>";
+    const headTrigger = document.createElement("td");
+    headTrigger.innerHTML = "<b>Trigger</b>";
+    const headType = document.createElement("td");
+    headType.innerHTML = "<b>Type</b>";
+    const headButtons = document.createElement("td");
+    headButtons.innerHTML = "<b>Buttons</b>";
+    headerRow.appendChild(headCount);
+    headerRow.appendChild(headName);
+    headerRow.appendChild(headType);
+    headerRow.appendChild(headTrigger);
+    headerRow.appendChild(headButtons);
+
+    loopTbody.appendChild(headerRow);
+
+    loops.forEach(loop => {
+        var index = loops.indexOf(loop);
+        const loopRow = document.createElement("tr");
+        
+        const loopCount = document.createElement("td");
+        loopCount.innerText = loop.Current+"/"+loop.Max;
+
+        const loopName = document.createElement("td");
+        loopName.innerText = loop.Name;
+
+        const loopType = document.createElement("td");
+        loopType.innerText = loop.Type;
+
+        const loopTrigger = document.createElement("td");
+        const loopTriggerButton = document.createElement("div");
+        loopTriggerButton.classList.add("button-text");
+        loopTriggerButton.innerText = loop.Trigger;
+        loopTriggerButton.id = loop.Trigger;
+        loopTriggerButton.onmouseover = function(){
+            var buttons = document.querySelectorAll('[id='+loop.Trigger+']');
+            buttons.forEach(but =>{
+                but.classList.add('hover');
+                but.style = "color:white;background-color: #696969;"
+            });
+            console.log(buttons);
+        }
+        loopTriggerButton.onmouseleave = function(){
+            var buttons = document.querySelectorAll('[id='+loop.Trigger+']');
+            buttons.forEach(but =>{
+                but.style = ""
+            });
+            console.log(buttons);
+        }
+        loopTriggerButton.onclick = function(){
+            loops.forEach(l =>{
+                if(l.Trigger == loop.Trigger){
+                    triggerCountdown(loops.indexOf(l));
+                }
+            });
+            generateLoops();
+        }
+        loopTrigger.appendChild(loopTriggerButton);
+
+        const loopButtons = document.createElement("td");
+        const deleteButton = document.createElement("div");
+        deleteButton.classList.add("button-text");
+        deleteButton.onclick = function(){
+            loops.splice(index,1);
+            generateLoops();
+        }
+        deleteButton.innerText = "Delete";
+        loopButtons.appendChild(deleteButton);
+
+        loopRow.appendChild(loopCount);
+        loopRow.appendChild(loopName);
+        loopRow.appendChild(loopType);
+        loopRow.appendChild(loopTrigger);
+
+        loopRow.appendChild(loopButtons);
+        
+        if (loop.JustTriggered){
+            loopRow.id = "triggered-loop-row";
+        }
+
+        loopTbody.appendChild(loopRow);
+
+    });
+    //addition row
+    const loopRow = document.createElement("tr");
+    
+    const loopCount = document.createElement("td");
+    const countField = document.createElement("input");
+    countField.type = "number";
+    countField.style = "width:40px;"
+    loopCount.appendChild(countField);
+
+    const loopName = document.createElement("td");
+    const nameField = document.createElement("input");
+    nameField.type = "text";
+    nameField.style = "width:70px;"
+    loopName.appendChild(nameField);
+
+    const type = document.createElement("td");
+    const typeField = document.createElement("select");
+    typeField.innerHTML = `<option value="Loop">Loop</option><option value="Countdown">Countdown</option>`
+    typeField.style = "width:70px;"
+    type.appendChild(typeField)
+
+    
+    const loopTrigger = document.createElement("td");
+    const triggerField = document.createElement("input");
+    triggerField.type = "text";
+    triggerField.style = "width:70px;"
+    loopTrigger.appendChild(triggerField);
+
+
+    const loopButtons = document.createElement("td");
+    const addButton = document.createElement("div");
+    addButton.classList.add("button-text");
+    addButton.onclick = function(){
+        loops.push({
+            "Name":nameField.value,
+            "Max":parseInt(countField.value),
+            "Current":parseInt(countField.value),
+            "Type":typeField.value,
+            "Trigger":triggerField.value,
+            "JustTriggered":false
+        });
+        generateLoops();
+    }
+    addButton.innerText = "add";
+    loopButtons.appendChild(addButton);
+
+    loopRow.appendChild(loopCount);
+    loopRow.appendChild(loopName);
+    loopRow.appendChild(type);
+    loopRow.appendChild(loopTrigger);
+    loopRow.appendChild(loopButtons);
+    loopTbody.appendChild(loopRow);
+
+    loopTable.appendChild(loopTbody);
+    loopDiv.appendChild(loopTable);
+    
+    
+    saveSession();
+}
+
+function triggerCountdown(index){
+    loops[index].Current += -1;
+    loops[index].JustTriggered = false;
+    if (loops[index].Current < 1){
+        if(loops[index].Type == "Loop"){
+            loops[index].Current = loops[index].Max;
+            loops[index].JustTriggered = true;
+        }else{
+            loops.splice(index,1);
+        }
+    }
+}
+
 function addAction(value){
     GMControlState.actions += value;
     if (GMControlState.actions < 0){
