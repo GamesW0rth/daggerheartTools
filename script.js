@@ -490,6 +490,7 @@ function createAndAppendPlayedAdvisaryCards(advisaries, containerId) {
 
 function getPlainCard(advisary){
     const card = document.createElement("div");
+    card.classList.add("adv-plain-card");
     card.classList.add("card");
     var tierColor = tierColorTypes[advisary.Tier];
     const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li style = "${actionColorStyles[feature.Type]}"><strong>${featureName}: <i>${feature.Type}</i></strong> ${feature.Description}</li>`).join('');

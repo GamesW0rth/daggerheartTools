@@ -75,9 +75,6 @@ body{
     height:97vh;
     border-radius: 8px;
 }
-select{
-
-}
 .rightpane{
    width: available;
    position: relative;
@@ -108,6 +105,15 @@ select{
   padding: 5px 0px 5px 0px;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
   position: relative;
+  
+}
+.adv-plain-card{
+  transition: 0.4s;
+}
+.adv-plain-card:hover{
+  transform: scale(1.02);
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
 }
 .description-area{
   background-color: #1abc9c61;
@@ -121,11 +127,14 @@ select{
   border-style: none solid none solid;
   text-decoration: none;
   color: white;
+  transition: 0.3s;
 }
 .page-link:hover{
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   background-color: #00000054;
-  transition: 0.7s;
+  transform: scale(1.02);
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
 }
 select {
 	border: none;
@@ -137,7 +146,7 @@ select {
 	color: #0b5344;
   height: 22.19px;
 }
-input {
+input,.editable-text {
 	appearance: none;
 	border: none;
 	outline: none;
@@ -150,13 +159,13 @@ input {
 input, select{
   transition: 0.3s;
 }
-input:hover, select:hover, textarea:hover{
+input:hover, select:hover, textarea:hover,.editable-text:hover{
   box-shadow: 2px 2px #0b463a;
 }
-input:focus, select:focus, textarea:focus{
+input:focus, select:focus, textarea:focus,.editable-text:focus{
 	background: #e1fffa;
 }
-input[type=text]{
+input[type=text],.editable-text{
 	border-radius: .2em .2em 0 0;
 	border-bottom: .2em solid #0b5344;
 } 
@@ -282,7 +291,6 @@ textarea {
 .button-text{
   background-color: #d1d1d1;
   margin: 1px;
-  border: #000000;
   border-radius: 9px;
   padding: 3px 8px;
   user-select: none;
@@ -299,7 +307,9 @@ textarea {
 .bubble-text{
   border-radius: 4px;
   padding: 1px 1px;
+  transition: 0.2s;
 }
+.bubble-text:hover{color: white;cursor: pointer;}
 .controls-header{
   width: available;
   margin: auto;
@@ -356,10 +366,6 @@ textarea {
   border:rgba(0, 0, 0, 1);
   color: rgb(111, 53, 53);
   cursor: pointer;
-}
-.editable-text{
-  background-color: #bcceeb;
-  border:2px solid  #06072b;
 }
 .not-highlight{
   user-select: none;
