@@ -856,13 +856,13 @@ function setupGMControls(){
 
     const removeFearButton = document.createElement("div");
     removeFearButton.classList.add("button-text");
-    removeFearButton.textContent = "-1 fear"
+    removeFearButton.textContent = "-1 FT"
     removeFearButton.onclick = function(){addFear(-1,maxFear)};
     fearButtonsP.appendChild(removeFearButton);  
 
     const addFearButton = document.createElement("div");
     addFearButton.classList.add("button-text");
-    addFearButton.textContent = "+1 fear"
+    addFearButton.textContent = "+1 FT"
     addFearButton.onclick = function(){addFear(1,maxFear)};
     fearButtonsP.appendChild(addFearButton);  
 
@@ -889,13 +889,13 @@ function setupGMControls(){
 
     const removeActionsButton = document.createElement("div");
     removeActionsButton.classList.add("button-text");
-    removeActionsButton.textContent = "-1 Actions"
+    removeActionsButton.textContent = "-1 AT"
     removeActionsButton.onclick = function(){addAction(-1)};
     actionButtonsP.appendChild(removeActionsButton);  
 
     const addActionsButton = document.createElement("div");
     addActionsButton.classList.add("button-text");
-    addActionsButton.textContent = "+1 Actions"
+    addActionsButton.textContent = "+1 AT"
     addActionsButton.onclick = function(){addAction(1)};
     actionButtonsP.appendChild(addActionsButton);  
 
@@ -941,6 +941,7 @@ function generateLoops(){
     loopDiv.innerHTML ='';
 
     const loopTable = document.createElement("table");
+    loopTable.style = "width:350px;";
     const loopTbody = document.createElement("tbody");
     loopTbody.id = "ctdnTableBody";
     const headerRow = document.createElement("tr");

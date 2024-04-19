@@ -8,20 +8,20 @@
 }
 
 ::-webkit-scrollbar-track-piece{
-	background-color: #FFF;
+	background-color: #cbcbcb34;
 }
 
 ::-webkit-scrollbar-thumb{
-	background-color: #CBCBCB;
-	outline: 2px solid #FFF;
+	background-color: #313131;
 	outline-offset: -2px;
-	border: .1px solid #B7B7B7;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-	background-color: #909090;
+	background-color: #6b6b6b;
 }
 body{
+  margin: 0;
+  padding: 0;
   background-color: #404040;
   opacity: 1;
   background-image:  linear-gradient(#676767 2.4000000000000004px, transparent 2.4000000000000004px), linear-gradient(90deg, #676767 2.4000000000000004px, transparent 2.4000000000000004px), linear-gradient(#676767 1.2000000000000002px, transparent 1.2000000000000002px), linear-gradient(90deg, #676767 1.2000000000000002px, #404040 1.2000000000000002px);
@@ -108,17 +108,17 @@ body{
   box-shadow: 0 8px 6px -6px black;
 }
 .banner-header{
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  position: relative;
+  color: white;
   overflow: hidden;
-  background-image: linear-gradient(to left,rgba(255, 255, 255, 0.471),transparent ,transparent , rgba(0, 0, 0, 0.169));
-  background-color: #bcceeb;
-  text-align: center;
+  background-image: linear-gradient(to left,#1abc9c,transparent ,transparent , rgba(0, 0, 0, 0.169));
+  background-color: #1abc9c;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   min-height: 1vh;
   max-height: 5vh;
+
 }
 .header{
   overflow: hidden;
