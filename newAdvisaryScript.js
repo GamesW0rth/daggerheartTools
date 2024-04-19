@@ -38,6 +38,11 @@ const featurePresets = [
         "Name":"Armor",
         "Type":"Passive",
         "Description":"When this adversary takes physical damage, reduce that damage by X."
+    },
+    {
+        "Name":"Group attack",
+        "Type":"Action - Fear",
+        "Description":"Very Close X</br>Spend a Fear to activate all adversaries with this name within close range of a target. This group moves into melee and makes an attack roll against that target. On a success, they deal X damage per adversary."
     }
     
 ]
@@ -201,6 +206,7 @@ function updateCreationJson(){
     advisaryObject.MotivesTactics = document.getElementById("motives").value;
     advisaryObject.Tier = document.getElementById("tier").value;
     advisaryObject.Role = document.getElementById("role").value;
+    advisaryObject.Description = document.getElementById("descriptionArea").value;
     advisaryObject.Difficulty = document.getElementById("difficulty").value;
     advisaryObject.Modifier = document.getElementById("modifier").value;
     advisaryObject.HP = document.getElementById("hp").value;
@@ -232,6 +238,7 @@ function emptyUIFields(){
     document.getElementById("motives").value='';
     document.getElementById("tier").value='';
     document.getElementById("role").value='';
+    document.getElementById("descriptionArea").value='';
     document.getElementById("difficulty").value='';
     document.getElementById("modifier").value = '';
     document.getElementById("hp").value = '';
@@ -255,6 +262,7 @@ function updateUIFromJson(){
     document.getElementById("motives").value=advisaryObject.MotivesTactics;
     document.getElementById("tier").value=advisaryObject.Tier;
     document.getElementById("role").value=advisaryObject.Role;
+    document.getElementById("descriptionArea").value = advisaryObject.Description;
     document.getElementById("difficulty").value=advisaryObject.Difficulty;
     document.getElementById("modifier").value = advisaryObject.Modifier;
     document.getElementById("hp").value = advisaryObject.HP;
