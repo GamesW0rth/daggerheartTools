@@ -216,7 +216,7 @@ function removeAdvChild(playedAdvId,childId){
             }
             }
         });
-    displayPlayedAdvisaries(selectedAdvisaries);
+        refreshMiddlePane();
 }
 
 function addAdvChildToPlayed(playedAdv){
@@ -254,7 +254,7 @@ function addAdvChildToPlayed(playedAdv){
         Name: playedAdv.linkedAdvisary.Name + " " + newId
     }
     playedAdv.advChildren.push(newChild);
-    displayPlayedAdvisaries(selectedAdvisaries);
+    refreshMiddlePane();
 }
 
 function createAndAppendPlayedAdvisaryCards(advisaries, containerId) {
@@ -495,12 +495,8 @@ function getPlainCard(advisary){
     const movesList = Object.entries(advisary.Features).map(([featureName, feature]) => `<li style = "${actionColorStyles[feature.Type]}"><strong>${featureName}: <i>${feature.Type}</i></strong> ${feature.Description}</li>`).join('');
 
     let advisaryDescriptionHtml = '';
-    if (advisary["Advisary Description"] && shouldToggle == true && advisary["Advisary Description"].trim() !== '') {
-        advisaryDescriptionHtml = `
-        <div id="advisary-description-${index}" class="advisary-description hidden">
-        <p><strong>Advisary Description:</strong> ${advisary["Advisary Description"]}</p>
-        </div>
-        `;
+    if (advisary["Description"]) {
+        advisaryDescriptionHtml = `<div class="description-area"><strong>Description:</strong> ${advisary["Description"]}</div>`;
     }
             
     let experienceHtml = '';
@@ -546,8 +542,9 @@ function getPlainCard(advisary){
     </ul>
     </div>
     `;
+    const gridHtml = `<div class="grid-container">${leftColumnHtml}${rightColumnHtml}</div>`
     
-    card.innerHTML = headerHtml + leftColumnHtml + rightColumnHtml + advisaryDescriptionHtml;
+    card.innerHTML = headerHtml + gridHtml + advisaryDescriptionHtml;
     return card;
 }
 
@@ -583,7 +580,7 @@ function changeAdvHealthOnClick(amount, advId, instId=-1){
             }
         }
     });
-    displayPlayedAdvisaries(selectedAdvisaries);
+    refreshMiddlePane();
 }
 function changeAdvStressOnClick(amount, advId, instId=-1){
     selectedAdvisaries.forEach(playedAdvisary => {
@@ -612,12 +609,12 @@ function changeAdvStressOnClick(amount, advId, instId=-1){
             }
         }
     });
-    displayPlayedAdvisaries(selectedAdvisaries);
+    refreshMiddlePane();
 }
 
 function removePlayedAdvisary(advId){
     selectedAdvisaries = selectedAdvisaries.filter(playedAdvisary => playedAdvisary.playId !== advId);
-    displayPlayedAdvisaries(selectedAdvisaries);
+    refreshMiddlePane();
 }
 
 function addPlayedAdvisary(advisary){
@@ -638,7 +635,7 @@ function addPlayedAdvisary(advisary){
     playedAdvisary.advChildren = [];
     LatestPlayId++;
     selectedAdvisaries.push(playedAdvisary);
-    displayPlayedAdvisaries(selectedAdvisaries);
+    refreshMiddlePane();
 }
 
 function displayAdvisaries(advisaries) {

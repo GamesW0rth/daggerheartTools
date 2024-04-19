@@ -107,6 +107,23 @@ body{
   padding: 5px 0px 5px 0px;
   box-shadow: 0 8px 6px -6px black;
 }
+.description-area{
+  background-color: #1abc9c61;
+}
+.page-link{
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: 5vh;
+  padding: 0 1vh 0 1vh;
+  border-style: none solid none solid;
+  text-decoration: none;
+  color: white;
+}
+.page-link:hover{
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #00000054
+}
 .banner-header{
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   position: relative;
