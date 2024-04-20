@@ -32,14 +32,12 @@ body{
   background-color: #a5aab0;
   border-radius: 8px;
   max-width: 16vw;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 #loops{
   background-color: #a5aab0;
   width: 450px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 #loops table tr {
@@ -54,6 +52,9 @@ body{
 
 #triggered-loop-row td{
   border: 2px solid rgb(255, 0, 0);
+}
+#search-container{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .middlepane{
   min-width: 50vw;
@@ -73,9 +74,7 @@ body{
     border-collapse: collapse;
     height:97vh;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .rightpane{
    width: available;
    position: relative;
@@ -101,11 +100,85 @@ body{
   background-color: #b0b2b5;
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 1 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   overflow: hidden;
   padding: 5px 0px 5px 0px;
-  box-shadow: 0 8px 6px -6px black;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  
+}
+.adv-plain-card{
+  transition: 0.4s;
+}
+.adv-plain-card:hover{
+  transform: scale(1.02);
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
+}
+.description-area{
+  background-color: #1abc9c61;
+}
+.page-link{
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: 5vh;
+  padding: 0 1vh 0 1vh;
+  border-style: none solid none solid;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+.page-link:hover{
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #00000054;
+  transform: scale(1.02);
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
+}
+select {
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #0b5344;
+	background: #f3fffd;
+	border-radius: .2em .2em 0 0;
+	padding: .2em;
+	color: #0b5344;
+  height: 22.19px;
+}
+input,.editable-text {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: #f3fffd;
+	border-radius: .2em;
+	padding: .2em;
+	color: #0b5344;
+  margin: 2px;
+}
+input, select{
+  transition: 0.3s;
+}
+input:hover, select:hover, textarea:hover,.editable-text:hover{
+  box-shadow: 2px 2px #0b463a;
+}
+input:focus, select:focus, textarea:focus,.editable-text:focus{
+	background: #e1fffa;
+}
+input[type=text],.editable-text{
+	border-radius: .2em .2em 0 0;
+	border-bottom: .2em solid #0b5344;
+} 
+textarea {
+	appearance: none;
+	border: none;
+	outline: none;
+  margin: 2px;
+	border-top: .2em solid #0b5344;
+	background: #f3fffd;
+	border-radius: .2em .2em 0 0;
+	padding: .2em;
+	color: #0b5344;
 }
 .banner-header{
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -183,6 +256,7 @@ body{
   background-color: #b8b8b8;
   cursor: pointer;
   user-select: none;
+  transition: 0.5s;
 }
 .table-head-row td:hover{
   background-color: #797979;
@@ -217,21 +291,30 @@ body{
 .button-text{
   background-color: #d1d1d1;
   margin: 1px;
-  border: #000000;
   border-radius: 9px;
   padding: 3px 8px;
   user-select: none;
+  transition: 0.2s;
+  box-shadow: 1px 1px #0b4c3fc9;
 }
 .button-text:hover{
   background-color: #696969;
   color: white;
-  cursor: pointer;
+  cursor:pointer;
+  box-shadow: 2px 2px #23c2a2c9;
+  transform: scale(1.05);
 }
-
+.button-text:active{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  transform: scale(0.8);
+}
 .bubble-text{
   border-radius: 4px;
   padding: 1px 1px;
+  transition: 0.2s;
 }
+.bubble-text:hover{color: white;cursor: pointer;}
 .controls-header{
   width: available;
   margin: auto;
@@ -289,10 +372,6 @@ body{
   color: rgb(111, 53, 53);
   cursor: pointer;
 }
-.editable-text{
-  background-color: #bcceeb;
-  border:2px solid  #06072b;
-}
 .not-highlight{
   user-select: none;
 }
@@ -307,8 +386,4 @@ body{
 
 #minionCont tr:nth-child(odd) {
   background-color: #828282; /* Slightly different color for odd rows for zebra striping */
-}
-
-.input[type=text]{
-  border-radius: 15px;
 }
