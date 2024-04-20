@@ -1177,7 +1177,7 @@
                 "On My Signal": {
                     "Type": "Reaction",
                     "Countdown": "5",
-                    "Description": "Activate when this creature sees any number of hostile targets. It ticks down anytime a PC makes an attack roll. When triggered, all Archer Guards within Far range fire at their nearest target with a +3 attack modifier instead of their standard attack modifier. 'With the wave of a hand, a rain of arrows falls down upon you.'"
+                    "Description": "Countdown: 5</br>Activate when this creature sees any number of hostile targets. It ticks down anytime a PC makes an attack roll. When triggered, all Archer Guards within Far range fire at their nearest target with a +3 attack modifier instead of their standard attack modifier. 'With the wave of a hand, a rain of arrows falls down upon you.'"
                 }
             },
             "id": 32
@@ -1786,7 +1786,7 @@
                 "Exile": {
                     "Type": "Action - Fear",
                     "Countdown": "6",
-                    "Description": "Activate when Petty Noble becomes hostile to a target. When the countdown triggers, exile the target and their close associates from the noble’s territory. While exiled, the target has disadvantage in all social situations within the Noble’s domain. 'Be gone!'"
+                    "Description": "Countdown: 6</br>Activate when Petty Noble becomes hostile to a target. When the countdown triggers, exile the target and their close associates from the noble’s territory. While exiled, the target has disadvantage in all social situations within the Noble’s domain. 'Be gone!'"
                 }
             },
             "id": 48
@@ -2073,7 +2073,7 @@
                 "Hallucinatory Breath": {
                     "Type": "Action",
                     "Countdown": "Loop 1d6",
-                    "Description": "Activate the first time the Flickerfly takes damage. When triggered, the Flickerfly breathes hallucinatory gas on all targets in front of them up to Far range. Targets must make an Instinct Reaction Roll (15) or be tormented by fearful hallucinations. Targets whose fears are known to the Flickerfly have disadvantage on this roll. On a failure, the target marks a Stress and loses a Hope."
+                    "Description": "Loop 1d6</br>Activate the first time the Flickerfly takes damage. When triggered, the Flickerfly breathes hallucinatory gas on all targets in front of them up to Far range. Targets must make an Instinct Reaction Roll (15) or be tormented by fearful hallucinations. Targets whose fears are known to the Flickerfly have disadvantage on this roll. On a failure, the target marks a Stress and loses a Hope."
                 }
             },
             "id": 55
@@ -2266,7 +2266,7 @@
                     "Type": "Reaction",
                     "Countdown": "Loop 1d6",
                     "AttackModifier": "+3",
-                    "Description": "Activate when a hostile target is spotted. When triggered, move in a straight line to somewhere in Far range, and make an attack with a +3 modifier against all enemies in the path. Deal 2d20 physical damage to any you succeed against."
+                    "Description": "Loop 1d6</br>Activate when a hostile target is spotted. When triggered, move in a straight line to somewhere in Far range, and make an attack with a +3 modifier against all enemies in the path. Deal 2d20 physical damage to any you succeed against."
                 }
             },
             "id": 60
@@ -2593,7 +2593,7 @@
                 "Hallucinatory Breath": {
                     "Type": "Action",
                     "Countdown": "Loop 1d6",
-                    "Description": "Activate the first time the Flickerfly takes damage. When triggered, the Flickerfly breathes hallucinatory gas on all targets in front of them up to Far range. Targets must make an Instinct Reaction Roll (17) or be tormented by fearful hallucinations. Targets whose fears are known to the Flickerfly have disadvantage on this roll. On a failure, the target takes 3d8+3 mag damage and loses 2 Hope."
+                    "Description": "Loop 1d6</br>Activate the first time the Flickerfly takes damage. When triggered, the Flickerfly breathes hallucinatory gas on all targets in front of them up to Far range. Targets must make an Instinct Reaction Roll (17) or be tormented by fearful hallucinations. Targets whose fears are known to the Flickerfly have disadvantage on this roll. On a failure, the target takes 3d8+3 mag damage and loses 2 Hope."
                 },
                 "Uncanny Reflexes": {
                     "Type": "Reaction",
@@ -3131,7 +3131,7 @@
                 "Apocalyptic Thrashing": {
                     "Type": "Action - Fear",
                     "Countdown": "1d12",
-                    "Description": "Spend a Fear to activate. This ticks down every time a token is placed on the action tracker. When triggered, Ashen Tyrant thrashes about, causing environmental damage (earthquake, avalanche, collapsing walls, etc.) All targets within Far range must make a Strength Reaction Roll (22) or suffer 4d20 phy damage and become Restrained in the rubble. Any restrained targets can break free with Strength (25). Targets that succeed only take half damage and are not Restrained."
+                    "Description": "Countdown:1d12</br>Spend a Fear to activate. This ticks down every time a token is placed on the action tracker. When triggered, Ashen Tyrant thrashes about, causing environmental damage (earthquake, avalanche, collapsing walls, etc.) All targets within Far range must make a Strength Reaction Roll (22) or suffer 4d20 phy damage and become Restrained in the rubble. Any restrained targets can break free with Strength (25). Targets that succeed only take half damage and are not Restrained."
                 }
             },
             "id": 80
