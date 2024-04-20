@@ -1091,14 +1091,17 @@ function generateLoops(){
 
 function triggerCountdown(index){
     loops[index].Current += -1;
-    loops[index].JustTriggered = false;
     if (loops[index].Current < 1){
         if(loops[index].Type == "Loop"){
             loops[index].Current = loops[index].Max;
             loops[index].JustTriggered = true;
-        }else{
+        }else if(loops[index].JustTriggered == true){
             loops.splice(index,1);
+        }else if(loops[index].JustTriggered == false){
+            loops[index].JustTriggered = true;
         }
+    }else{
+        loops[index].JustTriggered = false;
     }
 }
 
